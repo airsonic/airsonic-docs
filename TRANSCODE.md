@@ -1,3 +1,8 @@
+<!--
+# TRANSCODE.md
+# Libresonic/documentation
+-->
+
 # Setting up Transcoding Binaries
 
 ## About Transcoding

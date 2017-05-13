@@ -1,6 +1,6 @@
 <!--
 # INSTALL.md
-# Libresonic/libresonic
+# Libresonic/documentation
 -->
 
 # Installing Libresonic

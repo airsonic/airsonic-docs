@@ -1,3 +1,8 @@
+<!--
+# DATABASE.md
+# Libresonic/documentation
+-->
+
 # Database Selection
 
 Libresonic is built with generic ANSI SQL (for the most part) and uses [Liquibase](http://www.liquibase.org/) 

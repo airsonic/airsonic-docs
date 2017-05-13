@@ -1,3 +1,8 @@
+<!--
+# PROXY.md
+# Libresonic/documentation
+-->
+
 # Setting up a reverse proxy
 
 A reverse proxy is a public-facing web server sitting in front of an internal

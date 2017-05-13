@@ -1,3 +1,8 @@
+<!--
+# CONFIGURATION.md
+# Libresonic/documentation
+-->
+
 # Startup Configuration Guide
 
 Libresonic has some system-wide configuration. These configurations are stored in the 

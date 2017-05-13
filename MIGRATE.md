@@ -1,3 +1,8 @@
+<!--
+# MIGRATE.md
+# Libresonic/documentation
+-->
+
 Upgrade to Libresonic from Subsonic
 ================
 

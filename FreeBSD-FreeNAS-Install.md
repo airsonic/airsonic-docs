@@ -1,3 +1,8 @@
+<!--
+# FreeBSD-FreeNAS-Install.md
+# Libresonic/documentation
+-->
+
 # Installing Libresonic on FreeBSD 10.3 and FreeNAS 9.10
 
 ### Preamble
