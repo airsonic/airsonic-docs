@@ -15,11 +15,12 @@ However, there are other documents detailing specifics on running Libresonic.
 It is recommended to also read them after this document but before actually
 running Libresonic. To list some of the important ones:
 
-  * [PROXY](PROXY.md) - Recommended if you plan on exposing Libresonic to the internet
-  * [CONFIGURATION](CONFIGURATION.md) - Documents some startup configurations that cannot be changed in the Libresonic Settings Page
-  * [DATABASE](DATABASE.md) - Provides guidance on using a database other than HSQL 1.8. Strongly recommended for long term / heavy use.
-  * [MIGRATE](MIGRATE.md) - Documents upgrading from an old Subsonic installation
-  * [TRANSCODE](TRANSCODE.md) - Mandatory setup if you want Libresonic to convert between formats on the fly
+  * [PROXY](proxy.md) - Recommended if you plan on exposing Libresonic to the internet.
+  * [CONFIGURATION](configure.md) - Documents some startup configurations that cannot be changed in the Libresonic Settings Page.
+  * [DATABASE](database.md) - Provides guidance on using a database other than HSQL 1.8. Strongly recommended for long term / heavy use.
+  * [MIGRATE](migrate.md) - Documents upgrading from an old Subsonic installation.
+  * [TRANSCODE](transcode.md) - Mandatory setup if you want Libresonic to convert between formats on the fly.
+  * [LOGGING](LOGGING.md) - Explains how to manage Libresonic logs.
 
 ## Installing From Pre-Compiled Package
 
