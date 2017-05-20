@@ -116,6 +116,7 @@ The following configuration works for Apache (without HTTPS):
     DocumentRoot      /var/www
     ProxyPass         /libresonic http://localhost:4040/libresonic
     ProxyPassReverse  /libresonic http://localhost:4040/libresonic
+    RequestHeader set X-Forwarded-Proto "http"
 </VirtualHost>
 ```
 
