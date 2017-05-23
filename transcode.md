@@ -1,52 +1,111 @@
-<!--
-# TRANSCODE.md
-# Libresonic/documentation
--->
+---
+layout: docs
+title: Setting up transcoding binaries
+permalink: /docs/transcode/
+---
+#### About transcoding
 
-# Setting up Transcoding Binaries
+Transcoders are used by Libresonic to convert media from their on disk format to a format that can be consumed by clients. This is done not only for compatibility but also to save bandwidth when dealing with heavier file types. For example, although your library might use the flac format, bandwidth can be saved by converting to mp3 before transmission.
 
-## About Transcoding
-Transcoders are used by Libresonic to convert media from their on disk format
-to a format that can be consumed by clients. This is done not only for compatibility
-but also to save bandwidth when dealing with heavier file types. For example, although your
-library might use the flac format, bandwidth can be saved by converting to mp3 before 
-transmission.
+#### Install the transcoder
 
-## Bare Minimum setup (Linux)
+##### On Debian 8
 
-*Commands provided below are illustrative*
-
-Install ffmpeg using your distributions package manager. 
-
+Add jessie-backports repo to your `source.list` file:
 ```
-sudo yum install ffmpeg
+deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib
 ```
 
-In the case that ffmpeg is not available, you have two options.
-- Add a repository that provides ffmpeg
-- Build the binary from source
-  - Outdated documentation for this can be found at [TRANSCODE.TXT](developer/TRANSCODE.TXT)
+Install ffmpeg package
+```
+sudo apt-get install ffmpeg -t jessie-backports
+```
 
-Create a `transcode` directory within your `libresonic.home` directory:
-
+Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
 ```
 mkdir /var/libresonic/transcode
 ```
 
-Ensure it has the correct permissions:
-
+Within the `transcode` directory symlink to ffmpeg and verify correct permissions
 ```
--bash-4.2$ ls -alhd transcode/
-drwxr-xr-x. 2 tomcat tomcat 41 Jan  7 13:45 transcode/
+cd transcode/
+ln -s /usr/bin/ffmpeg
+ls -alh
+```
+```
+lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
+```
+> Note that `user` has te be the use that runs Libresonic
+
+##### On Ubuntu > 16.04
+
+Install ffmpeg package
+```
+sudo apt-get install ffmpeg
+```
+
+Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+```
+mkdir /var/libresonic/transcode
 ```
 
 Within the `transcode` directory symlink to ffmpeg and verify correct permissions
 ```
--bash-4.2$ cd transcode/
--bash-4.2$ ln -s /usr/bin/ffmpeg
--bash-4.2$ ls -alh
-total 4.0K
-drwxr-xr-x. 2 tomcat tomcat   41 Jan  7 13:45 .
-drwxr--r--. 7 tomcat tomcat 4.0K Feb 23 19:23 ..
-lrwxrwxrwx. 1 tomcat tomcat   15 Jan  7 13:45 ffmpeg -> /usr/bin/ffmpeg
+cd transcode/
+ln -s /usr/bin/ffmpeg
+ls -alh
 ```
+```
+lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
+```
+> Note that `user` has te be the use that runs Libresonic
+
+##### On Red Hat / Fedora
+```
+sudo yum install ffmpeg
+```
+
+Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+```
+mkdir /var/libresonic/transcode
+```
+
+Within the `transcode` directory symlink to ffmpeg and verify correct permissions
+```
+cd transcode/
+ln -s /usr/bin/ffmpeg
+ls -alh
+```
+```
+lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
+```
+> Note that `user` has te be the use that runs Libresonic
+
+##### On Windows
+
+Get the ffmpeg package from the project [download page](https://ffmpeg.zeranoe.com/builds/).
+
+Unpack the files into the `LIBRESONIC_HOME/transcode/` folder.
+
+##### On MacOS
+
+You can install ffmpeg binaries on MacOS using `Homebrew` :
+```
+brew install ffmpeg
+```
+
+Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+```
+mkdir /var/libresonic/transcode
+```
+
+Within the `transcode` directory symlink to ffmpeg and verify correct permissions
+```
+cd transcode/
+ln -s /usr/bin/ffmpeg
+ls -alh
+```
+```
+lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
+```
+> Note that `user` has te be the use that runs Libresonic
