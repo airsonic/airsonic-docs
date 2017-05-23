@@ -2,7 +2,7 @@
 # README.md
 # Libresonic/documentation
 -->
-Libresonic Documentation
-========================
+
+# Libresonic Documentation
 
 This repository contains documentation for Libresonic.
