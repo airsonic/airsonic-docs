@@ -7,11 +7,11 @@ Libresonic is built with generic ANSI SQL (for the most part) and uses [Liquibas
 
 | Database   | Version | Liquibase | Runtime | Notes  |
 |:----------:|:-------:|:---------:|:-------:|:------:|
-| HyperSQL   | 1.8     | ✔         | ✔        | Default|
+| HyperSQL   | 1.8     | ✔         | ✔       | Default|
 | HyperSQL   | 2.X     | ✕         | ✕       | No curent plans to support, look into SQLite instead? |
 | PostgreSQL | 9.5     | ✔         | ✔       |        |
 | MariaDB    | 10.2    | ✔         | ✔       |        |
-| MySQL      | 5.7.17  | ✔         | ✕       | Work In Progress |
+| MySQL      | 5.7.17  | ✔         | ✔       |        |
 
 If you wish to continue using the current hsql 1.8 database driver, no action is needed. If you wish to use another database, read on.
 
