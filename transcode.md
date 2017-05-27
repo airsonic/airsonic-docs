@@ -16,7 +16,12 @@ Add jessie-backports repo to your `source.list` file:
 deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib
 ```
 
-Install ffmpeg package
+Update your package list:
+```
+sudo apt-get update
+```
+
+Install ffmpeg package:
 ```
 sudo apt-get install ffmpeg -t jessie-backports
 ```
