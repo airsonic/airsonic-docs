@@ -94,7 +94,7 @@ And then go to:
 
 #### Set up a transcoder
 
-Add jessie-backports repo to your `source.list` file:
+Add jessie-backports repo to your `/etc/apt/source.list` file:
 ```
 deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib
 ```

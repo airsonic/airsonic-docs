@@ -11,7 +11,7 @@ Transcoders are used by Libresonic to convert media from their on disk format to
 
 ##### On Debian 8
 
-Add jessie-backports repo to your `source.list` file:
+Add jessie-backports repo to your `/etc/apt/source.list` file:
 ```
 deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib
 ```
