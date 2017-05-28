@@ -1,10 +1,10 @@
 ---
 layout: docs
-title: Libresonic API
+title: API
 permalink: /docs/api/
 ---
 
-### Subsonic API
+#### Subsonic API
 
 Libresonic will try not to break with the Subsonic API version 1.13.0.
 
