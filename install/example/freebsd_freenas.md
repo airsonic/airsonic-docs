@@ -12,6 +12,7 @@ If on FreeNAS create a standard jail in the web interface and enter the shell.
 #### Install Tomcat
 
 To run Libresonic we need a server to run it in. Log into your machine and then run these commands either as root or with sudo:
+
 ```
 pkg install tomcat8 nano
 ```
@@ -21,12 +22,14 @@ Hit y on all prompts to complete installation of Tomcat.
 #### Configure Tomcat
 
 Edit Tomcat's user configuration file with your favourite text editor. We installed nano in step 1.
+
 ```
 rm /usr/local/apache-tomcat-8.0/conf/tomcat-users.xml
 nano /usr/local/apache-tomcat-8.0/conf/tomcat-users.xml
 ```
 
 Copy/paste the following:
+
 ```
 <tomcat-users xmlns="http://tomcat.apache.org/xml"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -52,12 +55,14 @@ version="1.0">
 #### Start and test Tomcat
 
 Start tomcat8:
+
 ```
 echo tomcat8_enable="YES" >> /etc/rc.conf
 service tomcat8 start
 ```
 
 Test if Tomcat is listening on port 8080:
+
 ```
 netstat -an | grep 8080
 ```
@@ -71,6 +76,7 @@ It should return a line containing the IP address of your system (or jail).
 #### Create directories and set up permissions
 
 Create directories and set up permissions:
+
 ```
 mkdir /var/libresonic
 chown -R www:www /var/libresonic
@@ -111,6 +117,7 @@ Congratulations you have set up Libresonic.
 ## Transcoding Support
 
 If you want transcoding and DON'T need mp3 support:
+
 ```
 pkg install ffmpeg
 ln -s /usr/local/bin/ffmpeg /var/libresonic/transcode/ffmpeg
@@ -124,6 +131,7 @@ If you need mp3 support and most likely you will the process is more arduous as 
 #### Install ffmpeg dependencies and Ports Tree
 
 Install the dependencies required to build and use ffmpeg:
+
 ```
 pkg install yasm binutils texi2html frei0r v4l_compat gmake pkgconf perl5 fontconfig freetype2 opencv-core schroedinger libtheora libv4l libva libvdpau libvorbis libvpx libx264 xvid gnutls libiconv
 ```
@@ -138,11 +146,13 @@ portsnap extract
 #### Build ffmpeg
 
 Navigate to the ffmpeg port directory
+
 ```
 cd /usr/ports/multimedia/ffmpeg
 ```
 
 Configure ffmpeg build
+
 ```
 make configure
 ```
@@ -152,6 +162,7 @@ This will bring up a menu. Scroll down using arrow keys to "LAME" and hit the sp
 The ffmpeg source files will automatically be downloaded then you will be presented with an additional prompt to install documentation. I uncheck with spacebar then press enter to continue.
 
 Start build and installation of ffmpeg
+
 ```
 make install clean
 ```
@@ -159,11 +170,13 @@ make install clean
 Building ffmpeg will take some time depending on the capabilities of your machine, please be patient.
 
 Symlink ffmpeg to where Libresonic expects the transcoder to be.
+
 ```
 ln -s /usr/local/bin/ffmpeg /var/libresonic/transcode/ffmpeg
 ```
 
 Finally restart tomcat
+
 ```
 service tomcat8 restart
 ```

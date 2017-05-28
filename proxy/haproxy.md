@@ -47,6 +47,7 @@ backend libresonic-backend
     # Forward requests to Libresonic server
     server libresonic 127.0.0.1:8080 check
 ```
+
 You will need to make a couple of changes in the configuration file:
 - Be sure to set the right path to your `cert_key.pem` files.
 - Change `/libresonic` following your libresonic server path.

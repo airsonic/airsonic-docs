@@ -29,6 +29,7 @@ We will refer to container managed configuration as jndi and libresonic managed 
 **Before doing anything, make sure your database is properly backed up. Ensure your server is shutdown**
 
 In your libresonic.properties file, you will need to add the following settings (this is just an example):
+
 ```
 DatabaseConfigType=embed
 DatabaseConfigEmbedDriver=org.hsqldb.jdbcDriver

@@ -3,7 +3,6 @@ layout: docs
 title: Manage Libresonic logs
 permalink: /docs/logging/
 ---
-
 This guide explains how to manage Libresonic logs.
 
 ### Main log file
@@ -30,7 +29,7 @@ java -jar libresonic.war
 
 In that case you can add your own `application.properties` file in a `config` subdirectory to override the default application configuration.
 
-Suppose that you'd like to change the default log level to DEBUG. Follow these steps :
+Suppose that you'd like to change the default log level to DEBUG. Follow these steps:
 
 - create a `config` folder beside the `libresonic.war` file
 - create a `config/application.properties` empty file
@@ -43,7 +42,7 @@ logging.level.root=DEBUG
 - restart Libresonic
 
 The `config/application.properties` file can contain any logging configuration directive.
-You can fine tune the log level on any java package by adding a line like :
+You can fine tune the log level on any java package by adding a line like:
 
 ```
 logging.level.package=LEVEL
@@ -51,7 +50,7 @@ logging.level.package=LEVEL
 
 where package must be replaced with a real java package name, and LEVEL must be replaced with a real level code.
 
-Allowed levels are :
+Allowed levels are:
 - `ERROR`
 - `WARN`
 - `INFO`

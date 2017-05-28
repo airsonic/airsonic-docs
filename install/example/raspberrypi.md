@@ -13,6 +13,7 @@ Install tomcat8 and oracle-java8-jdk:
 ```
 sudo apt install oracle-java8-jdk tomcat8
 ```
+
 > Note: We suggest not to use the OpenJDK package because Libresonic will take more than 1 hour to deploy. See [this issue](https://github.com/Libresonic/libresonic/issues/281) for more details.
 
 #### Deploy Libresonic
@@ -95,26 +96,31 @@ And then go to:
 #### Set up a transcoder
 
 Open your `/etc/apt/source.list`:
+
 ```
 sudo nano /etc/apt/source.list
 ```
 
 Add the backports repo to it:
+
 ```
 deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib
 ```
 
 Update your package list:
+
 ```
 sudo apt-get update
 ```
 
 Install ffmpeg package from jessie-backports:
+
 ```
 sudo apt-get install ffmpeg -t jessie-backports
 ```
 
 Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+
 ```
 mkdir /var/libresonic/transcode
 ```
@@ -128,4 +134,5 @@ ls -alh
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
+
 > Note that `user` has to be the user that runs Libresonic

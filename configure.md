@@ -19,7 +19,6 @@ This parameter dictates the folder where Libresonic will store its logs, setting
 
 > Default: `/var/libresonic` or `C:\\music`
 
-
 #### Setting java parameters on Tomcat
 
 As described in the [RUNNING.txt](http://tomcat.apache.org/tomcat-8.0-doc/RUNNING.txt) doc provided by tomcat, you can create a file named `setenv.sh` or for windows `setenv.bat` in the Tomcat home `bin` folder to  modify  the java args.
