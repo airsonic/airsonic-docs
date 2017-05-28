@@ -94,7 +94,12 @@ And then go to:
 
 #### Set up a transcoder
 
-Add jessie-backports repo to your `/etc/apt/source.list` file:
+Open your `/etc/apt/source.list`:
+```
+sudo nano /etc/apt/source.list
+```
+
+Add the backports repo to it:
 ```
 deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib
 ```
@@ -104,7 +109,7 @@ Update your package list:
 sudo apt-get update
 ```
 
-Install ffmpeg package:
+Install ffmpeg package from jessie-backports:
 ```
 sudo apt-get install ffmpeg -t jessie-backports
 ```
