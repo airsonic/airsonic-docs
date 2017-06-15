@@ -14,6 +14,26 @@ Install tomcat8 and oracle-java8-jdk:
 sudo apt install oracle-java8-jdk tomcat8
 ```
 
+If you could not set JAVA_HOME using `sudo update-alternatives --config java`, do the following:
+
+List the available Java versions:
+
+```
+ll /usr/lib/jvm/
+```
+```
+drwxr-xr-x 9 root root 4096 juin  15 14:13 jdk-8-oracle-arm32-vfp-hflt
+```
+
+Open `/etc/default/tomcat8` and hardcode the path to JAVA_HOME:
+
+```
+# The home directory of the Java development kit (JDK). You need at least
+# JDK version 7. If JAVA_HOME is not set, some common directories for
+# OpenJDK and the Oracle JDK are tried.
+JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
+```
+
 > Note: We suggest not to use the OpenJDK package because Libresonic will take more than 1 hour to deploy. See [this issue](https://github.com/Libresonic/libresonic/issues/281) for more details.
 
 #### Deploy Libresonic
