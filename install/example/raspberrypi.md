@@ -40,15 +40,15 @@ sudo systemctl stop tomcat8.service
 Remove the possible existing libresonic files from the TOMCAT_HOME:
 
 ```
-sudo rm /var/tomcat8/webapps/libresonic.war
-sudo rm -R /var/tomcat8/webapps/libresonic/
-sudo rm -R /var/tomcat8/work/*
+sudo rm /var/lib/tomcat8/webapps/libresonic.war
+sudo rm -R /var/lib/tomcat8/webapps/libresonic/
+sudo rm -R /var/lib/tomcat8/work/*
 ```
 
 Move the downloaded WAR file in the TOMCAT_HOME/webapps/ folder:
 
 ```
-sudo mv libresonic-v{{ site.stable_version }}.war /var/tomcat8/webapps/libresonic.war
+sudo mv libresonic-v{{ site.stable_version }}.war /var/lib/tomcat8/webapps/libresonic.war
 ```
 
 Restart the tomcat8 service:
