@@ -17,7 +17,7 @@ If you ran Subsonic before, your data will be (by default) stored in `/var/subso
 
 > WARNING: Deletes all Libresonic data
 ```
-sudo rm -r /var/libresonic
+sudo rm -R /var/libresonic
 ```
 
 We then copy Subsonic data to Libresonic location. Be aware that a couple of files need to be renamed:
@@ -35,10 +35,16 @@ sudo mv /var/libresonic/db/subsonic.properties /var/libresonic/db/libresonic.pro
 sudo mv /var/libresonic/db/subsonic.script /var/libresonic/db/libresonic.script
 ```
 
-Then start Libresonic service again.
-
-Your old settings will still be there. --If you wish--, you can delete subsonic data:
+Change the `/var/libresonic` owner to use that will run libresonic (e.g. tomcat8 or libresonic):
 
 ```
-sudo rm -r /var/subsonic
+sudo chown -R user:user /var/libresonic
+```
+
+Then start Libresonic service again.
+
+Your old settings will still be there. **If you wish**, you can delete subsonic data:
+
+```
+sudo rm -R /var/subsonic
 ```
