@@ -9,7 +9,7 @@ Airsonic development is a community project, and contributions are welcomed. Her
     - More spacing, more empty lines !! The documentation needs to be readable !
     - Read already written guides to find some inspiration.
 
-  2.  **License Acceptance** All contributions must be licensed under [GNU GPLv3](https://github.com/airsonic/documentation/blob/stable/LICENSE.txt) to be accepted. Use [`git commit --signoff`](https://gitirc.eu/git-commit.html) to acknowledge this.
+  2.  **License Acceptance** All contributions must be licensed under [GNU GPLv3](https://github.com/airsonic/documentation/blob/master/LICENSE.txt) to be accepted. Use [`git commit --signoff`](https://gitirc.eu/git-commit.html) to acknowledge this.
 
   3.  **Be bold!** Without contributions, this project will vanish.
 
