@@ -35,23 +35,23 @@ frontend https
     redirect scheme https if !{ ssl_fc }
 
     # Bind URL with the right backend
-    acl is_libresonic  path_beg -i /libresonic
-    use_backend libresonic-backend if is_libresonic
+    acl is_airsonic  path_beg -i /airsonic
+    use_backend airsonic-backend if is_airsonic
 
-backend libresonic-backend
+backend airsonic-backend
 
     # Rewrite all redirects to use HTTPS, similar to what Nginx does in the
     # proxy_redirect directive.
     http-response replace-value Location ^http://(.*)$ https://\1
 
-    # Forward requests to Libresonic server
-    server libresonic 127.0.0.1:8080 check
+    # Forward requests to Airsonic server
+    server airsonic 127.0.0.1:8080 check
 ```
 
 You will need to make a couple of changes in the configuration file:
 - Be sure to set the right path to your `cert_key.pem` files.
-- Change `/libresonic` following your libresonic server path.
-- Change `127.0.0.1:8080` following you libresonic server location and port.
+- Change `/airsonic` following your airsonic server path.
+- Change `127.0.0.1:8080` following you airsonic server location and port.
 
 Restart the Haproxy service:
 

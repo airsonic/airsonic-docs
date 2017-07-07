@@ -1,47 +1,47 @@
 ---
 layout: docs
-title: Migrating from Subsonic to Libresonic
+title: Migrating from Subsonic to Airsonic
 permalink: /docs/migrate/
 ---
-This guide helps you to migrate your data from Subsonic to Libresonic. It has been tested with Subsonic 5 to Libresonic 6.
+This guide helps you to migrate your data from Subsonic to Airsonic. It has been tested with Subsonic 5 to Airsonic 6.
 
-#### Install Libresonic
+#### Install Airsonic
 
-Install Libresonic as described in the [install guide](/docs/install).
+Install Airsonic as described in the [install guide](/docs/install).
 
-#### Migrate to Libresonic
+#### Migrate to Airsonic
 
-After installation of Libresonic, the database needs to be migrated. In preperation for that, stop the Libresonic service.
+After installation of Airsonic, the database needs to be migrated. In preperation for that, stop the Airsonic service.
 
-If you ran Subsonic before, your data will be (by default) stored in `/var/subsonic`. Assuming you did not use Libresonic before, we will delete all data from Libresonic:
+If you ran Subsonic before, your data will be (by default) stored in `/var/subsonic`. Assuming you did not use Airsonic before, we will delete all data from Airsonic:
 
-> WARNING: Deletes all Libresonic data
+> WARNING: Deletes all Airsonic data
 ```
-sudo rm -R /var/libresonic
-```
-
-We then copy Subsonic data to Libresonic location. Be aware that a couple of files need to be renamed:
-
-```
-sudo cp -a /var/subsonic /var/libresonic
-sudo mv /var/libresonic/subsonic_sh.log libresonic_sh.log
-sudo mv /var/libresonic/subsonic.log libresonic.log
-sudo mv /var/libresonic/subsonic.properties libresonic.properties
-sudo mv /var/libresonic/db/subsonic.backup /var/libresonic/db/libresonic.backup
-sudo mv /var/libresonic/db/subsonic.data /var/libresonic/db/libresonic.data
-sudo mv /var/libresonic/db/subsonic.lck /var/libresonic/db/libresonic.lck
-sudo mv /var/libresonic/db/subsonic.log /var/libresonic/db/libresonic.log
-sudo mv /var/libresonic/db/subsonic.properties /var/libresonic/db/libresonic.properties
-sudo mv /var/libresonic/db/subsonic.script /var/libresonic/db/libresonic.script
+sudo rm -R /var/airsonic
 ```
 
-Change the `/var/libresonic` owner to use that will run libresonic (e.g. tomcat8 or libresonic):
+We then copy Subsonic data to Airsonic location. Be aware that a couple of files need to be renamed:
 
 ```
-sudo chown -R user:user /var/libresonic
+sudo cp -a /var/subsonic /var/airsonic
+sudo mv /var/airsonic/subsonic_sh.log airsonic_sh.log
+sudo mv /var/airsonic/subsonic.log airsonic.log
+sudo mv /var/airsonic/subsonic.properties airsonic.properties
+sudo mv /var/airsonic/db/subsonic.backup /var/airsonic/db/airsonic.backup
+sudo mv /var/airsonic/db/subsonic.data /var/airsonic/db/airsonic.data
+sudo mv /var/airsonic/db/subsonic.lck /var/airsonic/db/airsonic.lck
+sudo mv /var/airsonic/db/subsonic.log /var/airsonic/db/airsonic.log
+sudo mv /var/airsonic/db/subsonic.properties /var/airsonic/db/airsonic.properties
+sudo mv /var/airsonic/db/subsonic.script /var/airsonic/db/airsonic.script
 ```
 
-Then start Libresonic service again.
+Change the `/var/airsonic` owner to use that will run airsonic (e.g. tomcat8 or airsonic):
+
+```
+sudo chown -R user:user /var/airsonic
+```
+
+Then start Airsonic service again.
 
 Your old settings will still be there. **If you wish**, you can delete subsonic data:
 

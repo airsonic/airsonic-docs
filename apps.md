@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Libresonic applications
+title: Airsonic applications
 permalink: /docs/apps/
 ---
 **Work in progress**

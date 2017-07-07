@@ -3,7 +3,7 @@ layout: docs
 title: Setting up an external database
 permalink: /docs/database/
 ---
-Libresonic is built with generic ANSI SQL (for the most part) and uses [Liquibase](http://www.liquibase.org/) for database migrations in a database agnostic way and should be able to run against a variety of databases. However, not all databases have been verified to work and you may run into issues with the liquibase migrations or runtime SQL issues. Here is a list of community tested setups:
+Airsonic is built with generic ANSI SQL (for the most part) and uses [Liquibase](http://www.liquibase.org/) for database migrations in a database agnostic way and should be able to run against a variety of databases. However, not all databases have been verified to work and you may run into issues with the liquibase migrations or runtime SQL issues. Here is a list of community tested setups:
 
 | Database   | Version | Liquibase | Runtime | Notes  |
 |:----------:|:-------:|:---------:|:-------:|:------:|
@@ -20,20 +20,20 @@ If you wish to continue using the current hsql 1.8 database driver, no action is
 **Before doing anything, make sure your database is properly backed up. Ensure your server is shutdown**
 
 For those that wish to change their database, instructions differ based on
-whether you wish for your database connection to be managed by your container (tomcat), or whether you wish Libresonic to manage it for you. The former may offer some performance gains in the case of many concurrent users with connection pooling while the latter is easiest.
+whether you wish for your database connection to be managed by your container (tomcat), or whether you wish Airsonic to manage it for you. The former may offer some performance gains in the case of many concurrent users with connection pooling while the latter is easiest.
 
-We will refer to container managed configuration as jndi and libresonic managed configuration as embedded.
+We will refer to container managed configuration as jndi and airsonic managed configuration as embedded.
 
 #### Embedded
 
 **Before doing anything, make sure your database is properly backed up. Ensure your server is shutdown**
 
-In your libresonic.properties file, you will need to add the following settings (this is just an example):
+In your airsonic.properties file, you will need to add the following settings (this is just an example):
 
 ```
 DatabaseConfigType=embed
 DatabaseConfigEmbedDriver=org.hsqldb.jdbcDriver
-DatabaseConfigEmbedUrl=jdbc:hsqldb:file:/tmp/libre/db/libresonic
+DatabaseConfigEmbedUrl=jdbc:hsqldb:file:/tmp/libre/db/airsonic
 DatabaseConfigEmbedUsername=sa
 DatabaseConfigEmbedPassword=
 ```
@@ -46,25 +46,25 @@ In addition, you will need to ensure that a jdbc driver suitable for your databa
 
 **Before doing anything, make sure your database is properly backed up. Ensure your server is shutdown**
 
-In your libresonic.properties file, you will need to add the following settings (this is just an example):
+In your airsonic.properties file, you will need to add the following settings (this is just an example):
 
 ```
 DatabaseConfigType=jndi
-DatabaseConfigJNDIName=jdbc/libresonicDB
+DatabaseConfigJNDIName=jdbc/airsonicDB
 ```
 
 Then in your context.xml in your tomcat directory, add the jndi config:
 
 ```
-<Resource name="jdbc/libresonicDB" auth="Container"
+<Resource name="jdbc/airsonicDB" auth="Container"
     type="javax.sql.DataSource"
     maxActive="20"
     maxIdle="30"
     maxWait="10000"
-    username="libresonic"
+    username="airsonic"
     password="REDACTED"
     driverClassName="com.mysql.jdbc.Driver"
-    url="jdbc:mysql://hostname/libresonic?sessionVariables=sql_mode=ANSI_QUOTES"/>
+    url="jdbc:mysql://hostname/airsonic?sessionVariables=sql_mode=ANSI_QUOTES"/>
 
 ```
 
@@ -80,4 +80,4 @@ You will also need to add `database.usertable.quote=\"` to your properties file.
 
 #### Troubleshooting
 
-In the event that you change these settings, restart your server and it fails to start, you can remedy this by reverting to the LEGACY config by removing all `Database*` settings from your `libresonic.properties` file.
+In the event that you change these settings, restart your server and it fails to start, you can remedy this by reverting to the LEGACY config by removing all `Database*` settings from your `airsonic.properties` file.

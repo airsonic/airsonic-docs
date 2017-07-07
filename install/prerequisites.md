@@ -1,9 +1,9 @@
 ---
 layout: docs
-title: Libresonic prerequisites installation
+title: Airsonic prerequisites installation
 permalink: /docs/install/prerequisites/
 ---
-To get Libresonic running, we are going to install OpenJDK 8 or Oracle JDK 8, set the default `JAVA_HOME`, and finally deploy our Libresonic WAR package.
+To get Airsonic running, we are going to install OpenJDK 8 or Oracle JDK 8, set the default `JAVA_HOME`, and finally deploy our Airsonic WAR package.
 
 #### Install OpenJDK 8
 

@@ -1,9 +1,9 @@
 
-The Libresonic framework contains a convenient class (called MetricsManager) to add inner metrics that constructs in real time some performance indicators.
+The Airsonic framework contains a convenient class (called MetricsManager) to add inner metrics that constructs in real time some performance indicators.
 
-The use of MetricsManager is illustrated in the org.libresonic.player.filter.MetricsFilter class. 
+The use of MetricsManager is illustrated in the org.airsonic.player.filter.MetricsFilter class. 
 
-The MetricsFilter adds a metric based on the time spent by each /main.view HTTP request. This is interesting as the main.view request is invoqued when something is displayed in the main Libresonic web frame.
+The MetricsFilter adds a metric based on the time spent by each /main.view HTTP request. This is interesting as the main.view request is invoqued when something is displayed in the main Airsonic web frame.
 
 By default, the MetricsManager is deactivated; it does nothing. 
 It can be activated only by adding the following line inside the livresonic.properties configuration file :

@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: Install Libresonic from source
+title: Install Airsonic from source
 permalink: /docs/install/source/
 ---
 ##### Prerequisites
 
-In order to build, install, and run Libresonic, you will need:
+In order to build, install, and run Airsonic, you will need:
 - [A JDK installation, 1.8.x series of OpenJDK or Oracle JDK 8+ should work.](/docs/install/prerequisites)
 - A recent version of [Maven](http://maven.apache.org/).
 - Optional: lintian and fakeroot, for .deb package.
@@ -27,13 +27,13 @@ echo $JAVA_HOME
 
 If Java is installed, but the `JAVA_HOME` variable not set, be sure to set it before you continue.
 
-#### Download Libresonic
+#### Download Airsonic
 
-Clone the Libresonic repo:
+Clone the Airsonic repo:
 
 ```
-git clone https://github.com/Libresonic/libresonic.git
-cd libresonic
+git clone https://github.com/airsonic/airsonic.git
+cd airsonic
 ```
 
 > If you want to build the development version, change the branch to `develop`
@@ -43,9 +43,9 @@ git checkout develop
 
 #### Building
 
-##### Build Libresonic .war package
+##### Build Airsonic .war package
 
-Using Maven, build Libresonic:
+Using Maven, build Airsonic:
 
 ```
 mvn clean package
@@ -54,19 +54,19 @@ mvn clean package
 You should now have a `.war` file:
 
 ```
-ls -l libresonic-main/target/libresonic.war
+ls -l airsonic-main/target/airsonic.war
 ```
 ```
-libresonic-main/target/libresonic.war
+airsonic-main/target/airsonic.war
 ```
 
-Follow the [WAR installation guide](/docs/install/war) to deploy the Libresonic `.war` file.
+Follow the [WAR installation guide](/docs/install/war) to deploy the Airsonic `.war` file.
 
-##### Build Libresonic .deb package
+##### Build Airsonic .deb package
 
 **Work in progress**
 
-##### Build Libresonic .rpm package
+##### Build Airsonic .rpm package
 
 **Work in progress**
 

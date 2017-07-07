@@ -1,14 +1,14 @@
 <!--
 # README.md
-# Libresonic/documentation
+# Airsonic/documentation
 -->
 
-# Libresonic Documentation
+# Airsonic Documentation
 
-This repository contains documentation for Libresonic.
+This repository contains documentation for Airsonic.
 
-To browse the documentation, we suggest you to use the [Libresonic website](https://libresonic.github.io/docs/).
+To browse the documentation, we suggest you to use the [Airsonic website](https://airsonic.github.io/docs/).
 
 ## Contributing
 
-Please see [this guide](https://github.com/Libresonic/documentation/blob/stable/CONTRIBUTING.md) for any contribution.
+Please see [this guide](https://github.com/airsonic/documentation/blob/stable/CONTRIBUTING.md) for any contribution.

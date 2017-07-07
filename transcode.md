@@ -3,7 +3,7 @@ layout: docs
 title: Setting up transcoding binaries
 permalink: /docs/transcode/
 ---
-Transcoders are used by Libresonic to convert media from their on disk format to a format that can be consumed by clients. This is done not only for compatibility but also to save bandwidth when dealing with heavier file types. For example, although your library might use the flac format, bandwidth can be saved by converting to mp3 before transmission.
+Transcoders are used by Airsonic to convert media from their on disk format to a format that can be consumed by clients. This is done not only for compatibility but also to save bandwidth when dealing with heavier file types. For example, although your library might use the flac format, bandwidth can be saved by converting to mp3 before transmission.
 
 #### Install the transcoder
 
@@ -36,7 +36,7 @@ sudo apt-get install ffmpeg -t jessie-backports
 Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
 
 ```
-mkdir /var/libresonic/transcode
+mkdir /var/airsonic/transcode
 ```
 
 Within the `transcode` directory symlink to ffmpeg and verify correct permissions:
@@ -50,7 +50,7 @@ ls -alh
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
 
-> Note that `user` has to be the user that runs Libresonic
+> Note that `user` has to be the user that runs Airsonic
 
 ##### On Ubuntu > 16.04
 
@@ -63,7 +63,7 @@ sudo apt-get install ffmpeg
 Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
 
 ```
-mkdir /var/libresonic/transcode
+mkdir /var/airsonic/transcode
 ```
 
 Within the `transcode` directory symlink to ffmpeg and verify correct permissions:
@@ -76,7 +76,7 @@ ls -alh
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
-> Note that `user` has to be the user that runs Libresonic
+> Note that `user` has to be the user that runs Airsonic
 
 ##### On Red Hat / Fedora
 
@@ -89,7 +89,7 @@ sudo yum install ffmpeg
 Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
 
 ```
-mkdir /var/libresonic/transcode
+mkdir /var/airsonic/transcode
 ```
 
 Within the `transcode` directory symlink to ffmpeg and verify correct permissions:
@@ -102,7 +102,7 @@ ls -alh
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
-> Note that `user` has to be the user that runs Libresonic
+> Note that `user` has to be the user that runs Airsonic
 
 ##### On Windows
 
@@ -121,7 +121,7 @@ brew install ffmpeg
 Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
 
 ```
-mkdir /var/libresonic/transcode
+mkdir /var/airsonic/transcode
 ```
 
 Within the `transcode` directory symlink to ffmpeg and verify correct permissions:
@@ -134,4 +134,4 @@ ls -alh
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
-> Note that `user` has to be the user that runs Libresonic
+> Note that `user` has to be the user that runs Airsonic
