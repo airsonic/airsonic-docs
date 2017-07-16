@@ -13,7 +13,9 @@ You can find a detailed list of applications available for Subsonic on the [Subs
 | Name   | Available | Free |  Notes  |
 |:----------:|:-------:|:---------:|:-------:|:------:|
 | Subsonic  | [Google Play](https://play.google.com/store/apps/details?id=net.sourceforge.subsonic.androidapp) | ✔ |The official Subsonic app made by Sindre Mehus.
+| DSub  | [F-Droid Repository](https://f-droid.org/packages/github.daneren2005.dsub/) | ✔ | A Subsonic client fork.   
 | DSub  | [Google Play](https://play.google.com/store/apps/details?id=github.daneren2005.dsub) | ✕  | Not free but very good. Made by Scott Jackson.
+| Audinaut | [F-Droid Repository](https://f-droid.org/app/net.nullsum.audinaut) | ✔ | Made by Andrew Rabert.
 | XenoAmp  | [Google Play](https://play.google.com/store/apps/details?id=pl.qus.xenoamp&hl=en) | ✔ | Supports many different services (Soundcloud, Subsonic, SMB...)
 | Substreamer  | [Google Play](https://play.google.com/store/apps/details?id=com.ghenry22.substream2), [App Store](https://itunes.apple.com/us/app/substreamer/id1012991665?ls=1&mt=8) | ✔ | -
 | Subsonic Music Streamer | [Windows Store](https://www.microsoft.com/de-at/store/p/subsonic-music-streamer/9nblggh0dfs4?rtc=1) | ✕  | Made by Anton Van Zuylen.
@@ -30,8 +32,10 @@ You can find a detailed list of applications available for Subsonic on the [Subs
 
 | Name   | Platform | Free |  Notes  |
 |:----------:|:-------:|:---------:|:-------:|:------:|
-| [Submariner](http://www.read-write.fr/subapp/index.php)  | Mac | ✔  | A native mac music application.
+| [Clementine](https://www.clementine-player.org/) | Windows, Mac OS, Linux | ✔ | A multiplatform music player. Provides support for many different services beside Airsonic (Souncloud, Spotify...)
+| [Submariner](http://www.read-write.fr/subapp/index.php)  | Mac OS | ✔  | A native mac music application.
 | [Subsonic Plugin](http://musicbee.wikia.com/wiki/Subsonic_Client) for [MusicBee](https://getmusicbee.com/)  | Windows | ✔  | Provides support for many different services (SoundCloud, web radio...)
+| [Jamstash](http://jamstash.com/#/settings) | Web, Google Chrome ([Web Store](https://chrome.google.com/webstore/detail/jamstash/jccdpflnecheidefpofmlblgebobbloc)) | ✔ | A HTML 5 music player.
 | [Perisonic](https://chrome.google.com/webstore/detail/perisonic/bkdipjpecphmbijlckkkmabnabhbpjbn) | Google Chrome | ✔  | Plays your music in random order.
 | [PolySonic](https://chrome.google.com/webstore/detail/polysonic/dmijgonnbeadbncajpphnlidgjkgmblf) | Google Chrome | ✔  | Simple subsonic player based on Polymer.
 
