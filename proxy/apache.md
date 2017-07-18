@@ -40,10 +40,11 @@ Activate the host:
 sudo a2ensite airsonic.conf
 ```
 
-Activate apache2 proxy module:
+Activate apache2 proxy and proxy_http module:
 
 ```
 sudo a2enmod proxy
+sudo a2enmod proxy_http
 ```
 
 Restart the Apache2 service:
