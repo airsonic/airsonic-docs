@@ -7,6 +7,33 @@ Transcoders are used by Airsonic to convert media from their on disk format to a
 
 #### Install the transcoder
 
+##### On Debian 9
+
+Install ffmpeg package:
+
+```
+sudo apt install ffmpeg
+```
+
+Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+
+```
+mkdir /var/airsonic/transcode
+```
+
+Within the `transcode` directory symlink to ffmpeg and verify correct permissions:
+
+```
+cd transcode/
+ln -s /usr/bin/ffmpeg
+ls -alh
+```
+```
+lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
+```
+
+> Note that `user` has to be the user that runs Airsonic
+
 ##### On Debian 8
 
 Open your `/etc/apt/source.list`:
