@@ -34,7 +34,7 @@ Open `/etc/default/tomcat8` and hardcode the path to JAVA_HOME:
 JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
 ```
 
-> Note: We suggest not to use the OpenJDK package because Airsonic will take more than 1 hour to deploy. See [this issue](https://github.com/airsonic/airsonic/issues/281) for more details.
+> Note: We suggest not to use the OpenJDK package because Airsonic will take more than 1 hour to deploy. See [this issue](https://github.com/airsonic/airsonic/issues/283) for more details.
 
 #### Deploy Airsonic
 
