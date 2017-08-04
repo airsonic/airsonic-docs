@@ -67,7 +67,8 @@ Restart the Apache2 service:
 sudo systemctl restart apache2.service
 ```
 
-## Serve Airsonic under it's own domain with Tomcat ##
+<br>
+##### Serve Airsonic under it's own domain with Tomcat #####
 
 If you use Tomcat and want to serve your Airsonic instance under it's own domain (e.g. music.example.com), some changes to Tomcat are necessary.<br>
 Simply modifying your virtual host file won't work as you won't be able to log in:
