@@ -3,6 +3,8 @@ layout: docs
 title: Setting up HAproxy
 permalink: /docs/proxy/haproxy/
 ---
+The following configurations works for HTTPS (with an HTTP redirection).
+
 Open the haproxy configuration file:
 
 ```

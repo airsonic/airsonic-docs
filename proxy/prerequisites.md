@@ -9,11 +9,11 @@ This is useful in many ways, such as gathering all web configuration in the same
 
 This guide assumes you already have a working Airsonic installation after following the [installation guide](/docs/install).
 
-## Getting a TLS certificate
+### Getting a TLS certificate
 
 This guide assumes you already have a TLS certificate. [Let's Encrypt](https://letsencrypt.org/getting-started/) currently provides such certificates for free using the [certbot software](https://certbot.eff.org/).
 
-## Configure Airsonic
+### Configure Airsonic
 
 A few settings should be tweaked via Spring Boot or Tomcat
 configuration:
@@ -22,29 +22,7 @@ configuration:
   - Set the correct address to listen to
   - Set the correct port to listen to
 
-##### Spring Boot
-
-Add the following java args:
-
-```java
-java -Dserver.port=8080 -Dserver.address=127.0.0.1 -Dserver.contextPath=/airsonic -jar airsonic.war
-```
-
-##### Tomcat
-
-Modify your `<Connector>` with the proper address and port:
-
-```
-<Connector
-    port="8080"
-    address="127.0.0.1"
-```
-
-See [HTTP Connector](https://tomcat.apache.org/tomcat-8.0-doc/config/http.html) for further detail.
-
-For the context path, tomcat will automatically deploy to a context path matching your war name. So if you're using airsonic.war, you do not need to change anything.
-
-## Reverse proxy configuration
+### Reverse proxy configuration
 
 ##### How it works
 
@@ -64,7 +42,7 @@ Currently this is used wherever, `NetworkService#getBaseUrl` is called. A couple
 - Share urls
 - Coverart urls
 
-## Provided configurations
+### Provided configurations
 
 Use a guide in the list below:
 - [Configure Apache proxy](/docs/proxy/apache)
