@@ -22,6 +22,11 @@ configuration:
   - Set the correct address to listen to
   - Set the correct port to listen to
 
+To change this, please use one of the guide below according to your installation:
+
+- [Tomcat](/docs/configure/tomcat/)
+- [Standalone](/docs/configure/standalone/)
+
 ### Reverse proxy configuration
 
 ##### How it works
