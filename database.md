@@ -76,7 +76,7 @@ Finally, copy the jdbc driver from the database vendor website to the `lib` dire
 
 `stringtype=unspecified` on your jdbc url string is necessary.
 
-You will also need to add `database.usertable.quote=\"` to your properties file. This is due to the fact that our `user` table is a keyword for postgres.
+You will also need to add `DatabaseUsertableQuote="` to your properties file. This is due to the fact that our `user` table is a keyword for postgres.
 
 #### Troubleshooting
 
