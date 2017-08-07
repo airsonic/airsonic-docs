@@ -42,11 +42,11 @@ Changes the address that the standalone package listens on.
 
 #### Context path
 
-Parameter = `airsonic.contextPath`
+Parameter = `server.context-path`
 
-Example = `-Dairsonic.contextPath=/audio`
+Example = `-Dserver.context-path=/audio`
 
-> Note: Please do not add the last `/` in the contextPath
+> Note: Please do not add the last `/` in the context path
 
 Changes the URL path that the standalone package listens on.
 
