@@ -41,7 +41,7 @@ JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
 Download the latest `airsonic.war` package from the [download page](/download), or with the command below:
 
 ```
-wget {{ site.repo }}/airsonic-v{{ site.stable_version }}.war
+wget {{ site.repo }}/download/v{{ site.stable_version }}/airsonic.war
 ```
 
 Create the Airsonic directory and assign ownership to the Tomcat system user (if running tomcat as a service):

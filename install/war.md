@@ -16,7 +16,7 @@ In order to install and run Airsonic with Tomcat, you will need:
 Download the latest Airsonic .war package from the [download page](/download), or with the command below:
 
 ```
-wget {{ site.repo }}/airsonic-v{{ site.stable_version }}.war
+wget {{ site.repo }}/download/v{{ site.stable_version }}/airsonic.war
 ```
 
 Create the Airsonic directory and assign ownership to the Tomcat system user (if running tomcat as a service):
