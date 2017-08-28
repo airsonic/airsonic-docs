@@ -41,33 +41,33 @@ integration with Systemd.  Systemd is an init system for most linux systems. It
 allows one to run airsonic on boot. These steps below were done on a Fedora host,
 however the steps should be similar for other Linux distributions.
 
-1. Setup dedicated airsonic user:
+Setup dedicated airsonic user:
 
 ```
 useradd airsonic
 ```
 
-2. Setup Airsonic data dir:
+Setup Airsonic data dir:
 
 ```
 mkdir /var/airsonic
 chown airsonic /var/airsonic
 ```
 
-3. Download the war:
+Download the war:
 
 ```
 wget {{ site.repo }}/download/v{{ site.stable_version }}/airsonic.war  --output-document=/var/airsonic/airsonic.war
 ```
 
-4. Setup systemd service:
+Setup systemd service:
 
 ```
 wget https://raw.githubusercontent.com/airsonic/airsonic/master/contrib/airsonic.service -O /etc/systemd/system/airsonic.service
-systemctl daemon-reload 
+systemctl daemon-reload
 systemctl start airsonic.service
 systemctl enable airsonic.service
 wget https://raw.githubusercontent.com/airsonic/airsonic/master/contrib/airsonic-systemd-env -O /etc/sysconfig/airsonic
 ```
 
-5. Review/Modify any startup settings in /etc/sysconfig/airsonic.
+Review/Modify any startup settings in /etc/sysconfig/airsonic.
