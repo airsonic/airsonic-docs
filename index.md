@@ -10,18 +10,16 @@ Welcome to the Airsonic documentation. This guide describes installation process
 Before installing Airsonic, you will have to install a working JDK. Follow this [guide](/docs/install/prerequisites/) to install it.
 
 Here you can pick your installation docs for:
+
 - [WAR package (Tomcat)](/docs/install/war)
 - [WAR package (Standalone)](/docs/install/war-standalone)
 - [Docker container](/docs/install/docker)
-
-{% comment %} Build targets not suported yet
-
-- [Deb package (Debian / Ubuntu)](/docs/install/deb)
-- [Rpm package (Red Hat / Fedora)](/docs/install/rpm)
-- [Exe package (Windows)](/docs/install/exe)
-- [Pkg package (macOS)](/docs/install/pkg)
 - [Build from source](/docs/install/source)
-
+{% comment %} Build targets not suported yet
+    - [Deb package (Debian / Ubuntu)](/docs/install/deb)
+    - [Rpm package (Red Hat / Fedora)](/docs/install/rpm)
+    - [Exe package (Windows)](/docs/install/exe)
+    - [Pkg package (macOS)](/docs/install/pkg)
 {% endcomment %}
 
 If you come from [Subsonic](http://www.subsonic.org/pages/index.jsp), you can migrate using our [migration docs](/docs/migrate).
