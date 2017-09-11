@@ -7,7 +7,20 @@ This guide helps you to migrate your data from Subsonic to Airsonic. It has been
 
 #### Install Airsonic
 
-Install Airsonic as described in the [install guide](/docs/install).
+Install Airsonic as described in one of the following install guides:
+
+- [WAR package (Tomcat)](/docs/install/war)
+- [WAR package (Standalone)](/docs/install/war-standalone)
+- [Docker container](/docs/install/docker)
+{% comment %} Build targets not suported yet
+
+- [Deb package (Debian / Ubuntu)](/docs/install/deb)
+- [Rpm package (Red Hat / Fedora)](/docs/install/rpm)
+- [Exe package (Windows)](/docs/install/exe)
+- [Pkg package (macOS)](/docs/install/pkg)
+
+{% endcomment %}
+- [Build from source](/docs/install/source)
 
 #### Migrate to Airsonic
 
