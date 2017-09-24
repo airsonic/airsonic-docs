@@ -7,7 +7,7 @@ Airsonic development is a community project, and contributions are welcomed. Her
     - Do not use `<h1>` or `<h2>` headers ( `# h1` or `## h2` headers).
     - Never manually start a new line in the middle of a sentence.
     - More spacing, more empty lines !! The documentation needs to be readable !
-    - Read already written guides to find some inspiration.
+    - Read existing guides to find some inspiration.
 
   2. **Testing** The documentation is browsed with the website, so we recommand to test any new guides within the website using [jekyll](https://jekyllrb.com/) locally.
     - Clone the website repo `git clone https://github.com/airsonic/airsonic`.
