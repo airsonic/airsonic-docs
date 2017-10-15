@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Supporting additional metadata
-permalink: /docs/ffprobe-metadata/
+permalink: /docs/metadata/ffprobe/
 ---
 For some file types (currently only video files), Airsonic can use an external
 program to learn about the file's contents when it otherwise would be unable to.
