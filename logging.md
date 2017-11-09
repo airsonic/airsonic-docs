@@ -7,7 +7,7 @@ This guide explains how to manage Airsonic logs.
 
 ### Main log file
 
-Airsonic ouput log messages into a file called `airsonic.log` located in the `LIBRESONIC_HOME` folder.
+Airsonic ouput log messages into a file called `airsonic.log` located in the `AIRSONIC_HOME` folder.
 
 #### Change log level using Tomcat
 

@@ -139,7 +139,7 @@ Install ffmpeg package from jessie-backports:
 sudo apt-get install ffmpeg -t jessie-backports
 ```
 
-Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+Create a `transcode` directory within your `AIRSONIC_HOME` directory:
 
 ```
 mkdir /var/airsonic/transcode
