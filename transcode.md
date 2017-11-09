@@ -15,7 +15,7 @@ Install ffmpeg package:
 sudo apt install ffmpeg
 ```
 
-Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+Create a `transcode` directory within your `AIRSONIC_HOME` directory:
 
 ```
 mkdir /var/airsonic/transcode
@@ -60,7 +60,7 @@ Install ffmpeg package from jessie-backports:
 sudo apt-get install ffmpeg -t jessie-backports
 ```
 
-Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+Create a `transcode` directory within your `AIRSONIC_HOME` directory:
 
 ```
 mkdir /var/airsonic/transcode
@@ -87,7 +87,7 @@ Install ffmpeg package:
 sudo apt-get install ffmpeg
 ```
 
-Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+Create a `transcode` directory within your `AIRSONIC_HOME` directory:
 
 ```
 mkdir /var/airsonic/transcode
@@ -113,7 +113,7 @@ Install ffmpeg package:
 sudo yum install ffmpeg
 ```
 
-Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+Create a `transcode` directory within your `AIRSONIC_HOME` directory:
 
 ```
 mkdir /var/airsonic/transcode
@@ -135,7 +135,7 @@ lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 
 Get the ffmpeg package from the project [download page](https://ffmpeg.zeranoe.com/builds/).
 
-Unpack the files into the `LIBRESONIC_HOME/transcode/` folder.
+Unpack the files into the `AIRSONIC_HOME/transcode/` folder.
 
 ##### On MacOS
 
@@ -145,7 +145,7 @@ You can install ffmpeg binaries on MacOS using `Homebrew`:
 brew install ffmpeg
 ```
 
-Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+Create a `transcode` directory within your `AIRSONIC_HOME` directory:
 
 ```
 mkdir /var/airsonic/transcode
