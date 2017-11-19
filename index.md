@@ -15,6 +15,7 @@ Here you can pick your installation docs for:
 - [WAR package (Standalone)](/docs/install/war-standalone)
 - [Docker container](/docs/install/docker)
 - [Build from source](/docs/install/source)
+- [Homebrew](/docs/install/homebrew)
 
 If you come from [Subsonic](http://www.subsonic.org/pages/index.jsp), you can migrate using our [migration docs](/docs/migrate).
 

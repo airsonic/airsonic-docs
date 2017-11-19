@@ -174,3 +174,13 @@ Add the following lines to your ` ~/.bash_profile` file:
 ```
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 ```
+
+##### On MacOS (Homebrew)
+
+First install [Homebrew](https://brew.sh) if you haven't already.
+
+Then, to install the latest version of Java:
+
+```
+brew cask install java
+```
