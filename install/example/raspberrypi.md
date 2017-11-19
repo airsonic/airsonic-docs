@@ -3,7 +3,6 @@ layout: docs
 title: Installing Airsonic on a Raspberry Pi
 permalink: /docs/install/example/raspberrypi/
 ---
-
 This guide will wallk you through the process of deploying Airsonic on a Raspbery Pi running Rapsbian (Debian Jessie) using tomcat.
 
 #### Install required packages
@@ -139,7 +138,7 @@ Install ffmpeg package from jessie-backports:
 sudo apt-get install ffmpeg -t jessie-backports
 ```
 
-Create a `transcode` directory within your `LIBRESONIC_HOME` directory:
+Create a `transcode` directory within your `AIRSONIC_HOME` directory:
 
 ```
 mkdir /var/airsonic/transcode

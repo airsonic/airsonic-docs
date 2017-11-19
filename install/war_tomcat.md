@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Tomcat WAR installation
-permalink: /docs/install/war/
+permalink: /docs/install/war-tomcat/
 ---
 ##### Prerequisites
 
