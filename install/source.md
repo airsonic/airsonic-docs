@@ -59,17 +59,3 @@ ls -l airsonic-main/target/airsonic.war
 ```
 airsonic-main/target/airsonic.war
 ```
-
-Follow the [WAR installation guide](/docs/install/war) to deploy the Airsonic `.war` file.
-
-##### Build Airsonic .deb package
-
-**Work in progress**
-
-##### Build Airsonic .rpm package
-
-**Work in progress**
-
-##### Additional release archives
-
-**Work in progress**

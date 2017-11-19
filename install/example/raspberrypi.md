@@ -3,7 +3,6 @@ layout: docs
 title: Installing Airsonic on a Raspberry Pi
 permalink: /docs/install/example/raspberrypi/
 ---
-
 This guide will wallk you through the process of deploying Airsonic on a Raspbery Pi running Rapsbian (Debian Jessie) using tomcat.
 
 #### Install required packages
