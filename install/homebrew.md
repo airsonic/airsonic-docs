@@ -64,7 +64,7 @@ Here is a brief list of the runtime flags used, for reference.
 * `Dlogging.level.root=ERROR`
 * `Dserver.host=0.0.0.0`
 * `Dserver.port=4040`
-* `Dserver.contextPath=/`
+* `Dserver.context-path=/`
 * `Dairsonic.home=#{workingdir}`
 * `Djava.awt.headless=true`
 
