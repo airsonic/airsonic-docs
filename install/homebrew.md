@@ -59,19 +59,13 @@ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.airsonic.plist
 
 Here is a brief list of the runtime flags used, for reference.
 
-* `Xmx256m`
+* `Xmx512m`
 * `Dlogging.file=#{var}/log/airsonic.log`
 * `Dlogging.level.root=ERROR`
 * `Dserver.host=0.0.0.0`
 * `Dserver.port=4040`
 * `Dserver.contextPath=/`
 * `Dairsonic.home=#{workingdir}`
-* `Dairsonic.host=0.0.0.0`
-* `Dairsonic.port=4040`
-* `Dairsonic.contextPath=/`
-* `Dairsonic.defaultMusicFolder=~/Music/iTunes/iTunes Media/Music`
-* `Dairsonic.defaultPodcastFolder=~/Music/iTunes/iTunes Media/Podcasts`
-* `Dairsonic.defaultPlaylistFolder=~/Music/Playlists`
 * `Djava.awt.headless=true`
 
 
