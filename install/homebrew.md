@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Homebrew Installation
+title: Homebrew installation
 permalink: /docs/install/homebrew/
 ---
 This page describes how to run install Airsonic with Homebrew on macOS [Airsonic Homeprew tap](https://github.com/airsonic/homebrew-airsonic/).
