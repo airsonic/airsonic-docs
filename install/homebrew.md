@@ -59,13 +59,13 @@ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.airsonic.plist
 
 Here is a brief list of the runtime flags used, for reference.
 
-* `Xmx512m`
-* `Dlogging.file=#{var}/log/airsonic.log`
-* `Dlogging.level.root=ERROR`
-* `Dserver.host=0.0.0.0`
-* `Dserver.port=4040`
-* `Dserver.context-path=/`
-* `Dairsonic.home=#{workingdir}`
-* `Djava.awt.headless=true`
-
-
+```
+Xmx512m
+Dlogging.file=#{var}/log/airsonic.log
+Dlogging.level.root=ERROR
+Dserver.host=0.0.0.0
+Dserver.port=4040
+Dserver.context-path=/
+Dairsonic.home=#{workingdir}
+Djava.awt.headless=true
+```
