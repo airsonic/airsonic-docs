@@ -30,7 +30,7 @@ Paste the following configuration in the virtual host file:
     ErrorLog ${APACHE_LOG_DIR}/airsonic-error.log
     ProxyPass /airsonic http://127.0.0.1:8080/airsonic
     ProxyPassReverse /airsonic http://127.0.0.1:8080/airsonic
-    RequestHeader set X-Forwarded-Proto "http"
+    RequestHeader set X-Forwarded-Proto "https"
 </VirtualHost>
 ```
 
