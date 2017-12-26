@@ -8,8 +8,6 @@ permalink: /docs/install/source/
 In order to build, install, and run Airsonic, you will need:
 - [A JDK installation, 1.8.x series of OpenJDK or Oracle JDK 8+ should work.](/docs/install/prerequisites)
 - A recent version of [Maven](http://maven.apache.org/).
-- Optional: lintian and fakeroot, for .deb package.
-- Optional: rpm and rpmlint, for .rpm package.
 
 #### Test your system
 
@@ -36,9 +34,12 @@ git clone https://github.com/airsonic/airsonic.git
 cd airsonic
 ```
 
-> If you want to build the development version, change the branch to `develop`
+Airsonic version are tagged so you simply need to checkout the version you need:
+
+> `master` being our current develop branch
+
 ```
-git checkout develop
+git checkout v{{ site.stable_version }}
 ```
 
 #### Building
