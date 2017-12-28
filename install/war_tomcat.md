@@ -43,7 +43,7 @@ sudo rm -R /var/lib/tomcat8/work/*
 Move the downloaded WAR file in the TOMCAT_HOME/webapps/ folder:
 
 ```
-sudo mv airsonic-v{{ site.stable_version }}.war /var/lib/tomcat8/webapps/airsonic.war
+sudo mv airsonic.war /var/lib/tomcat8/webapps/airsonic.war
 ```
 
 Restart the tomcat8 service:
