@@ -69,6 +69,6 @@ systemctl start airsonic.service
 systemctl enable airsonic.service
 wget https://raw.githubusercontent.com/airsonic/airsonic/master/contrib/airsonic-systemd-env -O /etc/sysconfig/airsonic
 ```
-> Note: On Debian systems you need to replace `/etc/sysconfig` in the lines below with `/etc/default`)
+> Note: On Debian systems you need to replace `/etc/sysconfig` in with `/etc/default`)
 
 Review/Modify any startup settings in /etc/sysconfig/airsonic.
