@@ -10,9 +10,10 @@ Airsonic development is a community project, and contributions are welcomed. Her
     - Read existing guides to find some inspiration.
 
   2. **Testing** The documentation is browsed with the website, so we recommand to test any new guides within the website using [jekyll](https://jekyllrb.com/) locally.
-    - Clone the website repo `git clone https://github.com/airsonic/airsonic.github.io airsonic`.
-    - Change directory into the cloned repo `cd airsonic`.
+    - Clone the website repo `git clone https://github.com/airsonic/airsonic.github.io`.
+    - Change directory into the cloned repo `cd airsonic.github.io`.
     - Clone the documentation submodule`git clone https://github.com/airsonic/documentation pages/docs`.
+    - Install [Jekyll](https://jekyllrb.com/)
     - Run `jekyll serve --watch`.
     - Add your changes.
     - Check if everything is fine at `localhost:4040`.
