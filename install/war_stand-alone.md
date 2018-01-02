@@ -62,8 +62,6 @@ wget {{ site.repo }}/download/v{{ site.stable_version }}/airsonic.war  --output-
 
 Setup systemd service:
 
-(Under Debian : replace `/etc/sysconfig` in the command line below with `/etc/default`)
-
 ```
 wget https://raw.githubusercontent.com/airsonic/airsonic/master/contrib/airsonic.service -O /etc/systemd/system/airsonic.service
 systemctl daemon-reload
@@ -71,5 +69,6 @@ systemctl start airsonic.service
 systemctl enable airsonic.service
 wget https://raw.githubusercontent.com/airsonic/airsonic/master/contrib/airsonic-systemd-env -O /etc/sysconfig/airsonic
 ```
+> Note: On Debian systems you need to replace `/etc/sysconfig` in the lines below with `/etc/default`)
 
 Review/Modify any startup settings in /etc/sysconfig/airsonic.
