@@ -32,7 +32,7 @@ Open `/etc/default/tomcat8` and hardcode the path to JAVA_HOME:
 # The home directory of the Java development kit (JDK). You need at least
 # JDK version 7. If JAVA_HOME is not set, some common directories for
 # OpenJDK and the Oracle JDK are tried.
-JAVA_HOME=/usr/lib/jvm/java-8-oracle
+JAVA_HOME=/usr/lib/jvm/java-8-oracle/
 ```
 
 #### Deploy Airsonic
