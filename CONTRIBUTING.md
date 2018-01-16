@@ -9,10 +9,10 @@ Airsonic development is a community project, and contributions are welcomed. Her
     - More spacing, more empty lines !! The documentation needs to be readable !
     - Read existing guides to find some inspiration.
 
-  2. **Testing** The documentation is browsed with the website, so we recommand to test any new guides within the website using [jekyll](https://jekyllrb.com/) locally.
+  2. **Testing** The documentation is browsed with the website, so we recommend to test any new guides within the website using [jekyll](https://jekyllrb.com/) locally.
     - Clone the website repo `git clone https://github.com/airsonic/airsonic.github.io`.
     - Change directory into the cloned repo `cd airsonic.github.io`.
-    - Clone the documentation submodule`git clone https://github.com/airsonic/documentation pages/docs`.
+    - Clone the documentation submodule `git clone https://github.com/airsonic/documentation pages/docs`.
     - Install [Jekyll](https://jekyllrb.com/)
     - Run `jekyll serve --watch`.
     - Add your changes.

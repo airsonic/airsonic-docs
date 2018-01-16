@@ -10,18 +10,20 @@ This guide will wallk you through the process of deploying Airsonic on a Raspber
 Install tomcat8 and oracle-java8-jdk:
 
 ```
-sudo apt install oracle-java8-jdk tomcat8
+sudo apt-get install oracle-java8-jdk tomcat8
 ```
+
+> Note: We suggest not to use the OpenJDK package because Airsonic will take more than 1 hour to deploy. See [this issue](https://github.com/airsonic/airsonic/issues/283) for more details.
 
 If you could not set JAVA_HOME using `sudo update-alternatives --config java`, do the following:
 
 List the available Java versions:
 
 ```
-ll /usr/lib/jvm/
+ls -l /usr/lib/jvm
 ```
 ```
-drwxr-xr-x 9 root root 4096 juin  15 14:13 jdk-8-oracle-arm32-vfp-hflt
+drwxr-xr-x 8 root root 4096 Jan  6 22:24 java-8-oracle
 ```
 
 Open `/etc/default/tomcat8` and hardcode the path to JAVA_HOME:
@@ -30,10 +32,8 @@ Open `/etc/default/tomcat8` and hardcode the path to JAVA_HOME:
 # The home directory of the Java development kit (JDK). You need at least
 # JDK version 7. If JAVA_HOME is not set, some common directories for
 # OpenJDK and the Oracle JDK are tried.
-JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
+JAVA_HOME=/usr/lib/jvm/java-8-oracle/
 ```
-
-> Note: We suggest not to use the OpenJDK package because Airsonic will take more than 1 hour to deploy. See [this issue](https://github.com/airsonic/airsonic/issues/283) for more details.
 
 #### Deploy Airsonic
 
@@ -67,7 +67,7 @@ sudo rm -R /var/lib/tomcat8/work/*
 Move the downloaded WAR file in the TOMCAT_HOME/webapps/ folder:
 
 ```
-sudo mv airsonic-v{{ site.stable_version }}.war /var/lib/tomcat8/webapps/airsonic.war
+sudo mv airsonic.war /var/lib/tomcat8/webapps/airsonic.war
 ```
 
 Restart the tomcat8 service:
@@ -81,7 +81,7 @@ sudo systemctl start tomcat8.service
 INFO: Deployment of web application archive /var/lib/tomcat8/webapps/airsonic.war has finished in 146,192 ms
 ```
 
-Airsonic should be running at [http://localhost:8080/airsonic](http://localhost:8080/airsonic) if installed locally, replace `localhost` with your server IP address if installed remotly.
+Airsonic should be running at [http://localhost:8080/airsonic](http://localhost:8080/airsonic) if installed locally, replace `localhost` with your server IP address if installed remotely.
 
 #### Set up a reverse proxy
 
@@ -114,13 +114,13 @@ And then go to:
 
 #### Set up a transcoder
 
-Open your `/etc/apt/source.list`:
+Edit your `/etc/apt/sources.list`:
 
 ```
-sudo nano /etc/apt/source.list
+sudo nano /etc/apt/sources.list
 ```
 
-Add the backports repo to it:
+Add the backports repository to it:
 
 ```
 deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib
@@ -141,17 +141,18 @@ sudo apt-get install ffmpeg -t jessie-backports
 Create a `transcode` directory within your `AIRSONIC_HOME` directory:
 
 ```
-mkdir /var/airsonic/transcode
+sudo mkdir /var/airsonic/transcode
 ```
 
 Within the `transcode` directory symlink to ffmpeg and verify correct permissions
 ```
-cd transcode/
-ln -s /usr/bin/ffmpeg
-ls -alh
+cd /var/airsonic/transcode/
+sudo ln -s /usr/bin/ffmpeg
+sudo chown -R tomcat8:tomcat8 /var/airsonic
+ls -l
 ```
 ```
-lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
+lrwxrwxrwx 1 tomcat8 tomcat8 15 Jan  7 09:46 ffmpeg -> /usr/bin/ffmpeg
 ```
 
 > Note that `user` has to be the user that runs Airsonic
