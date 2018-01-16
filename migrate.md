@@ -29,9 +29,9 @@ We then copy Subsonic data to Airsonic location. Be aware that a couple of files
 
 ```
 sudo cp -a /var/subsonic /var/airsonic
-sudo mv /var/airsonic/subsonic_sh.log airsonic_sh.log
-sudo mv /var/airsonic/subsonic.log airsonic.log
-sudo mv /var/airsonic/subsonic.properties airsonic.properties
+sudo mv /var/airsonic/subsonic_sh.log /var/airsonic/airsonic_sh.log
+sudo mv /var/airsonic/subsonic.log /var/airsonic/airsonic.log
+sudo mv /var/airsonic/subsonic.properties /var/airsonic/airsonic.properties
 sudo mv /var/airsonic/db/subsonic.backup /var/airsonic/db/airsonic.backup
 sudo mv /var/airsonic/db/subsonic.data /var/airsonic/db/airsonic.data
 sudo mv /var/airsonic/db/subsonic.lck /var/airsonic/db/airsonic.lck
