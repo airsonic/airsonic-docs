@@ -3,17 +3,19 @@ layout: docs
 title: Installing Airsonic on a Raspberry Pi
 permalink: /docs/install/example/raspberrypi/
 ---
-This guide will wallk you through the process of deploying Airsonic on a Raspbery Pi running Rapsbian (Debian Jessie) using tomcat.
+This guide will walk you through the process of deploying Airsonic on a Raspbery Pi running Debian 9 Stretch using Tomcat 8.
+
+> Note: We suggest not to use the OpenJDK package because Airsonic will take more than 1 hour to deploy. See [this issue](https://github.com/airsonic/airsonic/issues/283) for more details.
+
+> Note: If you are using a distribution that does not include Oracle's JDK 8 in the repositories, *e.g.* [OSMC](https://osmc.tv/), you will need to add a repository to install Oracle JDK. Several webpages document how to add a repository and install it using apt-get tools and can be found using your favourite search engine.
 
 #### Install required packages
 
-Install tomcat8 and oracle-java8-jdk:
+Install tomcat8 and oracle-java8-jdk using apt-get
 
 ```
 sudo apt-get install oracle-java8-jdk tomcat8
 ```
-
-> Note: We suggest not to use the OpenJDK package because Airsonic will take more than 1 hour to deploy. See [this issue](https://github.com/airsonic/airsonic/issues/283) for more details.
 
 If you could not set JAVA_HOME using `sudo update-alternatives --config java`, do the following:
 
@@ -123,7 +125,7 @@ sudo nano /etc/apt/sources.list
 Add the backports repository to it:
 
 ```
-deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib
+deb http://ftp.fr.debian.org/debian/ stretch-backports main contrib
 ```
 
 Update your package list:
@@ -132,10 +134,10 @@ Update your package list:
 sudo apt-get update
 ```
 
-Install ffmpeg package from jessie-backports:
+Install ffmpeg package from stretch-backports:
 
 ```
-sudo apt-get install ffmpeg -t jessie-backports
+sudo apt-get install ffmpeg -t stretch-backports
 ```
 
 Create a `transcode` directory within your `AIRSONIC_HOME` directory:
