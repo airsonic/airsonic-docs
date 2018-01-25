@@ -8,10 +8,8 @@ permalink: /docs/configure/jukebox/
 
 Jukebox might not always work out-of-the-box and may require some additional tweaking. If you get no sound output while trying to play via the Jukebox, you might need to tweak the audio device being picked up by Java sound. You can run the folowing Java program to get a list of all the audio devices in your system:
 
-<details>
-    <summary>Source Code
-    </summary>
-<div markdown="1">
+### Source Code
+
 ```java
 import java.io.*;
 import javax.sound.sampled.*;
@@ -27,12 +25,9 @@ public class audioDevList {
     }
 } 
 ```
-</div>
-</details>
 
-<details >
-    <summary>Sample Output</summary>
-<div markdown="1">
+### Sample Output
+
 ```
 Available mixers:
 Port HDMI [hw:0]
@@ -45,8 +40,6 @@ HDMI [plughw:0,9]
 HDMI [plughw:0,10]
 PCH [plughw:1,0]
 ```
-</div>
-</details>
 
 You can then generate a `sound.properties` file accordingly with your devicename:
 
