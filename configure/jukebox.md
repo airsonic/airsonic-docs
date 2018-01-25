@@ -52,7 +52,7 @@ javax.sound.sampled.TargetDataLine=#PCH [plughw:1,0]
 
 ### Docker
 
-- Ensure that the docker user (passed through `--user` in the docker run) command has access to the `/dev/snd` device. Typically this can be done on most distros by adding the user to the `audio` group. You can alternatively use the `--add-group` flag to add the `audio` group the the user.
+- Ensure that the docker user (passed through `--user` in the docker run) command has access to the `/dev/snd` device. Typically this can be done on most distros by adding the user to the `audio` group. You can alternatively use the `--group-add` flag to add the `audio` group the the user.
 - Pass the `--device /dev/snd` argument for docker run. See the [docker documentation](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities) for more details.
 - You can mount a copy of the `sound.properties` file to `/usr/lib/jvm/java-1.8-openjdk/jre/lib/sound.properties`
  inside the container.
@@ -65,7 +65,7 @@ docker run \
     -v /home/airsonic/config:/config \
     -v /home/airsonic/podcasts:/podcasts \
     -v /home/airsonic/playlists:/playlists \
-    --add-group audio \
+    --group-add audio \
     --device /dev/snd \
     -v /home/airsonic/sound.properties:/usr/lib/jvm/java-1.8-openjdk/jre/lib/sound.properties \
     -p 4040:4040 \
