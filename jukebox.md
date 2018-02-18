@@ -25,6 +25,7 @@ public class audioDevList {
 }
 ```
 
+Sample output:
 ```
 Available mixers:
 Port HDMI [hw:0]
@@ -49,7 +50,7 @@ javax.sound.sampled.SourceDataLine=#PCH [plughw:1,0]
 javax.sound.sampled.TargetDataLine=#PCH [plughw:1,0]
 ```
 
-Copy the `sound.properties` file to `/usr/lib/jvm/java-1.8-openjdk/jre/lib/sound.properties`. Where `java-1.8-openjdk` can change depending on your installation.
+Copy the `sound.properties` file to `/usr/lib/jvm/java-1.8-openjdk/jre/lib/sound.properties`. Change `java-1.8-openjdk` depending on your java installation.
 
 ## Using Java parameters
 
