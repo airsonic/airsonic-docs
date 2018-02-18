@@ -5,7 +5,7 @@ permalink: /docs/jukebox/
 ---
 Jukebox might not always work out-of-the-box and may require some additional tweaking. If you get no sound output while trying to play via the Jukebox, you might need to tweak the audio device being picked up by Java sound.
 
-#### Finding device name
+##### Finding device name
 
 You can run the folowing Java program to get a list of all the audio devices in your system:
 
@@ -39,7 +39,7 @@ HDMI [plughw:0,10]
 PCH [plughw:1,0]
 ```
 
-## Using sound.properties
+### Using sound.properties
 
 You can then generate a `sound.properties` file accordingly with your devicename:
 
@@ -52,7 +52,7 @@ javax.sound.sampled.TargetDataLine=#PCH [plughw:1,0]
 
 Copy the `sound.properties` file to `/usr/lib/jvm/java-1.8-openjdk/jre/lib/sound.properties`. Change `java-1.8-openjdk` depending on your java installation.
 
-## Using Java parameters
+### Using Java parameters
 
 You can pass the devicename as parameter into the launch script/service file:
 
@@ -63,7 +63,7 @@ You can pass the devicename as parameter into the launch script/service file:
 -Djavax.sound.sampled.TargetDataLine=#PCH [plughw:1,0]
 ```
 
-## Using Docker
+### Using Docker
 
 - Ensure that the docker user (passed through `--user` in the docker run) command has access to the `/dev/snd` device. Typically this can be done on most distros by adding the user to the `audio` group. You can alternatively use the `--group-add` flag to add the `audio` group the the user.
 - Pass the `--device /dev/snd` argument for docker run. See the [docker documentation](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities) for more details.
