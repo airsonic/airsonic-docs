@@ -40,29 +40,23 @@ brew install airsonic
 brew upgrade airsonic
 ```
 
-##### Running Airsonic with Homebrew Services (preferred)
+##### Using Homebrew Services (preferred)
 
 ```
 brew services start airsonic
 ```
 
-##### Running Airsonic with launchd so that when you login Airsonic is launched
+##### Using launchd
 
 ```
-cp `(brew --prefix)`/Cellar/airsonic/VERSION/homebrew.mxcl.airsonic.plist ~/Library/LaunchAgents/
+cp `(brew --prefix)`/Cellar/airsonic/{{ site.stable_version }}/homebrew.mxcl.airsonic.plist ~/Library/LaunchAgents/
 launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.airsonic.plist
 ```
 
-> Replace VERSION with your Airsonic version
-```
-
-##### Running Airsonic with launchd at system boot needing no user login (background/headless)
+##### Using launchd (headless)
 
 ```
-cp `(brew --prefix)`/Cellar/airsonic/VERSION/homebrew.mxcl.airsonic.plist /Library/LaunchDaemons/
-```
-
-> Replace VERSION with your Airsonic version (and chown the .plist file to be root:wheel)
+cp `(brew --prefix)`/Cellar/airsonic/{{ site.stable_version }}/homebrew.mxcl.airsonic.plist /Library/LaunchDaemons/
 ```
 
 ##### Runtime settings used
