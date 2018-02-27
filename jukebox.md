@@ -84,3 +84,22 @@ docker run \
     -p 4040:4040 \
     airsonic/airsonic
 ```
+
+### Use Jukebox with Pulseaudio
+The point of this configuration is to force pulseaudio to use mixed ALSA output `alsa_output.dmix` (if it's available in your system). To check what sink is being used use `pactl list sinks`.
+
+
+- Configure java machine as stated above to get Jukebox working.
+- Configure pulseaudio alsa module to use dmix device by default (remember to edit an apropriate `*.pa` file, `/etc/pulse/default.pa` if your pulseaudio instance is being autospawn by clients or `/etc/pulse/system.pa` if you run pulseaudio in system mode):
+
+    ```
+       load-module module-alsa-sink device=dmix
+       load-module module-alsa-source device=snoop
+    ```
+- Configure pulseaudio to use dmix output by default.
+
+
+    ```sh
+    set-default-sink asla_output.dmix
+    ```
+
