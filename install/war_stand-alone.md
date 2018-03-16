@@ -41,6 +41,8 @@ integration with Systemd.  Systemd is an init system for most linux systems. It
 allows one to run airsonic on boot. These steps below were done on a Fedora host,
 however the steps should be similar for other Linux distributions.
 
+By following these systemd setup instructions, Airsonic will be available at `http://localhost:8080/airsonic`.
+
 Setup dedicated airsonic user:
 
 ```
@@ -69,6 +71,6 @@ systemctl start airsonic.service
 systemctl enable airsonic.service
 wget https://raw.githubusercontent.com/airsonic/airsonic/master/contrib/airsonic-systemd-env -O /etc/sysconfig/airsonic
 ```
-> Note: On Debian systems you need to replace `/etc/sysconfig` in with `/etc/default`)
+> Note: On Debian systems you need to replace `/etc/sysconfig` with `/etc/default`)
 
 Review/Modify any startup settings in /etc/sysconfig/airsonic.
