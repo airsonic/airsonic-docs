@@ -28,6 +28,8 @@ You can find a detailed list of applications available for Subsonic on the [Subs
 | AVSub  | [AppStore](https://itunes.apple.com/us/app/avsub/id923424694?mt=8) | ✕  | Made by Richard Levy.
 | Soundwaves  | [AppStore](https://itunes.apple.com/app/soundwaves/id736139596?mt=8) | ✔  | Made by Simone Tellini.
 | play:Sub  | [AppStore](https://itunes.apple.com/us/app/play-sub-subsonic-music-streamer/id955329386?mt=8) | ✕  |Made by Michael Hansen.
+| Ultrasonic | [Google Play](https://play.google.com/store/apps/details?id=org.moire.ultrasonic) | ✔ | [Open source](https://github.com/ultrasonic/ultrasonic) client for Subsonic API compatible servers
+| Ultrasonic | [F-Droid Repository](https://f-droid.org/packages/org.moire.ultrasonic/) | ✔ | [Open source](https://github.com/ultrasonic/ultrasonic) client for Subsonic API compatible servers
 
 #### Other Applications
 
