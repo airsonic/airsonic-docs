@@ -21,7 +21,7 @@ Here you can pick your installation docs for a:
 
 If you come from [Subsonic](http://www.subsonic.org/pages/index.jsp), you can migrate using our [migration docs](/docs/migrate).
 
-> NOTE: Since we forked from Subsonic 5.3, you might need to do some extra cleanup if coming from version prior 5.3.
+> NOTE: Since we forked Subsonic version 5.3, you might need to do some extra cleanup if migrating from a higher version.
 
 After installing Airsonic, you may want to put Airsonic behind a reverse proxy to access Airsonic on the HTTP ports or/and enable SSL. Use a [guide](/docs/proxy) in the list below:
 - [Configure Apache proxy](/docs/proxy/apache)
