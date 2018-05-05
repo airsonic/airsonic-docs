@@ -44,7 +44,7 @@ server {
 ```
 
 You will need to make a couple of changes in the configuration file:
-- Replace `exemple.com` with your own domain name.
+- Replace `example.com` with your own domain name.
 - Be sure to set the right path to your `cert.pem` and `key.pem` files.
 - Change `/airsonic` following your airsonic server path.
 - Change `http://127.0.0.1:8080` following you airsonic server location and port.
