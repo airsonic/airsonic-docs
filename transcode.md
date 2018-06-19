@@ -26,6 +26,7 @@ Within the `transcode` directory symlink to ffmpeg and verify correct permission
 ```
 cd transcode/
 ln -s /usr/bin/ffmpeg
+chown -h user:user ffmpeg
 ls -alh
 ```
 ```
@@ -71,6 +72,7 @@ Within the `transcode` directory symlink to ffmpeg and verify correct permission
 ```
 cd transcode/
 ln -s /usr/bin/ffmpeg
+chown -h user:user ffmpeg
 ls -alh
 ```
 ```
@@ -98,6 +100,7 @@ Within the `transcode` directory symlink to ffmpeg and verify correct permission
 ```
 cd transcode/
 ln -s /usr/bin/ffmpeg
+chown -h user:user ffmpeg
 ls -alh
 ```
 ```
@@ -124,6 +127,7 @@ Within the `transcode` directory symlink to ffmpeg and verify correct permission
 ```
 cd transcode/
 ln -s /usr/bin/ffmpeg
+chown -h user:user ffmpeg
 ls -alh
 ```
 ```
@@ -155,7 +159,8 @@ Within the `transcode` directory symlink to ffmpeg and verify correct permission
 
 ```
 cd transcode/
-ln -s /usr/bin/ffmpeg
+ln -s "$(brew --prefix)/bin/ffmpeg"
+chown -h user:user ffmpeg
 ls -alh
 ```
 ```
