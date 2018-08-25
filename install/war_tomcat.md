@@ -40,10 +40,11 @@ sudo rm -R /var/lib/tomcat8/webapps/airsonic/
 sudo rm -R /var/lib/tomcat8/work/*
 ```
 
-Move the downloaded WAR file in the TOMCAT_HOME/webapps/ folder:
+Move the downloaded WAR file in the TOMCAT_HOME/webapps/ folder and assign ownership to the Tomcat system user:
 
 ```
 sudo mv airsonic.war /var/lib/tomcat8/webapps/airsonic.war
+sudo chown tomcat8:tomcat8 /var/lib/tomcat8/webapps/airsonic.war
 ```
 
 Restart the tomcat8 service:
