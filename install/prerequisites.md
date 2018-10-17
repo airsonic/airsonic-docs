@@ -165,22 +165,23 @@ Click OK and Apply Changes as prompted
 
 ##### On MacOS
 
-Download the JDK 8 .dmg package from the [JDK download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+Download the _JDK 8 .dmg_ package from the [JDK download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) ([direct download link](http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-macosx-x64.dmg)).
 
 Install the downloaded package.
 
-Add the following lines to your ` ~/.bash_profile` file:
+Add run the following lines in your terminal:
+
+```bash
+# Use ~/.zshrc if you're using zsh.
+
+echo export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" >> ~/.bash_profile \
+source ~/.bash_profile
+```
+
+All other dependencies will be installed and linked automatically.
+
+To easily load Airsonic, and start it with your system services, you should also install the [Homebrew Services](https://github.com/Homebrew/homebrew-services) tap.
 
 ```
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-```
-
-##### On MacOS (Homebrew)
-
-First install [Homebrew](https://brew.sh) if you haven't already.
-
-Then, to install the latest version of Java:
-
-```
-brew cask install java
+brew tap homebrew/services
 ```

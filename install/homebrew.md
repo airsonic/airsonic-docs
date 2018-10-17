@@ -9,12 +9,19 @@ This installation method is designed for easy install and upgrades, and uses san
 
 ##### Prerequisites
 
-In order to install and Airsonic on macOS all you need is [Homebrew](https://brew.sh).
+In order to install and Airsonic on macOS you need Java 8 runtime and [Homebrew](https://brew.sh).
 
-Airsonic requires a recent Java runtime. The formula requires this cask, but it will not be installed automatically.
+Download the _JDK 8 .dmg_ package from the [JDK download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) ([direct download link](http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-macosx-x64.dmg)).
 
-```
-brew cask install java
+Install the downloaded package.
+
+Add run the following lines in your terminal:
+
+```bash
+# Use ~/.zshrc if you're using zsh.
+
+echo export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" >> ~/.bash_profile \
+source ~/.bash_profile
 ```
 
 All other dependencies will be installed and linked automatically.
@@ -72,4 +79,22 @@ Dserver.port=4040
 Dserver.context-path=/
 Dairsonic.home=#{workingdir}
 Djava.awt.headless=true
+```
+
+##### Updating Runtime settings
+
+Use your favorite text editor and open _$(brew --prefix)/Cellar/airsonic/{{ site.stable_version }}/homebrew.mxcl.airsonic.plist_
+
+Edit any of the following properties:
+```xml
+<string>-Xmx512m</string>  <!-- Max Memory -->
+<string>-Dlogging.file=/usr/local/var/log/airsonic.log</string>
+<string>-Dlogging.level.root=ERROR</string>
+<string>-Dserver.host=0.0.0.0</string>
+<string>-Dserver.port=4040</string>
+<string>-Dserver.context-path=/</string>  <!-- localhost:port/context-path, e.g.: /airsonic -->
+<string>-Dairsonic.home=/usr/local/var/airsonic</string>
+<string>-Djava.awt.headless=true</string>
+<string>-jar</string>
+<string>/usr/local/Cellar/airsonic/{{ site.stable_version }}/airsonic.war</string>
 ```
