@@ -172,10 +172,25 @@ Install the downloaded package.
 Add run the following lines in your terminal:
 
 ```bash
-# Use ~/.zshrc if you're using zsh.
+local version=$(java -version 2>&1 >/dev/null | grep 'java version' | awk '{print $3}')
 
-echo export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" >> ~/.bash_profile \
-source ~/.bash_profile
+if [[ ! $version =~ ^\"1.8.*\"$ ]]; then
+  local where_is_java=$(whereis java)
+  local profile
+
+  if [[ $(echo $0) =~ -zsh ]]; then
+    profile="~/.zshrc"
+  else
+    profile="~/.bash_profile"
+  fi
+
+  if [ ! -f $profile ]; then
+    echo "$profile not found! Exiting..."
+  fi
+
+  echo export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" >> $profile && \
+  source $profile
+fi
 ```
 
 All other dependencies will be installed and linked automatically.

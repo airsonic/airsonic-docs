@@ -11,17 +11,32 @@ This installation method is designed for easy install and upgrades, and uses san
 
 In order to install and Airsonic on macOS you need Java 8 runtime and [Homebrew](https://brew.sh).
 
-Download the _JDK 8 .dmg_ package from the [JDK download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) ([direct download link](http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-macosx-x64.dmg)).
+Download the _JDK 8 .dmg_ package from the [JDK download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
 Install the downloaded package.
 
 Add run the following lines in your terminal:
 
 ```bash
-# Use ~/.zshrc if you're using zsh.
+local version=$(java -version 2>&1 >/dev/null | grep 'java version' | awk '{print $3}')
 
-echo export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" >> ~/.bash_profile \
-source ~/.bash_profile
+if [[ ! $version =~ ^\"1.8.*\"$ ]]; then
+  local where_is_java=$(whereis java)
+  local profile
+
+  if [[ $(echo $0) =~ -zsh ]]; then
+    profile="~/.zshrc"
+  else
+    profile="~/.bash_profile"
+  fi
+
+  if [ ! -f $profile ]; then
+    echo "$profile not found! Exiting..."
+  fi
+
+  echo export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" >> $profile && \
+  source $profile
+fi
 ```
 
 All other dependencies will be installed and linked automatically.
@@ -83,9 +98,10 @@ Djava.awt.headless=true
 
 ##### Updating Runtime settings
 
-Use your favorite text editor and open _$(brew --prefix)/Cellar/airsonic/{{ site.stable_version }}/homebrew.mxcl.airsonic.plist_
+Use your favorite text editor and open `$(brew --prefix)/Cellar/airsonic/{{ site.stable_version }}/homebrew.mxcl.airsonic.plist`
 
 Edit any of the following properties:
+
 ```xml
 <string>-Xmx512m</string>  <!-- Max Memory -->
 <string>-Dlogging.file=/usr/local/var/log/airsonic.log</string>
