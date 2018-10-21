@@ -23,7 +23,7 @@ Set default JAVA_HOME by using the command below and choose the right version (1
 sudo update-alternatives --config java
 ```
 
-> Note that if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
+> **NOTE**:  if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
 1. List the available Java version:
 ```
 ls -l /usr/bin/jvm/
@@ -75,7 +75,7 @@ Set default JAVA_HOME by using the command below and choose the right version (1
 sudo update-alternatives --config java
 ```
 
-> Note that if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
+> **NOTE**:  if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
 1. List the available Java version:
 ```
 ls -l /usr/bin/jvm/
@@ -108,7 +108,7 @@ Set default JAVA_HOME by using the command below and choose the right version (1
 ```
 sudo update-alternatives --config java
 ```
-> Note that if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
+> **NOTE**:  if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
 1. List the available Java version:
 ```
 ls -l /usr/bin/jvm/

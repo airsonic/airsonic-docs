@@ -21,7 +21,7 @@ Those interested in details can have a look at [this spring.io document](https:/
 
 Running Airsonic as a standalone application means that you don't deploy Airsonic to a servlet container but run it via a command that looks like this for short :
 
-> Note: See [stand-alone installation doc](/docs/install/war-standalone/) for more details
+> **NOTE**: See [stand-alone installation doc](/docs/install/war-standalone/) for more details
 
 ```
 java -jar airsonic.war

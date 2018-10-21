@@ -9,7 +9,7 @@ We will try not to break with the Subsonic API.
 
 Airsonic currently embed Subsonic API version 1.15.0.
 
-> Note: Some features where removed or not integreted, so some endpoint of the API will return some errors:
+> **NOTE**: Some features where removed or not integreted, so some endpoint of the API will return some errors:
 - getChatMessages returns 410 Gone
 - addChatMessage returns 410 Gone
 - getVideoInfo returns 501 Not implemented
