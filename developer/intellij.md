@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Developing with Intellij
-permalink: /docs/proxy/intellij/
+permalink: /docs/developer/intellij/
 ---
 For developing with Intellij (running and debugging), there are two options listed below.
 

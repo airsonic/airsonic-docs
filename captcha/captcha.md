@@ -3,7 +3,6 @@ layout: docs
 title: CAPTCHA
 permalink: /docs/captcha/
 ---
-
 Airsonic supports requiring anybody attempting to reset a user's password to
 solve a [CAPTCHA](https://en.wikipedia.org/wiki/CAPTCHA), making it more
 difficult for attackers to automatically cause passwords to be reset. Versions
