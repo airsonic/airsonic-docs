@@ -5,7 +5,7 @@ permalink: /docs/install/prerequisites/
 ---
 To get Airsonic running, we are going to install OpenJDK 8 or Oracle JDK 8, set the default `JAVA_HOME`, and finally deploy our Airsonic WAR package.
 
-> Please note that if you are running Airsonic on an ARM platform and you experience extremely long startup times (on the order of 20-30 minutes), you should install Oracle's JDK/JRE. There are known performance issues with OpenJDK under ARM.
+> **NOTE**: if you are running Airsonic on an ARM platform and you experience extremely long startup times (on the order of 20-30 minutes), you should install Oracle's JDK/JRE. There are known performance issues with OpenJDK under ARM.
 
 #### Install OpenJDK 8
 
@@ -23,7 +23,7 @@ Set default JAVA_HOME by using the command below and choose the right version (1
 sudo update-alternatives --config java
 ```
 
-> **NOTE**:  if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
+> **NOTE**: if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
 1. List the available Java version:
 ```
 ls -l /usr/bin/jvm/
@@ -75,7 +75,7 @@ Set default JAVA_HOME by using the command below and choose the right version (1
 sudo update-alternatives --config java
 ```
 
-> **NOTE**:  if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
+> **NOTE**: if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
 1. List the available Java version:
 ```
 ls -l /usr/bin/jvm/
@@ -108,7 +108,7 @@ Set default JAVA_HOME by using the command below and choose the right version (1
 ```
 sudo update-alternatives --config java
 ```
-> **NOTE**:  if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
+> **NOTE**: if Tomcat8 didn't get the right JAVA_HOME you can set it in `/etc/default/tomcat8`:
 1. List the available Java version:
 ```
 ls -l /usr/bin/jvm/
@@ -134,12 +134,10 @@ Please follow this [well documented guide](https://www.digitalocean.com/communit
 
 ##### On Windows
 
-Download the JDK 8 .exe package from the [JDK download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
-
-Install the downloaded package.
+Download the JDK 8 .exe package from the [JDK download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and install it.
 
 Then locate the Java installation directory.
-> If you didn't change the path during installation, it'll be something like `C:\Program Files\Java\jdk1.8.0_65`
+> **NOTE**: If you didn't change the path during installation, it'll be something like `C:\Program Files\Java\jdk1.8.0_65`
 
 Do one of the following:
 - Windows 7 – Right click My Computer and select Properties > Advanced
@@ -157,7 +155,7 @@ In the Variable Value field, enter your JDK or JRE installation path.
 
 If the path contains spaces, use the shortened path name.
 For example, `C:\Progra~1\Java\jdk1.8.0_65`.
-> Note for Windows users on 64-bit systems:
+> **NOTE**: For Windows users on 64-bit systems:
 - Progra~1 = `'Program Files'`
 - Progra~2 = `'Program Files(x86)'`
 
@@ -165,22 +163,17 @@ Click OK and Apply Changes as prompted
 
 ##### On MacOS
 
-Download the _JDK 8 .dmg_ package from the [JDK download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) ([direct download link](http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-macosx-x64.dmg)).
+Download the _JDK 8 .dmg_ package from the [JDK download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and install it.
 
-Install the downloaded package.
+Run the following lines in your terminal:
 
-Add run the following lines in your terminal:
-
-```bash
+```sh
 # check to see if you have 'java -version'. if not, run the command below
 # if you run zsh, replace .bash_profile with .zshrc
 
 echo export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" >> ~/.bash_profile && \
 source ~/.bash_profile
 ```
-```
-
-All other dependencies will be installed and linked automatically.
 
 To easily load Airsonic, and start it with your system services, you should also install the [Homebrew Services](https://github.com/Homebrew/homebrew-services) tap.
 
