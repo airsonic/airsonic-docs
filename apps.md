@@ -30,6 +30,7 @@ You can find a detailed list of applications available for Subsonic on the [Subs
 | play:Sub  | [AppStore](https://itunes.apple.com/us/app/play-sub-subsonic-music-streamer/id955329386?mt=8) | ✕  |Made by Michael Hansen.
 | Ultrasonic | [Google Play](https://play.google.com/store/apps/details?id=org.moire.ultrasonic) | ✔ | [Open source](https://github.com/ultrasonic/ultrasonic) client for Subsonic API compatible servers
 | Ultrasonic | [F-Droid Repository](https://f-droid.org/packages/org.moire.ultrasonic/) | ✔ | [Open source](https://github.com/ultrasonic/ultrasonic) client for Subsonic API compatible servers
+| airsonic Player | [Google Play](https://play.google.com/store/apps/details?id=net.volcanomobile.airsonicplayer) | ✔ | client for Subsonic API compatible servers
 
 #### Other Applications
 
