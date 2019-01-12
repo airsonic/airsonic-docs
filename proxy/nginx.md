@@ -62,6 +62,15 @@ location /airsonic {
     proxy_redirect                     http:// https://;
 }
 ```
+You will also need to make sure Tomcat uses the correct headers for redirects. Stop your Airsonic server or docker image and:
+```
+nano /path/to/airsonic/config/airsonic.properties
+```
+Add the following line to the bottom of the file:
+```
+server.use-forward-headers=true
+```
+Ctrl+X to save and exit the file, and restart your Airsonic server or docker image.
 
 > **NOTE**:  you may face some `Content-Security-Policy` issues. To fix this add the following line to your configuration:
 ```nginx
