@@ -29,8 +29,8 @@ verifications pass. While this configuration is not any more secure, the mere
 presence of a CAPTCHA (even if it does nothing) may deter some unsophisticated
 attackers.
 
-To obtain reCAPTCHA keys it is necessary to register with Google, at
-https://www.google.com/recpatcha/admin. Register a new site with any label (the
+To obtain reCAPTCHA keys it is necessary to register with Google, [here](https://www.google.com/recaptcha/admin/).
+Register a new site with any label (the
 label merely identifies a site in the admin console) and select "reCAPTCHA v2"
 as the type.
 
