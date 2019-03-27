@@ -43,3 +43,4 @@ You can find a detailed list of applications available for Subsonic on the [Subs
 | [Perisonic](https://chrome.google.com/webstore/detail/perisonic/bkdipjpecphmbijlckkkmabnabhbpjbn) | Google Chrome | ✔  | Plays your music in random order.
 | [PolySonic](https://chrome.google.com/webstore/detail/polysonic/dmijgonnbeadbncajpphnlidgjkgmblf) | Google Chrome | ✔  | Simple subsonic player based on Polymer.
 | SqueezeSonic for [Logitech Media Server (SqueezeBoxServer)](https://www.mysqueezebox.com/download) | Windows, Mac, Linux, NASs, ARM, ... | ✔  | Subsonic API > 1.11.0. Included in LMS install as a third party plugin
+| Volusonic for [Volumio](https://www.volumio.org) | volumio | ✔  | Subsonic API > 1.13.0. Available in volumio install
