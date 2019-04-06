@@ -11,13 +11,9 @@ Note that, in that case, airsonic will available at `http://localhost:8080` (and
 In order to install and run Airsonic, you will need:
 - [A JDK installation, 1.8.x series of OpenJDK or Oracle JDK 8+ should work.](/docs/install/prerequisites)
 
+{% include_relative inc.download.md %}
+
 #### Run Airsonic WAR package
-
-Download the latest Airsonic .war package from the [download page](/download), or with the command below:
-
-```
-wget {{ site.repo }}/download/v{{ site.stable_version }}/airsonic.war
-```
 
 Create the Airsonic directory and assign ownership to the user that will run Airsonic:
 
