@@ -7,7 +7,7 @@ permalink: /docs/api/
 
 We will try not to break with the Subsonic API.
 
-Airsonic currently embed Subsonic API version 1.15.0.
+Airsonic currently embed Subsonic API version {{ site.subsonic_api_version }}.
 
 > **NOTE**: Some features where removed or not integrated, so some endpoint of the API will return some errors:
 - getChatMessages returns 410 Gone
