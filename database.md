@@ -78,6 +78,39 @@ Finally, copy the jdbc driver from the database vendor website to the `lib` dire
 
 You will also need to add `DatabaseUsertableQuote="` to your properties file. This is due to the fact that our `user` table is a keyword for postgres.
 
+##### HSQLDB
+
+Unless a different database is configured, the default internal HSQLDB database
+is stored in multiple files in the `$(airsonic.home)/db` directory.
+
+> **NOTE**: It is heavily recommended to operate on a copy of the database (the
+> entire `db` directory) unless write access is needed, because modern HSQLDB
+> versions (2+) will *automatically* upgrade the database format, making it
+> unreadable to Airsonic.
+
+The database can be accessed using tools such as
+[DBeaver](https://dbeaver.io/), by providing the `sa` username and no password:
+
+![DBeaver Configuration](database_hsqldb_dbeaver.png)
+
+In addition to that, the HSQLDB distribution provides a command-line tool that
+can be used to automate some tasks. Download [HSQLDB
+1.8.1](https://sourceforge.net/projects/hsqldb/files/hsqldb/hsqldb_1_8_1/)
+(SHA256 checksum is
+c3669bbebcb5c722b273f20c316af744d4e263bc90cc20fd1e6296dff7cc3d07) from the
+official website, and unzip the `hsqldb/lib/hsqldb.jar` file inside, which
+contains the SQLTool command.
+
+This command can then be used to run queries on the database:
+
+    $ java -jar hsqldb.jar --inlineRc=url=jdbc:hsqldb:file:/path/to/dbcopy/airsonic,user=sa,password=
+    JDBC Connection established to a HSQL Database Engine v. 1.8.1 database as "SA".
+    SqlTool v. 333.                        (SqlFile processor v. 354)
+    Distribution is permitted under the terms of the HSQLDB license.
+    (c) 2004-2007 Blaine Simpson and the HSQLDB Development Group.
+    ...
+    sql> SELECT TOP 10 * FROM MEDIA_FILE;
+
 #### Troubleshooting
 
 In the event that you change these settings, restart your server and it fails to start, you can remedy this by reverting to the LEGACY config by removing all `Database*` settings from your `airsonic.properties` file.
