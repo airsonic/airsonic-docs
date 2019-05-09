@@ -133,7 +133,7 @@ If you need mp3 support and most likely you will the process is more arduous as 
 Install the dependencies required to build and use ffmpeg:
 
 ```
-pkg install yasm binutils texi2html frei0r v4l_compat gmake pkgconf perl5 fontconfig freetype2 opencv-core schroedinger libtheora libv4l libva libvdpau libvorbis libvpx libx264 xvid gnutls libiconv
+pkg install yasm binutils texi2html frei0r v4l_compat gmake pkgconf perl5 fontconfig freetype2 opencv-core schroedinger libtheora libv4l libva libvdpau libvorbis libvpx libx264 xvid gnutls libiconv dav1d cmake x265
 ```
 
 Now install the FreeBSD Ports Tree
