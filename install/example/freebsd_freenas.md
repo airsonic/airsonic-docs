@@ -52,6 +52,23 @@ version="1.0">
 > <user username="yourusername" password="yourpassword" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-gui,admin-script"/>
 > ```
 
+By default Tomcat only allows uploading of files up to 50mb. Our WAR file is slightly larger so we have to modify the according setting. Open the configuration file for the web-interface:
+
+```
+nano /usr/local/apache-tomcat-8.0/webapps/manager/WEB-INF/web.xml
+```
+
+Find this part in the file and simply add a zero to both numbers:
+
+```
+    <multipart-config>
+      <!-- 50MB max -->
+      <max-file-size>52428800</max-file-size>
+      <max-request-size>52428800</max-request-size>
+      <file-size-threshold>0</file-size-threshold>
+    </multipart-config>
+```
+
 #### Start and test Tomcat
 
 Start tomcat8:
