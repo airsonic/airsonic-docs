@@ -31,7 +31,7 @@ server.use-forward-headers=true
 ```
 Ctrl+X to save and exit the file, and restart your Airsonic server or docker image.
 
-Restart the Caddy service:
+Check the Caddy config for validity, and then restart the Caddy service:
 
 ```
 caddy -conf /etc/caddy/caddy.conf -validate
