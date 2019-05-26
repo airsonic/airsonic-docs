@@ -10,7 +10,7 @@ Airsonic is built with generic ANSI SQL (for the most part) and uses [Liquibase]
 | HyperSQL   | 1.8     | ✔         | ✔       | Default|
 | HyperSQL   | 2.X     | ✕         | ✕       | No curent plans to support, look into SQLite instead? |
 | PostgreSQL | 9.5     | ✔         | ✔       |        |
-| MariaDB    | 10.2    | ✔         | ✔       |        |
+| MariaDB    | 10.2    | ✔         | ✔       | Lower version is possible by tuning mariadb options |
 | MySQL      | 5.7.17  | ✔         | ✔       |        |
 
 If you wish to continue using the current hsql 1.8 database driver, no action is needed. If you wish to use another database, read on.
@@ -110,6 +110,28 @@ This command can then be used to run queries on the database:
     (c) 2004-2007 Blaine Simpson and the HSQLDB Development Group.
     ...
     sql> SELECT TOP 10 * FROM MEDIA_FILE;
+
+#### MariaDB
+
+Airsonic can use mariaDB below 10.2 (tested with mariadb 10.1.32) by setting the following options in my.cnf (apparently innodb_default_row_format is by default DYNAMIC now for mariadb starting from 10.2):
+```
+innodb_file_format=Barracuda
+innodb_large_prefix=ON
+innodb_default_row_format=DYNAMIC
+```
+Also create the database with:
+```
+db_character_set: utf8
+db_collate: utf8_general_ci
+```
+By passing the following options to airsonic, it's possible to use your custom mariadb server (fill in the variables):
+```
+-DDatabaseConfigType=embed
+-DDatabaseConfigEmbedDriver=com.mysql.jdbc.Driver
+-DDatabaseConfigEmbedPassword=${AIRSONIC_DB_PASSWORD}
+-DDatabaseConfigEmbedUrl=jdbc:mysql://${AIRSONIC_DB_HOST:-localhost}:${AIRSONIC_DB_PORT:-3306}/${AIRSONIC_DB_NAME:-airsonic}
+-DDatabaseConfigEmbedUsername=${AIRSONIC_DB_USERNAME}
+```
 
 #### Troubleshooting
 
