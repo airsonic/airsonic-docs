@@ -3,7 +3,7 @@ layout: docs
 title: Setting up Caddy
 permalink: /docs/proxy/caddy/
 ---
-The following configurations works for HTTPS (with an HTTP redirection).
+The following configuration works for HTTPS (with an HTTP redirection).
 
 Create a new virtual host file (assumes /etc/caddy/caddy.conf is your main file, and includes all *.conf files in /etc/caddy/caddy.conf.d/ directory):
 
