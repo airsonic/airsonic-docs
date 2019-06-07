@@ -32,10 +32,12 @@ openssl rand -hex 10
 head /dev/urandom | tr -dc A-Za-z0-9 | head -c 10 ; echo
 ```
 
-The token is generated using the md5sum of your password concatenated to the previous salt string (`token = md5(password + salt)`). Use the following command to generate the token:
+The token is generated using the md5sum of your password concatenated to the previous salt string `token = md5(password + salt)`. Use the following command to generate the token:
 ```sh
-echo -n <password><salt> | md5sum
+echo -n <password><salt> | md5sum | awk '{ print $1 }')
 ```
+
+> **NOTE**: The awk command is using to remove the md5 source name from the output, in our case from stdin `-`.
 
 You can now pass your username, the token and salt to your api requests:
 ```sh
@@ -54,5 +56,3 @@ echo ${SALT}
 echo ${TOKEN}
 curl "${SERVER}/rest/ping.view?u=${USERNAME}&t=${TOKEN}&s=${SALT}&v=1.15.0&c=${CLIENT}"
 ```
-
-> **NOTE**: The awk command is using to remove the md5 source name from the output, in our case from stdin `-`.
