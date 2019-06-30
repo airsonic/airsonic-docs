@@ -60,3 +60,42 @@ ls -l airsonic-main/target/airsonic.war
 ```
 airsonic-main/target/airsonic.war
 ```
+
+##### Build Airsonic Docker image
+
+Ensure that you have a working jdk, maven installed, and access to docker via the user you're using:
+
+```
+$ javac -version
+javac 1.8.0_212
+$ which mvn
+/usr/bin/mvn
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+```
+
+
+Using maven, build Airsonic with the docker profile:
+
+```
+$ mvn clean package -P docker
+...
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Airsonic 10.4.0-SNAPSHOT ........................... SUCCESS [  0.245 s]
+[INFO] Subsonic REST API .................................. SUCCESS [  1.652 s]
+[INFO] Sonos API .......................................... SUCCESS [  1.745 s]
+[INFO] Airsonic Main ...................................... SUCCESS [04:57 min]
+[INFO] Airsonic Docker Image 10.4.0-SNAPSHOT .............. SUCCESS [ 11.098 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+...
+```
+
+Note the new docker image:
+
+```
+$ docker images | grep airsonic
+airsonic/airsonic               10.4.0-SNAPSHOT     1f1ca2aaa170        About a minute ago   225 MB
+```
+
