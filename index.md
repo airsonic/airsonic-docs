@@ -31,3 +31,5 @@ After installing, you may want to put Airsonic behind a reverse proxy to access 
 Using an external database for large music collection can only be useful, just follow our [database docs](/docs/database) to set it up.
 
 Transcoders are used by Airsonic to convert media from their on disk format to a format that can be consumed by clients. Use our docs to set up the [transcode binaries](/docs/transcode).
+
+Don't forget to keep your airsonic instance [up to date](/docs/update)!
