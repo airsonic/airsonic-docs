@@ -12,9 +12,10 @@ Download and import [`Andrew DeMaria`](https://github.com/muff1nman) public key:
 gpg --keyserver keyserver.ubuntu.com --recv 0A3F5E91F8364EDF
 ```
 
-Download the signed key file and verify the previously download .war package:
+Download the signed checksums file and verify the previously download .war package:
 
 ```
-wget {{ site.repo }}/download/v{{ site.stable_version }}/airsonic.war.asc
-gpg --verify airsonic.war.asc
+wget {{ site.repo }}/download/v{{ site.stable_version }}/artifacts-checksums.sha.asc
+gpg --verify artifacts-checksums.sha.asc
+sha256sum -c artifacts-checksums.sha.asc
 ```
