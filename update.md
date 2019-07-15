@@ -4,13 +4,12 @@ title: Airsonic Applications
 permalink: /docs/update/
 ---
 
-{% include_relative inc.download.md %}
+{% include_relative install/inc.download.md %}
 
 #### Standalone deployment
 
 If you're using systemd, a simple `systemctl airsonic restart` should be
 enough.
-
 
 #### Tomcat deployment
 
