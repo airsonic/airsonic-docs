@@ -57,6 +57,7 @@ Activate apache2 proxy, proxy_http and ssl module:
 sudo a2enmod proxy
 sudo a2enmod proxy_http
 sudo a2enmod ssl
+sudo a2enmod headers
 ```
 
 Restart the Apache2 service:
