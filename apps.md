@@ -19,7 +19,6 @@ You can find a detailed list of applications available for Subsonic on the [Subs
 | Ultrasonic | [Google Play](https://play.google.com/store/apps/details?id=org.moire.ultrasonic) | ✔ | [Open source](https://github.com/ultrasonic/ultrasonic) client for Subsonic API compatible servers (Fork of Subsonic app)
 | Ultrasonic | [F-Droid Repository](https://f-droid.org/packages/org.moire.ultrasonic/) | ✔ | [Open source](https://github.com/ultrasonic/ultrasonic) client for Subsonic API compatible servers (Fork of Subsonic app)
 | XenoAmp  | [Google Play](https://play.google.com/store/apps/details?id=pl.qus.xenoamp&hl=en) | ✔ | Supports many different services (Soundcloud, Subsonic, SMB...)
-| Substreamer  | [Google Play](https://play.google.com/store/apps/details?id=com.ghenry22.substream2), [App Store](https://itunes.apple.com/us/app/substreamer/id1012991665?ls=1&mt=8) | ✔ | -
 | Subsonic Music Streamer | [Windows Store](https://www.microsoft.com/de-at/store/p/subsonic-music-streamer/9nblggh0dfs4?rtc=1) | ✕  | Made by Anton Van Zuylen.
 | SonicStreamer | [Windows Store](https://www.microsoft.com/de-at/store/p/sonicstreamer/9wzdncrdfk0f?rtc=1) | ✔  |
 | BetaBeats  | [Windows Store](https://www.microsoft.com/store/apps/9nblggh6h297) | ✔  | -
