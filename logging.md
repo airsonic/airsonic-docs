@@ -56,3 +56,17 @@ Allowed levels are:
 - `INFO`
 - `DEBUG`
 - `TRACE`
+
+Interesting packages to watch for are:
+
+```
+# Set Airsonic-specific loggers to 'DEBUG'
+logging.level.org.airsonic=DEBUG
+
+# Set all loggers to 'DEBUG' (warning: generates a lot of logs)
+logging.level.root=DEBUG
+
+# Set up SQL logging (warning: may leak passwords/keys/personal data)
+logging.level.org.springframework.jdbc.core.JdbcTemplate=DEBUG
+logging.level.org.springframework.jdbc.core.StatementCreatorUtils=TRACE
+```
