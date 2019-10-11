@@ -5,7 +5,7 @@ permalink: /docs/developer/intellij/
 ---
 For developing with Intellij (running and debugging), there are two options listed below.
 
-> **NOTE**: Intellij Ultimate 2018.2 was used for these instructions. Intellij Community 2018.2 should work fine for the first option. The second requires Ultimate*
+> **NOTE**: Intellij Ultimate 2018.2 was used for these instructions. Intellij Community 2018.2 should work fine for the first option. The second requires Ultimate
 
 #### Use embedded Spring Boot
 
@@ -47,6 +47,28 @@ Click `Ok`.
 Now you can run or debug the application:
 
 ![](intellij-run.png)
+
+#### Use external Spring Boot
+
+IntelliJ can be used as a remote debugger on a running server, which can come in handy.
+
+> **NOTE**: This degrades performance slightly while the debugger is attached.
+
+First, follow the instructions in the last part to setup IntelliJ locally.
+
+Then, on the remote server, edit the Java command line used to run Airsonic and add the following options:
+
+```
+java -jar airsonic.war
+    ...other options...
+    -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:51423
+```
+
+> **WARNING**: This exposes port 51423 without any password. This must **never** be exposed outside of your local network. Enabling remote debugging allows remote control of anything on your server!
+
+Once this is done, in IntelliJ, open a new configuration and fill the name of your remote server, along with port 51423:
+
+![IntelliJ remote debugger setup](intellij-remote.png)
 
 #### Use external Tomcat
 
