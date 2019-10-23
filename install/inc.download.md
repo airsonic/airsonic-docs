@@ -1,6 +1,6 @@
 #### Download Airsonic WAR package
 
-Download the latest Airsonic .war package from the [download page](/download), or with the command below:
+Download the latest Airsonic .war package from the [download page](https://github.com/airsonic/airsonic/releases/), or with the command below:
 
 ```
 wget {{ site.repo }}/download/v{{ site.stable_version }}/airsonic.war
