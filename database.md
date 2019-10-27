@@ -103,7 +103,7 @@ contains the SQLTool command.
 
 This command can then be used to run queries on the database:
 
-    $ java -jar hsqldb.jar --inlineRc=url=jdbc:hsqldb:file:/path/to/dbcopy/airsonic,user=sa,password=
+    $ java -jar hsqldb.jar --inlineRc 'url=jdbc:hsqldb:file:/path/to/dbcopy/airsonic,user=sa,password='
     JDBC Connection established to a HSQL Database Engine v. 1.8.1 database as "SA".
     SqlTool v. 333.                        (SqlFile processor v. 354)
     Distribution is permitted under the terms of the HSQLDB license.
