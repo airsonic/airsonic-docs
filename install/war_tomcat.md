@@ -7,7 +7,7 @@ permalink: /docs/install/war-tomcat/
 
 In order to install and run Airsonic with Tomcat, you will need:
 - [A JDK installation, 1.8.x series of OpenJDK or Oracle JDK 8+ should work.](/docs/install/prerequisites)
-- A running [Tomcat](http://tomcat.apache.org/) server. If you're unfamiliar with Tomcat, there are many [guides](https://www.digitalocean.com/community/tags/java?q=How+to+install+tomcat8&type=tutorials) on it.
+- A running [Tomcat](http://tomcat.apache.org/) version 8.5+ server. If you're unfamiliar with Tomcat, there are many [guides](https://www.digitalocean.com/community/tags/java?q=How+to+install+tomcat8&type=tutorials) on it.
 
 {% include_relative inc.download.md %}
 
