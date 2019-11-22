@@ -39,7 +39,7 @@ You will need to make a couple of changes in the configuration file:
 - Be sure to set the right path to your `cert.pem` and `key.pem` files.
 - Change `/airsonic` following your airsonic server path.
 - Change `http://127.0.0.1:8080/airsonic` following you airsonic server location, port and path.
-> Note that you could only add ProxyPass and ProxyPassReverse lines to your existing configuration:
+> **NOTE**:  you could only add ProxyPass and ProxyPassReverse lines to your existing configuration:
 ```apache
 ProxyPass         /airsonic http://127.0.0.1:8080/airsonic
 ProxyPassReverse  /airsonic http://127.0.0.1:8080/airsonic
@@ -57,6 +57,7 @@ Activate apache2 proxy, proxy_http and ssl module:
 sudo a2enmod proxy
 sudo a2enmod proxy_http
 sudo a2enmod ssl
+sudo a2enmod headers
 ```
 
 Restart the Apache2 service:

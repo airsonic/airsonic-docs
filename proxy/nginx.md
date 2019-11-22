@@ -44,11 +44,11 @@ server {
 ```
 
 You will need to make a couple of changes in the configuration file:
-- Replace `exemple.com` with your own domain name.
+- Replace `example.com` with your own domain name.
 - Be sure to set the right path to your `cert.pem` and `key.pem` files.
 - Change `/airsonic` following your airsonic server path.
 - Change `http://127.0.0.1:8080` following you airsonic server location and port.
-> Note that you could only add the "location /airsonic" section to your existing configuration:
+> **NOTE**:  you could only add the "location /airsonic" section to your existing configuration:
 ```nginx
 # Proxy to the Airsonic server
 location /airsonic {
@@ -62,8 +62,17 @@ location /airsonic {
     proxy_redirect                     http:// https://;
 }
 ```
+You will also need to make sure Tomcat uses the correct headers for redirects. Stop your Airsonic server or docker image and:
+```
+nano /path/to/airsonic/config/airsonic.properties
+```
+Add the following line to the bottom of the file:
+```
+server.use-forward-headers=true
+```
+Ctrl+X to save and exit the file, and restart your Airsonic server or docker image.
 
-> Note that you may face some `Content-Security-Policy` issues. To fix this add the following line to your configuration:
+> **NOTE**:  you may face some `Content-Security-Policy` issues. To fix this add the following line to your configuration:
 ```nginx
 add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' www.gstatic.com; img-src 'self' *.akamaized.net; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; frame-src 'self'; object-src 'none'";
 ```

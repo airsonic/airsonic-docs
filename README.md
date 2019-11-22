@@ -11,4 +11,4 @@ To browse the documentation, we suggest you to use the [Airsonic website](https:
 
 ## Contributing
 
-Please see [this guide](https://github.com/airsonic/documentation/blob/master/CONTRIBUTING.md) for any contribution.
+Please see [this guide](https://github.com/airsonic/documentation/blob/master/.github/CONTRIBUTING.md) for any contribution.

@@ -9,15 +9,11 @@ In order to install and run Airsonic with Tomcat, you will need:
 - [A JDK installation, 1.8.x series of OpenJDK or Oracle JDK 8+ should work.](/docs/install/prerequisites)
 - A running [Tomcat](http://tomcat.apache.org/) server. If you're unfamiliar with Tomcat, there are many [guides](https://www.digitalocean.com/community/tags/java?q=How+to+install+tomcat8&type=tutorials) on it.
 
+{% include_relative inc.download.md %}
+
 #### Deploy Airsonic WAR package
 
 ##### On Debian 8 / Ubuntu > 16.04
-
-Download the latest Airsonic .war package from the [download page](/download), or with the command below:
-
-```
-wget {{ site.repo }}/download/v{{ site.stable_version }}/airsonic.war
-```
 
 Create the Airsonic directory and assign ownership to the Tomcat system user (if running tomcat as a service):
 
@@ -40,10 +36,11 @@ sudo rm -R /var/lib/tomcat8/webapps/airsonic/
 sudo rm -R /var/lib/tomcat8/work/*
 ```
 
-Move the downloaded WAR file in the TOMCAT_HOME/webapps/ folder:
+Move the downloaded WAR file in the TOMCAT_HOME/webapps/ folder and assign ownership to the Tomcat system user:
 
 ```
 sudo mv airsonic.war /var/lib/tomcat8/webapps/airsonic.war
+sudo chown tomcat8:tomcat8 /var/lib/tomcat8/webapps/airsonic.war
 ```
 
 Restart the tomcat8 service:
@@ -52,7 +49,7 @@ Restart the tomcat8 service:
 sudo systemctl start tomcat8.service
 ```
 
-> Note that it may take ~30 seconds after the service restarts for Tomcat to fully deploy the app. You can monitor /var/log/tomcat8/catalina.out for the following message:
+> **NOTE**: it may take ~30 seconds after the service restarts for Tomcat to fully deploy the app. You can monitor /var/log/tomcat8/catalina.out for the following message:
 ```
 INFO: Deployment of web application archive /var/lib/tomcat8/webapps/airsonic.war has finished in 46,192 ms
 ```

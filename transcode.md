@@ -26,13 +26,14 @@ Within the `transcode` directory symlink to ffmpeg and verify correct permission
 ```
 cd transcode/
 ln -s /usr/bin/ffmpeg
+chown -h user:user ffmpeg
 ls -alh
 ```
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
 
-> Note that `user` has to be the user that runs Airsonic
+> **NOTE**:  `user` has to be the user that runs Airsonic
 
 ##### On Debian 8
 
@@ -71,13 +72,14 @@ Within the `transcode` directory symlink to ffmpeg and verify correct permission
 ```
 cd transcode/
 ln -s /usr/bin/ffmpeg
+chown -h user:user ffmpeg
 ls -alh
 ```
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
 
-> Note that `user` has to be the user that runs Airsonic
+> **NOTE**:  `user` has to be the user that runs Airsonic
 
 ##### On Ubuntu > 16.04
 
@@ -98,12 +100,13 @@ Within the `transcode` directory symlink to ffmpeg and verify correct permission
 ```
 cd transcode/
 ln -s /usr/bin/ffmpeg
+chown -h user:user ffmpeg
 ls -alh
 ```
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
-> Note that `user` has to be the user that runs Airsonic
+> **NOTE**:  `user` has to be the user that runs Airsonic
 
 ##### On Red Hat / Fedora
 
@@ -124,12 +127,13 @@ Within the `transcode` directory symlink to ffmpeg and verify correct permission
 ```
 cd transcode/
 ln -s /usr/bin/ffmpeg
+chown -h user:user ffmpeg
 ls -alh
 ```
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
-> Note that `user` has to be the user that runs Airsonic
+> **NOTE**:  `user` has to be the user that runs Airsonic
 
 ##### On Windows
 
@@ -155,10 +159,11 @@ Within the `transcode` directory symlink to ffmpeg and verify correct permission
 
 ```
 cd transcode/
-ln -s /usr/bin/ffmpeg
+ln -s "$(brew --prefix)/bin/ffmpeg"
+chown -h user:user ffmpeg
 ls -alh
 ```
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
-> Note that `user` has to be the user that runs Airsonic
+> **NOTE**:  `user` has to be the user that runs Airsonic

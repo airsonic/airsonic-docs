@@ -26,7 +26,7 @@ Changes the port that the standalone package listens on.
 
 > Default: 8080
 
-> Note: This property only applies for spring boot/standalone config.
+> **NOTE**: This property only applies for spring boot/standalone config.
 
 #### Server address
 
@@ -38,7 +38,7 @@ Changes the address that the standalone package listens on.
 
 > Default: not set and listens to all addresses
 
-> Note: This property only applies for spring boot/standalone config.
+> **NOTE**: This property only applies for spring boot/standalone config.
 
 #### Context path
 
@@ -46,13 +46,13 @@ Parameter = `server.context-path`
 
 Example = `-Dserver.context-path=/audio`
 
-> Note: Please do not add the last `/` in the context path
+> **NOTE**: Please do not add the last `/` in the context path
 
 Changes the URL path that the standalone package listens on.
 
 > Default: not set and listens at `/`
 
-> Note: This property only applies for spring boot/standalone config.
+> **NOTE**: This property only applies for spring boot/standalone config.
 
 #### Airsonic home
 

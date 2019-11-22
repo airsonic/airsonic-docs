@@ -47,10 +47,27 @@ version="1.0">
 </tomcat-users>
 ```
 
-> Note: If you wish to use a different username and password please append the second last line to contain your preferred username and password.
+> **NOTE**: If you wish to use a different username and password please append the second last line to contain your preferred username and password.
 > ```
 > <user username="yourusername" password="yourpassword" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-gui,admin-script"/>
 > ```
+
+By default Tomcat only allows uploading of files up to 50mb. Our WAR file is slightly larger so we have to modify the according setting. Open the configuration file for the web-interface:
+
+```
+nano /usr/local/apache-tomcat-8.0/webapps/manager/WEB-INF/web.xml
+```
+
+Find this part in the file and simply add a zero to both numbers:
+
+```
+    <multipart-config>
+      <!-- 50MB max -->
+      <max-file-size>52428800</max-file-size>
+      <max-request-size>52428800</max-request-size>
+      <file-size-threshold>0</file-size-threshold>
+    </multipart-config>
+```
 
 #### Start and test Tomcat
 
@@ -133,7 +150,7 @@ If you need mp3 support and most likely you will the process is more arduous as 
 Install the dependencies required to build and use ffmpeg:
 
 ```
-pkg install yasm binutils texi2html frei0r v4l_compat gmake pkgconf perl5 fontconfig freetype2 opencv-core schroedinger libtheora libv4l libva libvdpau libvorbis libvpx libx264 xvid gnutls libiconv
+pkg install yasm binutils texi2html frei0r v4l_compat gmake pkgconf perl5 fontconfig freetype2 opencv-core schroedinger libtheora libv4l libva libvdpau libvorbis libvpx libx264 xvid gnutls libiconv dav1d cmake x265 nasm
 ```
 
 Now install the FreeBSD Ports Tree

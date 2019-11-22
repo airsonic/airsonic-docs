@@ -11,7 +11,7 @@ We recommand not to run Airsonic using the root user.
 
 To change this you can create a dedicated user that will run Airsonic.
 
-> Note: Please verify any permissions after you changed the process user.
+> **NOTE**: Please verify any permissions after you changed the process user.
 
 ### Set up user accounts
 
