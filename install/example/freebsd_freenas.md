@@ -75,6 +75,7 @@ Start tomcat8:
 
 ```
 echo tomcat8_enable="YES" >> /etc/rc.conf
+echo tomcat8_env="LANG=en_US.UTF-8 TZ=Europe/Paris" >> /etc/rc.conf
 service tomcat8 start
 ```
 

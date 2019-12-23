@@ -126,6 +126,8 @@ supporting Unicode characters, by adding the following line to `/etc/rc.conf`
 tomcat8_env="LANG=en_US.UTF-8 TZ=Europe/Paris"
 ```
 
+For more information, follow the complete [installation guide for FreeBSD](docs/install/example/freebsd_freenas/).
+
 ##### On Red Hat / Fedora
 
 **Work in progress**
