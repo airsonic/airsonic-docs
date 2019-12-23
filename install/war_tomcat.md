@@ -116,6 +116,16 @@ INFO: Deployment of web application archive /var/lib/tomcat9/webapps/airsonic.wa
 
 Airsonic should be running at [http://localhost:8080/airsonic](http://localhost:8080/airsonic) if installed locally, replace `localhost` with your server IP address if installed remotely.
 
+##### On FreeBSD
+
+After installing Tomcat, make sure that the Tomcat service is configured for
+supporting Unicode characters, by adding the following line to `/etc/rc.conf`
+(for the `tomcat8` package, replace `en_US` and `Europe/Paris` if necessary):
+
+```
+tomcat8_env="LANG=en_US.UTF-8 TZ=Europe/Paris"
+```
+
 ##### On Red Hat / Fedora
 
 **Work in progress**
