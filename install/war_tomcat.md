@@ -22,13 +22,13 @@ sudo mkdir /var/airsonic/
 sudo chown -R tomcat8:tomcat8 /var/airsonic/
 ```
 
-Stop the tomcat8 service:
+Stop the `tomcat8` service:
 
 ```
 sudo systemctl stop tomcat8.service
 ```
 
-Remove the possible existing airsonic files from the TOMCAT_HOME:
+Remove the possible existing airsonic files from the `$TOMCAT_HOME`:
 
 ```
 sudo rm /var/lib/tomcat8/webapps/airsonic.war
@@ -36,14 +36,14 @@ sudo rm -R /var/lib/tomcat8/webapps/airsonic/
 sudo rm -R /var/lib/tomcat8/work/*
 ```
 
-Move the downloaded WAR file in the TOMCAT_HOME/webapps/ folder and assign ownership to the Tomcat system user:
+Move the downloaded WAR file in the `$TOMCAT_HOME/webapps` folder and assign ownership to the Tomcat system user:
 
 ```
 sudo mv airsonic.war /var/lib/tomcat8/webapps/airsonic.war
 sudo chown tomcat8:tomcat8 /var/lib/tomcat8/webapps/airsonic.war
 ```
 
-Restart the tomcat8 service:
+Restart the `tomcat8` service:
 
 ```
 sudo systemctl start tomcat8.service
@@ -54,7 +54,7 @@ sudo systemctl start tomcat8.service
 INFO: Deployment of web application archive /var/lib/tomcat8/webapps/airsonic.war has finished in 46,192 ms
 ```
 
-Airsonic should be running at [http://localhost:8080/airsonic](http://localhost:8080/airsonic) if installed locally, replace `localhost` with your server IP address if installed remotly.
+Airsonic should be running at [http://localhost:8080/airsonic](http://localhost:8080/airsonic) if installed locally, replace `localhost` with your server IP address if installed remotely.
 
 ##### On Red Hat / Fedora
 
