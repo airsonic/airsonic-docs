@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Airsonic Applications
+title: Update
 permalink: /docs/update/
 ---
 
