@@ -329,6 +329,17 @@ Installing ffmpeg-4.2.2_5,1...
 Extracting ffmpeg-4.2.2_5,1: 100%
 ```
 
+Because we don't want the pre-packaged ffmpeg to overwrite our custom ffmpeg package, we 
+will lock the packages:
+```
+# pkg lock ffmpeg
+ffmpeg-4.2.2_5,1: lock this package? [y/N]: y
+Locking ffmpeg-4.2.2_5,1
+# pkg lock lame
+lame-3.100_2: lock this package? [y/N]: y
+Locking lame-3.100_2
+```
+
 Make sure you've got proper permissions on the ffmpeg executable:
 ```
 # chown www:www /usr/local/bin/ffmpeg
@@ -341,7 +352,7 @@ ln -s /usr/local/bin/ffmpeg /var/airsonic/transcode/ffmpeg
 
 Finally restart tomcat
 ```
-service tomcat8 restart
+# service tomcat85 restart
 ```
 
 Congratulations you have ffmpeg with mp3 support installed ready for Airsonic to use!
