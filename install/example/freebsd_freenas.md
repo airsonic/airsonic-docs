@@ -124,7 +124,7 @@ Starting tomcat85.
 Cannot 'restart' tomcat85. Set tomcat85_enable to YES in /etc/rc.conf or use 'onerestart' instead of 'restart'.
 ```
 
-##### Test Tomcat
+#### Test Tomcat
 If Tomcat started without any issues, lets test if Tomcat is listening on port 8080:
 ```
 netstat -an | grep 8080
@@ -236,9 +236,9 @@ Once the media folder is saved to settings, click `Scan media folders now`
 
 Congratulations you have set up Airsonic!
 
-## Advanced configuration
+### Advanced configuration
 
-### Transcoding setup
+#### Transcoding setup
 
 If you want transcoding and DON'T need mp3 support:
 
@@ -346,7 +346,7 @@ service tomcat8 restart
 
 Congratulations you have ffmpeg with mp3 support installed ready for Airsonic to use!
 
-### Enable Tomcat web administration gui
+#### Enable Tomcat web administration gui
 
 Edit Tomcat's user configuration file with your favourite text editor. We installed nano in step 1.
 
