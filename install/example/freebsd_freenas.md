@@ -161,7 +161,7 @@ Stopping tomcat85.
 Waiting for PIDS: 26737.
 Starting tomcat85.
 ```
-> *** NOTE *** You may see that Tomcat has failed to start because it took longer to unpack 
+> ***NOTE*** You may see that Tomcat has failed to start because it took longer to unpack 
 > Airsonic than the *service* command expected it to take. You can double check the Tomcat 
 > log to make sure things are still happening.
 > ```
@@ -209,7 +209,7 @@ Many users will find a nullfs mount of an existing directory or mount on their f
 most simple solution for allowing Airsonic to read your media inside of a jail. This will bring 
 the specified directory into the jail, and can easily be set to read only for a safer implementation.
 
-> *** IOcage eample *** IOcage uses the same fstab mechanism that your host system does. To allow 
+> ***IOcage eample*** IOcage uses the same fstab mechanism that your host system does. To allow 
 > Airsonic read only access to a directory on the host system inside of it's jail, we can add 
 > the following to that jails *fstab* configuration file.
 >
@@ -272,7 +272,7 @@ Once there, we can use the *build-depends-list* option to get a list of build de
 ```
 # pkg install `make build-depends-list | rev | cut -d'/' -f-1 | rev | cut -d'.' -f-1`
 ```
-> *** For interested parties *** running command(s) in side of a back-tick \`\` will evaluate what's 
+> ***For interested parties*** running command(s) in side of a back-tick \`\` will evaluate what's 
 > inside before passing the result to the command outside of the back-tick. Here, we're telling 
 > the shell to run *make build-depends-list* and performing some cut magic to turn a string like 
 > */usr/ports/lang/perl5.30* into a package name pkg can use, *perl5*. 
@@ -281,7 +281,7 @@ We also need to use the *run-depends-list* to grab all of our runtime dependanci
 ```
 # pkg install `make run-depends-list | rev | cut -d'/' -f-1 | rev | cut -d'.' -f-1`
 ```
-*** This is some magic, and it may not work all the time. ***
+***This is some magic, and it may not work all the time.***
 
 #### Build ffmpeg & lame
 
