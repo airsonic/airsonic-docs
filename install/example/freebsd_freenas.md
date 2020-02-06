@@ -253,7 +253,7 @@ Congratulations you have transcoding enabled!
 If you need mp3 support and most likely you will, the process is more arduous as FreeBSD's ffmpeg 
 doesn't contain mp3 support by default and must be configured and compiled by the user.
 
-#### Install ffmpeg from source
+##### Install ffmpeg from source
 
 It is recommended to create an entirely separate jail from your Airsonic jail to build ffmpeg from source.
 
@@ -283,7 +283,7 @@ We also need to use the *run-depends-list* to grab all of our runtime dependanci
 ```
 ***This is some magic, and it may not work all the time.***
 
-#### Build ffmpeg & lame
+##### Build ffmpeg & lame
 
 Now that we have our depandancies installed, we can build our ffmpeg package. Assuming we are already 
 in the /usr/ports/multimedia/ffmpeg directory:
