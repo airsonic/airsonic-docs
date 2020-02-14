@@ -1,16 +1,17 @@
 ---
 layout: docs
-title: Installing Airsonic on FreeBSD 11.3 and FreeNAS
+title: Installing Airsonic on FreeBSD and FreeNAS
 permalink: /docs/install/example/freebsd-freenas/
 ---
 #### Preamble
 
-This guide will wallk you through the process of deploying Airsonic on FreeBSD either in a Jail on on the main system. Unless you are an advanced user, you will want to install Airsonic inside of a jail. FreeNAS has excellent support for jails, but you can also use a jail manager like [IOcage](https://iocage.io/) The prerequisites are you have root access on your FreeBSD machine (or jail), the ip address of the machine (or jail) and the Airsonic war available at the [Airsonic github page](https://github.com/airsonic/airsonic/releases).
+This guide will walk you through the process of deploying Airsonic on FreeBSD either in a [Jail](https://www.freebsd.org/doc/handbook/jails.html) on on the main system. Unless you are an advanced user, you will want to install Airsonic inside of a jail. FreeNAS has excellent support for jails, but you can also use a jail manager like [IOcage](https://iocage.io/). The prerequisites are you have root access on your FreeBSD machine (or jail), the ip address of the machine (or jail) and the Airsonic war available at the [Airsonic github page](https://github.com/airsonic/airsonic/releases).
 
 If on FreeNAS create a standard jail in the web interface and enter the shell. Make sure you give it an IP 
 address that is similar to your computer's IP address or DHCP. 
 
-If using iocage or other jail manager, follow the instructions to create a new jail. You will need to  
+If using iocage or other jail manager, follow the instructions to create a new jail and assigning an IP 
+address that can be seen outside of the host OS.
 
 ### Download the Airsonic package
 
@@ -53,7 +54,7 @@ from the pkg respository, Tomcat will install to /usr/local/
 
 With Tomcat installed, we can begin configuring it to suit our needs.
 
-We will utilize the "built-in" nature of installing from pkg and add a few lines to our *rc.conf* file 
+We will use the "built-in" nature of installing from pkg and add a few lines to our *rc.conf* file 
 using the sysrc utility.
 ```
 # sysrc tomcat85_enable=YES
@@ -131,7 +132,7 @@ netstat -an | grep 8080
 ```
 It should return a line containing the IP address of your system (or jail).
 
-> ie ```tcp4	0	0 10.0.0.10.8080	-.-	LISTEN ```
+```tcp4	0	0 10.0.0.10.8080	-.-	LISTEN ```
 
 > If in a jail it may also return the line "netstat: kvm not available: /dev/mem: No such file or directory" This can be ignored.
 
@@ -142,7 +143,7 @@ we can also use ifconfig to find the address:
         inet 10.0.0.10 netmask 0xffffff00 broadcast 10.0.0.255
 ```
 
-When we browse to http://10.0.0.10:8080, we should see "403 Access Denied"!
+When we browse to http://10.0.0.10:8080/manager, we should see "403 Access Denied"!
 Congratulations, you now have Tomcat ready to deploy Airsonic!
 
 #### Deploy Airsonic
@@ -200,16 +201,16 @@ Follow the prompts on the web page to change the password. This will log you out
 
 #### Configure media directories in system or jail
 
-If youre using FreeNAS, you will mount your media files using the FreeNAS gui.
+If you are using FreeNAS, you will mount your media files using the FreeNAS gui.
 
 For IOcage or other Jail management systems, you will need to follow the documentation for that 
 jail manager. 
 
-Many users will find a nullfs mount of an existing directory or mount on their filesystem to be the 
+Most users will find a [nullfs](https://www.freebsd.org/cgi/man.cgi?query=mount_nullfs) mount of an existing directory or mount on their filesystem to be the 
 most simple solution for allowing Airsonic to read your media inside of a jail. This will bring 
 the specified directory into the jail, and can easily be set to read only for a safer implementation.
 
-> ***IOcage eample*** IOcage uses the same fstab mechanism that your host system does. To allow 
+> ***IOcage example*** IOcage uses the same fstab mechanism that your host system does. To allow 
 > Airsonic read only access to a directory on the host system inside of it's jail, we can add 
 > the following to that jails *fstab* configuration file.
 >
@@ -264,11 +265,11 @@ portsnap fetch
 portsnap extract
 ```
 
-We need to install build & run dependancies, so we'll start by hopping into the ffmpeg directory
+We need to install build & run dependencies, so we'll start by hopping into the ffmpeg directory
 ```
 # cd /usr/ports/multimedia/ffmpeg
 ```
-Once there, we can use the *build-depends-list* option to get a list of build dependancies
+Once there, we can use the *build-depends-list* option to get a list of build dependencies
 ```
 # pkg install `make build-depends-list | rev | cut -d'/' -f-1 | rev | cut -d'.' -f-1`
 ```
@@ -277,7 +278,7 @@ Once there, we can use the *build-depends-list* option to get a list of build de
 > the shell to run *make build-depends-list* and performing some cut magic to turn a string like 
 > */usr/ports/lang/perl5.30* into a package name pkg can use, *perl5*. 
 
-We also need to use the *run-depends-list* to grab all of our runtime dependancies and install them.
+We also need to use the *run-depends-list* to grab all of our runtime dependencies and install them.
 ```
 # pkg install `make run-depends-list | rev | cut -d'/' -f-1 | rev | cut -d'.' -f-1`
 ```
@@ -389,20 +390,3 @@ version="1.0">
 > ```
 > <user username="yourusername" password="yourpassword" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-gui,admin-script"/>
 > ```
-
-By default Tomcat only allows uploading of files up to 50mb. Our WAR file is slightly larger so we have to modify the according setting. Open the configuration file for the web-interface:
-
-```
-nano /usr/local/apache-tomcat-8.0/webapps/manager/WEB-INF/web.xml
-```
-
-Find this part in the file and simply add a zero to both numbers:
-
-```
-    <multipart-config>
-      <!-- 50MB max -->
-      <max-file-size>52428800</max-file-size>
-      <max-request-size>52428800</max-request-size>
-      <file-size-threshold>0</file-size-threshold>
-    </multipart-config>
-```

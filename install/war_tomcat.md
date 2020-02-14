@@ -6,7 +6,7 @@ permalink: /docs/install/war-tomcat/
 ##### Prerequisites
 
 In order to install and run Airsonic with Tomcat, you will need:
-- [A JDK installation, 1.8.x series of OpenJDK or Oracle JDK 8+ should work.](/docs/install/prerequisites)
+- [A JDK installation, 1.8.x series of OpenJDK or Oracle JDK 8+ should work.](docs/install/prerequisites)
 - A running [Tomcat](http://tomcat.apache.org/) version 8.5+ server. If you're unfamiliar with Tomcat, there are many [guides](https://www.digitalocean.com/community/tags/java?q=How+to+install+tomcat8&type=tutorials) on it.
 
 {% include_relative inc.download.md %}
@@ -138,7 +138,7 @@ omit the TZ variable to use sysem time:
 tomcat85_env:  -> LANG=en_US.UTF-8 TZ=Europe/Paris
 ```
 
-For more information, follow the complete [installation guide for FreeBSD](/docs/install/example/freebsd-freenas/).
+For more information, follow the complete [installation guide for FreeBSD](docs/install/example/freebsd-freenas/).
 
 ##### On Red Hat / Fedora
 
