@@ -43,7 +43,7 @@ pkg install tomcat85 nano
 ```
 Accept the prompts complete installation.
 
-In BSD-like distrobutions, non-base (read: not included) software is installed to /usr. When installing 
+In BSD-like distributions, software that is not in the base image is installed to /usr. When installing 
 from the pkg respository, Tomcat will install to /usr/local/
 **For Tomcat 8.5***:
 ```
