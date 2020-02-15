@@ -6,7 +6,7 @@ permalink: /docs/install/war-tomcat/
 ##### Prerequisites
 
 In order to install and run Airsonic with Tomcat, you will need:
-- [A JDK installation, 1.8.x series of OpenJDK or Oracle JDK 8+ should work.](/docs/install/prerequisites)
+- [A JDK installation, 1.8.x series of OpenJDK or Oracle JDK 8+ should work.](docs/install/prerequisites)
 - A running [Tomcat](http://tomcat.apache.org/) version 8.5+ server. If you're unfamiliar with Tomcat, there are many [guides](https://www.digitalocean.com/community/tags/java?q=How+to+install+tomcat8&type=tutorials) on it.
 
 {% include_relative inc.download.md %}
@@ -118,15 +118,27 @@ Airsonic should be running at [http://localhost:8080/airsonic](http://localhost:
 
 ##### On FreeBSD
 
-After installing Tomcat, make sure that the Tomcat service is configured for
-supporting Unicode characters, by adding the following line to `/etc/rc.conf`
-(for the `tomcat8` package, replace `en_US` and `Europe/Paris` if necessary):
-
+Install Tomcat 8.5 by building from source or installing from the package repository:
 ```
-tomcat8_env="LANG=en_US.UTF-8 TZ=Europe/Paris"
+pkg install tomcat85
+```
+Once installed, have tomcat start on boot by adding a line to `/etc/rc.conf`:
+```
+# sysrc tomcat85_enable=YES
+tomcat_enable: NO -> YES
+```
+We also want to support unicode (non-english) characters in our file names,
+so we will tell Tomcat to use UTF-8. We will also let Tomcat know what timezone
+we are in.
+
+Replace `en_US` and `Europe/Paris` with your desired language & timezone. You may
+omit the TZ variable to use sysem time:
+```
+# sysrc tomcat85_env="LANG=en_US.UTF-8 TZ=Europe/Paris"
+tomcat85_env:  -> LANG=en_US.UTF-8 TZ=Europe/Paris
 ```
 
-For more information, follow the complete [installation guide for FreeBSD](docs/install/example/freebsd_freenas/).
+For more information, follow the complete [installation guide for FreeBSD](docs/install/example/freebsd-freenas/).
 
 ##### On Red Hat / Fedora
 
