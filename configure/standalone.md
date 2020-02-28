@@ -68,7 +68,9 @@ Dictates the folder where Airsonic will store its logs, settings, transcode bina
 
 Example = `-Xmx512m`
 
-Here we will allocate 512 Mb of memory to Airsonic's Java process.
+Here we will allocate 512 MB of memory to Airsonic's Java process.
+
+> **NOTE**: Airsonic has been observed to run quite well for a single user with only 200 MB and an Intel Atom C2350.
 
 ### Advanced parameters
 
