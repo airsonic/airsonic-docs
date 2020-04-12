@@ -7,17 +7,20 @@ permalink: /docs/install/example/freebsd-freenas/
 
 This guide will walk you through the process of deploying Airsonic on FreeBSD either in a [Jail](https://www.freebsd.org/doc/handbook/jails.html) on on the main system. Unless you are an advanced user, you will want to install Airsonic inside of a jail. FreeNAS has excellent support for jails, but you can also use a jail manager like [IOcage](https://iocage.io/). The prerequisites are you have root access on your FreeBSD machine (or jail), the ip address of the machine (or jail) and the Airsonic war available at the [Airsonic github page](https://github.com/airsonic/airsonic/releases).
 
-If on FreeNAS create a standard jail in the web interface and enter the shell. Make sure you give it an IP 
-address that is similar to your computer's IP address or DHCP. 
+If on FreeNAS create a standard jail (eg. "airsonic") in the web interface (DHCP+VNET) and start the jail. Note the IP-address of the new jail.
 
-If using iocage or other jail manager, follow the instructions to create a new jail and assigning an IP 
-address that can be seen outside of the host OS.
+Enter the jail shell in the browser or from the root shell by typing ```iocage console airsonic```.
+
+Install root certificate (if not you will get a Certificate verification failed when fetching from github.
+```
+pkg install ca_root_nss
+```
 
 ### Download the Airsonic package
 
 Navigate to the Airsonic Releases page ([https://github.com/airsonic/airsonic/releases/](https://github.com/airsonic/airsonic/releases/)) and find the "Airsonic.war" link under the most recent release Right-click and "Copy link location", we will need this later.
 
-Open a shell in your jail and download Airsonic using fetch(1):
+Download Airsonic using fetch:
 ```
 fetch https://github.com/airsonic/airsonic/releases/download/v10.5.0/airsonic.war
 ```
@@ -57,15 +60,13 @@ With Tomcat installed, we can begin configuring it to suit our needs.
 We will use the "built-in" nature of installing from pkg and add a few lines to our *rc.conf* file 
 using the sysrc utility.
 ```
-# sysrc tomcat85_enable=YES
-tomcat_enable: NO -> YES
+root@airsonic-jail:~ # sysrc tomcat85_enable=YES
+tomcat85_enable:  -> YES
 ```
 You can verify the changes have been made by reading the /etc/rc.conf file:
 ```
 root@airsonic-jail:~ # cat /etc/rc.conf
-...
 tomcat85_enable="YES"
-...
 ```
 
 Most music lovers interested in Airsonic likely have music with unicode (non-english) characters, 
@@ -79,7 +80,7 @@ tomcat85_env:  -> LANG=en_US.UTF-8 TZ=Europe/Paris
 
 By default, Tomcat will serve its content from a context directory. Airsonic will appear like:
 ```
-http://10.0.0.50:8080/airsonic
+http://IPADRESS:8080/airsonic
 ```
 Because we have a nice jail environment just for Airsonic, we'll make a change that allows Airsonic 
 to be served as the root context.
@@ -88,13 +89,7 @@ Open the server.xml configuration file:
 ```
 # nano /usr/local/apache-tomcat-8.5/conf/server.xml
 ```
-Find the following element:
-```
-<Host name="localhost" appBase="webapps"
-    unpackWARs="true" autoDeploy="true"> 
-```
-Add the line *<Context docBase="airsonic" path="" reloadable="true" />* below the element, before the
-</Host> tag; then save:
+Goto line 154 and add *<Context docBase="airsonic" path="" reloadable="true" />* below the element; then save.
 ```
 <Host name="localhost" appBase="webapps"
 	unpackWARs="true" autoDeploy="true">
@@ -108,7 +103,7 @@ Create directories and set up permissions:
 ```
 mkdir /var/airsonic
 chown -R www:www /var/airsonic
-chown -R www:www /usr/local/apache-tomcat-8.0/webapps
+chown -R www:www /usr/local/apache-tomcat-8.5/webapps
 ```
 
 #### Start Tomcat
@@ -118,32 +113,16 @@ We want to start Tomcat the same way the system will, so we'll use the service c
 # service tomcat85 start
 Starting tomcat85.
 ```
-> If you encounter an error here, you may have missed adding the enable variable to your rc.conf
-> Head back to [Configure Tomcat](#configure-tomcat) if you run into this:
-> ```
-# service tomcat85 restart
-Cannot 'restart' tomcat85. Set tomcat85_enable to YES in /etc/rc.conf or use 'onerestart' instead of 'restart'.
-```
 
 #### Test Tomcat
-If Tomcat started without any issues, lets test if Tomcat is listening on port 8080:
-```
-netstat -an | grep 8080
-```
-It should return a line containing the IP address of your system (or jail).
 
-```tcp4	0	0 10.0.0.10.8080	-.-	LISTEN ```
-
-> If in a jail it may also return the line "netstat: kvm not available: /dev/mem: No such file or directory" This can be ignored.
-
-We should be able to navigate to the IP address given to us in the *netstat* command output, but 
-we can also use ifconfig to find the address:
+Lets test if Tomcat is listening on port 8080:
 ```
-# ifconfig | grep inet
-        inet 10.0.0.10 netmask 0xffffff00 broadcast 10.0.0.255
+# netstat -an | grep 8080
+tcp46	0	0 *.8080	*.*	LISTEN 
 ```
 
-When we browse to http://10.0.0.10:8080/manager, we should see "403 Access Denied"!
+Browse to http://IPADRESS:8080 and tomcat frontpage will load.
 Congratulations, you now have Tomcat ready to deploy Airsonic!
 
 #### Deploy Airsonic
@@ -162,10 +141,10 @@ Stopping tomcat85.
 Waiting for PIDS: 26737.
 Starting tomcat85.
 ```
-> ***NOTE*** You may see that Tomcat has failed to start because it took longer to unpack 
+> ***NOTE*** You may get a WARNING that Tomcat has failed to start, but it's only because it took longer to unpack 
 > Airsonic than the *service* command expected it to take. You can double check the Tomcat 
 > log to make sure things are still happening.
-> ```
+```
 # tail -n 500 /usr/local/apache-tomcat-8.5/logs/catalina.out
 06-Feb-2020 03:45:53.544 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
 06-Feb-2020 03:45:53.552 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
@@ -187,11 +166,7 @@ Starting tomcat85.
 
 #### Navigate to Airsonic
 
-In a browser. Take your `SERVER_IP` and `PORT` and found in [Test Tomcat](#test-tomcat), 
-and navigate there in a web browser
-
-> In this example install, we would browse to:
-> ```http://10.0.0.10:8080```
+Browse to http://IPADRESS:8080
 
 #### Log into Airsonic
 
@@ -199,16 +174,45 @@ Log in. The default is username: admin password: admin
 
 Follow the prompts on the web page to change the password. This will log you out. Please re-login with your new password
 
-#### Configure media directories in system or jail
+#### Mount media directories in jail (FreeNAS)
 
-If you are using FreeNAS, you will mount your media files using the FreeNAS gui.
+First be aware that you have enabled group access to your media pool dataset
+In FreeNAS gui goto Storage>Pools, choose your media pool and choose "Edit ACL".
 
+Then Stop the jail and mount your media folder to the jail (Jails>Mount Points)
+You should mount to ```/root/var/music``` (music folder doesn't exist so you need to manually type in music to create this folder). Then save and start the jail again.
+
+In jail shell:
+```
+# ls -l /var
+drwxrwx---+ 321 nobody   1000     322 Apr  4 20:32 music
+```
+Notice that the music folder is accessible by group 1000 in this case, so we need to add the user "www" to this group to have group access to the folder. The groupID 1000 is actually from outside the jail, so we first need to make a corresponding group inside the jail (you need to change 1000 to the correct groupID in your setup).
+```
+# pw groupadd -n airsonicgroup -g 1000
+```
+Then we add the user www to this group we just made
+```
+# pw groupmod airsonicgroup -m www
+```
+The we check that the user "www" now are member of the new group
+```
+# id www
+uid=80(www) gid=80(www) groups=80(www),1000(airsonicgroup)
+```
+Then reboot the jail, and airsonic will now have access to your music folder.
+
+Add default playlist folder
+# mkdir /var/playlists
+# chown www:www playlists
+
+Congratulations you have set up Airsonic!
+
+#### Mounting in FreeBSD
 For IOcage or other Jail management systems, you will need to follow the documentation for that 
 jail manager. 
 
-Most users will find a [nullfs](https://www.freebsd.org/cgi/man.cgi?query=mount_nullfs) mount of an existing directory or mount on their filesystem to be the 
-most simple solution for allowing Airsonic to read your media inside of a jail. This will bring 
-the specified directory into the jail, and can easily be set to read only for a safer implementation.
+Most users will find a [nullfs](https://www.freebsd.org/cgi/man.cgi?query=mount_nullfs) mount of an existing directory or mount on their filesystem to be the most simple solution for allowing Airsonic to read your media inside of a jail. This will bring the specified directory into the jail, and can easily be set to read only for a safer implementation.
 
 > ***IOcage example*** IOcage uses the same fstab mechanism that your host system does. To allow 
 > Airsonic read only access to a directory on the host system inside of it's jail, we can add 
@@ -226,16 +230,6 @@ the specified directory into the jail, and can easily be set to read only for a 
 > Once the *fstab* file is saved, you can restart your jail and enter a shell, where you should 
 > be able to see your files.
 
-##### Configure media directories in Airsonic
-
-In Airsonic click `2. Setup Media folders`.
-
-Name your media folder and put in the path to your music. For our example, this would be 
-`/storage/media/music` 
-
-Once the media folder is saved to settings, click `Scan media folders now`
-
-Congratulations you have set up Airsonic!
 
 ### Advanced configuration
 
