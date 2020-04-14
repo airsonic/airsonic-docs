@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: Developing with Intellij
+title: Setup IntelliJ
 permalink: /docs/developer/intellij/
 ---
-For developing with Intellij (running and debugging), there are two options listed below.
+For developing with IntelliJ (running and debugging), there are two options listed below.
 
-> **NOTE**: Intellij Ultimate 2018.2 was used for these instructions. Intellij Community 2018.2 should work fine for the first option. The second requires Ultimate
+> **NOTE**: IntelliJ Ultimate 2018.2 was used for these instructions. IntelliJ Community 2018.2 should work fine for the first option. The second requires Ultimate.
 
 #### Use embedded Spring Boot
 
