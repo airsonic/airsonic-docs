@@ -20,9 +20,9 @@ This guide assumes you already have a TLS certificate. [Let's Encrypt](https://l
 A few settings should be tweaked via Spring Boot or Tomcat
 configuration:
 
-  - Set the context path to `/airsonic`
-  - Set the correct address to listen to
-  - Set the correct port to listen to
+  - Set the context path to (the rest of this guide assumes `/airsonic`)
+  - Set the correct address to listen to (the rest of this guide assumes `127.0.0.1`)
+  - Set the correct port to listen to (the rest of this guide assumes `8080`)
 
 To change this, please use one of the guide below according to your installation:
 
