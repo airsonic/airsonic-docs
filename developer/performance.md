@@ -4,7 +4,7 @@ title: Performance tests
 permalink: /docs/developer/performance/
 ---
 
-# Metrics
+### Metrics
 
 The Airsonic framework contains a convenient class (called MetricsManager) to add inner metrics that constructs in real time some performance indicators.
 
@@ -24,12 +24,12 @@ Each metric is registered as a MBean as shown below.
 
 ![](metrics-visualvm-screenshot.png)
 
-# Apache JMeter
+### Apache JMeter
 
 This document explains how to run performance tests on Airsonic using [Apache JMeter](http://jmeter.apache.org/). 
 The installation and setup of JMeter is not documented bellow; please refer to the JMeter web site.
 
-## Main test plan
+#### Main test plan
 
 The Airsonic sources come with a main performance test case defined in file airsonic-main/src/test/resources/jmeter/airsonicMainTestPlan.jmx.
 This is a JMeter test plan file.

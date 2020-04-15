@@ -12,7 +12,7 @@ The following page explains how Maven is structured for Airsonic, including
 many useful commands. Java IDE such as IntelliJ can run a subset of Maven
 features, though some are only available on the command-line.
 
-# Building Airsonic
+### Building Airsonic
 
 The following command can be used to build the Airsonic WAR package (`airsonic.war`):
 
@@ -39,14 +39,12 @@ Commands can also be combined, such as:
 $ mvn -P integration-test clean verify
 ```
 
-# Configuration
+### Configuration
 
 Maven's main configuration is split into multiple `pom.xml` files, starting
 from the one at the root of the repository.
 
-# Features
-
-## WAR packaging
+#### WAR packaging
 
 The main Airsonic package is an executable Spring Boot WAR file
 (`airsonic.war`), that can be both run in standalone mode or deployed on a
@@ -54,14 +52,14 @@ servlet container (such as Tomcat).
 
 This is provided by `spring-boot-maven-plugin` in `airsonic-main/pom.xml`.
 
-## Checkstyle
+#### Checkstyle
 
 The Maven build runs a "style checker", which checks the Airsonic code for
 common issues or style inconsistencies.
 
 This is provided by `maven-checkstyle-plugin`, defined in `pom.xml`.
 
-## Dependency checker
+#### Dependency checker
 
 The Maven build runs the Dependency Checker plugin, which checks the Airsonic
 code for security issues (CVE) or common dependency resolution errors (missing
@@ -75,7 +73,7 @@ $ mvn package -Ddependency-check.skip=true
 
 This is provided by `dependency-check-maven`, defined in `pom.xml`.
 
-## Unit tests (Maven Surefire)
+#### Unit tests (Maven Surefire)
 
 Airsonic unit tests are run using the Maven Surefire plugin.
 
@@ -103,7 +101,7 @@ or any such packaging. So your unit tests run directly on the compiled classes
 in their loose individual forms (`*.class` files usually sitting in
 `target/generated` or `target/classes` and `target/test-classes`).
 
-## Integration tests (Maven Failsafe)
+#### Integration tests (Maven Failsafe)
 
 Airsonic unit tests are run using the Maven Failsafe plugin in a Docker container.
 
@@ -140,7 +138,7 @@ Finally it is important to note that just running the integration-test phase is
 useless. You need to run verify because running the tests by itself doesn't do
 much. You need to verify whether the tests passed or not.
 
-## Other commands
+#### Other commands
 
 List all dependencies (useful for checking conflicts on upgrades):
 

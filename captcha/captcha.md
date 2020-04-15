@@ -3,6 +3,7 @@ layout: docs
 title: CAPTCHA
 permalink: /docs/captcha/
 ---
+
 Airsonic supports requiring anybody attempting to reset a user's password to
 solve a [CAPTCHA](https://en.wikipedia.org/wiki/CAPTCHA), making it more
 difficult for attackers to automatically cause passwords to be reset. Versions
@@ -13,7 +14,7 @@ reset their passwords).
 The new CAPTCHA support is disabled by default because it requires additional
 configuration. This documentation will walk through the process.
 
-## Configuring
+### Configuring
 
 The settings controlling CAPTCHA use can be found in the advanced settings pane
 of the Airsonic web interface.
@@ -43,7 +44,7 @@ Copy these into the Airsonic settings; the other information for client and
 server-side integration is unnecessary because Airsonic already implements those
 integrations.
 
-## Testing
+### Testing
 
 It is possible to test CAPTCHA configuration by logging out of Airsonic and
 selecting "Forgotten your password?" on the login page. If the CAPTCHA is
