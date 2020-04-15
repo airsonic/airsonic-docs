@@ -33,9 +33,10 @@ Paste the following configuration in the virtual host file:
     LogLevel warn
     CustomLog ${APACHE_LOG_DIR}/airsonic-access.log combined
     ErrorLog ${APACHE_LOG_DIR}/airsonic-error.log
-    ProxyPass /airsonic http://127.0.0.1:8080/airsonic
-    ProxyPassReverse /airsonic http://127.0.0.1:8080/airsonic
-    RequestHeader set X-Forwarded-Proto "https"
+
+    ProxyPass         /airsonic http://127.0.0.1:8080/airsonic
+    ProxyPassReverse  /airsonic http://127.0.0.1:8080/airsonic
+    RequestHeader     set       X-Forwarded-Proto "https"
 </VirtualHost>
 ```
 
@@ -45,6 +46,7 @@ the configuration below inside an existing `VirtualHost` block:
 ```apache
 ProxyPass         /airsonic http://127.0.0.1:8080/airsonic
 ProxyPassReverse  /airsonic http://127.0.0.1:8080/airsonic
+RequestHeader     set       X-Forwarded-Proto "https"
 ```
 
 You will need to make a couple of changes in the configuration file:
