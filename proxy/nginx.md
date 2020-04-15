@@ -3,7 +3,10 @@ layout: docs
 title: Setting up Nginx
 permalink: /docs/proxy/nginx/
 ---
+
 The following configurations works for HTTPS (with an HTTP redirection).
+
+> **NOTE**: Make sure you follow the [prerequisites](/docs/proxy/prerequisites/).
 
 Create a new virtual host file:
 
