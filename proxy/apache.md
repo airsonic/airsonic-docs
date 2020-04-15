@@ -8,6 +8,8 @@ The following configurations works for HTTPS (with an HTTP redirection).
 
 > **NOTE**: Make sure you follow the [prerequisites](/docs/proxy/prerequisites/).
 
+#### Apache configuration
+
 Create a new virtual host file:
 
 ```
@@ -18,8 +20,8 @@ Paste the following configuration in the virtual host file:
 
 ```apache
 <VirtualHost *:80>
-   ServerName example.com
-   Redirect permanent / https://example.com/
+    ServerName example.com
+    Redirect permanent / https://example.com/
 </VirtualHost>
 
 <VirtualHost *:443>
@@ -37,16 +39,20 @@ Paste the following configuration in the virtual host file:
 </VirtualHost>
 ```
 
-You will need to make a couple of changes in the configuration file:
-- Replace `example.com` with your own domain name.
-- Be sure to set the right path to your `cert.pem` and `key.pem` files.
-- Change `/airsonic` following your airsonic server path.
-- Change `http://127.0.0.1:8080/airsonic` following you airsonic server location, port and path.
-> **NOTE**:  you could only add ProxyPass and ProxyPassReverse lines to your existing configuration:
+Alternatively, if you want to use an existing configuration, you can also paste
+the configuration below inside an existing `VirtualHost` block:
+
 ```apache
 ProxyPass         /airsonic http://127.0.0.1:8080/airsonic
 ProxyPassReverse  /airsonic http://127.0.0.1:8080/airsonic
 ```
+
+You will need to make a couple of changes in the configuration file:
+
+- Replace `example.com` with your own domain name.
+- Be sure to set the right path to your `cert.pem` and `key.pem` files.
+- Change `/airsonic` following your Airsonic context path (`/` by default).
+- Change `http://127.0.0.1:8080/airsonic` following you Airsonic server location, port and path.
 
 Activate the host:
 
@@ -54,7 +60,7 @@ Activate the host:
 sudo a2ensite airsonic.conf
 ```
 
-Activate apache2 proxy, proxy_http and ssl module:
+Activate the following Apache modules:
 
 ```
 sudo a2enmod proxy
@@ -63,8 +69,35 @@ sudo a2enmod ssl
 sudo a2enmod headers
 ```
 
-Restart the Apache2 service:
+Restart the `apache2` service:
 
 ```
 sudo systemctl restart apache2.service
+```
+
+#### Forward headers
+
+You will also need to make sure Airsonic uses the correct headers for redirects, by setting the `server.use-forward-headers` property to `true`.
+
+To do so, stop your Airsonic server or Docker image, then edit the `config/application.properties` file:
+
+```
+nano /path/to/airsonic/config/application.properties
+```
+
+Add the following line to the bottom of the file:
+```
+server.use-forward-headers=true
+```
+
+Use Ctrl+X to save and exit the file, and restart your Airsonic server or Docker image.
+
+#### Content Security Policy
+
+You may face some `Content-Security-Policy` issues. To fix this, add the following line to your Apache configuration:
+
+```apache
+<Location /airsonic>
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' www.gstatic.com; img-src 'self' *.akamaized.net; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; frame-src 'self'; object-src 'none'"
+</Location>
 ```
