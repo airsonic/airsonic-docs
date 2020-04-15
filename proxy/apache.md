@@ -53,7 +53,7 @@ You will need to make a couple of changes in the configuration file:
 
 - Replace `example.com` with your own domain name.
 - Be sure to set the right path to your `cert.pem` and `key.pem` files.
-- Change `/airsonic` following your Airsonic context path (`/` by default).
+- Change `/airsonic` following your Airsonic context path.
 - Change `http://127.0.0.1:8080/airsonic` following you Airsonic server location, port and path.
 
 Activate the host:

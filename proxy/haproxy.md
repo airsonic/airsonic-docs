@@ -57,7 +57,7 @@ backend airsonic-backend
 
 You will need to make a couple of changes in the configuration file:
 - Be sure to set the right path to your `cert_key.pem` files.
-- Change `/airsonic` following your Airsonic context path (`/` by default).
+- Change `/airsonic` following your Airsonic context path.
 - Change `127.0.0.1:8080` following you Airsonic server location and port.
 
 Restart the HAProxy service:
