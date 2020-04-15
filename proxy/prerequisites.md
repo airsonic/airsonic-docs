@@ -53,3 +53,4 @@ Use a guide in the list below:
 - [Configure Apache proxy](/docs/proxy/apache)
 - [Configure Nginx proxy](/docs/proxy/nginx)
 - [Configure Haproxy proxy](/docs/proxy/haproxy)
+- [Configure Caddy proxy](/docs/proxy/caddy)
