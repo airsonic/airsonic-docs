@@ -32,20 +32,3 @@ Check the Caddy config for validity, and then restart the Caddy service:
 caddy -conf /etc/caddy/caddy.conf -validate
 sudo systemctl restart caddy.service
 ```
-
-#### Forward headers
-
-You will also need to make sure Airsonic uses the correct headers for redirects, by setting the `server.use-forward-headers` property to `true`.
-
-To do so, stop your Airsonic server or Docker image, then edit the `config/application.properties` file:
-
-```
-nano /path/to/airsonic/config/airsonic.properties
-```
-
-Add the following line to the bottom of the file:
-```
-server.use-forward-headers=true
-```
-
-Use Ctrl+X to save and exit the file, and restart your Airsonic server or Docker image.
