@@ -8,7 +8,7 @@ permalink: /docs/update/
 
 #### Standalone deployment
 
-If you're using systemd, a simple `systemctl airsonic restart` should be
+If you're using systemd, a simple `systemctl restart airsonic` should be
 enough.
 
 #### Tomcat deployment
