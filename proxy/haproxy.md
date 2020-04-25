@@ -3,9 +3,14 @@ layout: docs
 title: Setting up HAproxy
 permalink: /docs/proxy/haproxy/
 ---
+
 The following configurations works for HTTPS (with an HTTP redirection).
 
-Open the haproxy configuration file:
+> **NOTE**: Make sure you follow the [prerequisites](/docs/proxy/prerequisites/).
+
+#### HAProxy configuration
+
+Open the HAProxy configuration file:
 
 ```
 sudo nano /etc/haproxy/haproxy.cfg
@@ -16,7 +21,7 @@ Add these lines in your default section:
 ```haproxy
 default
 
-    # Use HTTP protocole
+    # Use HTTP protocol
     mode http
 ```
 
@@ -52,10 +57,10 @@ backend airsonic-backend
 
 You will need to make a couple of changes in the configuration file:
 - Be sure to set the right path to your `cert_key.pem` files.
-- Change `/airsonic` following your airsonic server path.
-- Change `127.0.0.1:8080` following you airsonic server location and port.
+- Change `/airsonic` following your Airsonic context path.
+- Change `127.0.0.1:8080` following you Airsonic server location and port.
 
-Restart the Haproxy service:
+Restart the HAProxy service:
 
 ```
 sudo systemctl restart haproxy.service
