@@ -58,7 +58,7 @@ Changes the URL path that the standalone package listens on.
 
 Parameter = `airsonic.home`
 
-Exemple = `-Dairsonic.home=/var/airsonic`
+Example = `-Dairsonic.home=/var/airsonic`
 
 Dictates the folder where Airsonic will store its logs, settings, transcode binaries, index and database if using the default H2 database. As such it is recommended to backup this folder.
 
