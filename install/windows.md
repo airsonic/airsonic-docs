@@ -3,7 +3,7 @@ layout: docs
 title: Windows Installation
 permalink: /docs/install/windows/
 ---
-This page describes how to install Airsonic under Windows as Stand-alone WAR, without using Tomcat. It also contains information about how to setup Airsonic as a Windows Service and let it run under an own user/service account.
+This page describes how to install Airsonic under Windows as Stand-alone WAR, without using Tomcat. It also contains information about how to setup Airsonic as a Windows Service and let it run under an user/service account.
 
 > **NOTE**: If you like to run Airsonic by using HTTPS, take a look at the proxy section about [IIS](/docs/proxy/iis/).
 
@@ -21,7 +21,7 @@ Before we start, doublecheck if Java is working as expected and you setup the `P
 
 Create a new directory `C:\Program Files\Airsonic` and move the `airsonic.war` to this folder.
 
-Create a `airsonic.cmd` file in this folder and add the following content.
+Create an `airsonic.cmd` file in this folder and add the following content.
 
 ```
 java -Dairsonic.home="C:\\Program Files\\Airsonic" -Dserver.port=4040 -jar airsonic.war
@@ -55,9 +55,9 @@ That's it, you're ready to start the Windows Service by typing `net start Airson
 
 Wait some seconds and browse to `http://localhost:4040`. You should see the Airsonic logon page.
 
-##### Run the Airsonic Windows Service under an own Account
+##### Run the Airsonic Windows Service under an Account
 
-The Airsonic Windows Service we just setup, is now running under the `SYSTEM` account. This is just fine, if all your media are on a local disk. But if you have your media on a network share, e.g. on a NAS you need to be able to connect to this share. To access this share you need to have the propper permissions. To achieve that, you should run your Airsonic under an own service account and not by using the `SYSTEM` account. In this instructions this service account is called `sa-airsonic`.
+The Airsonic Windows Service we just setup, is now running under the `SYSTEM` account. This is just fine, if all your media are on a local disk. But if you have your media on a network share, e.g. on a NAS you need to be able to connect to this share. To access this share you need to have the propper permissions. To achieve that, you should run your Airsonic under an service account and not by using the `SYSTEM` account. In this instructions this service account is called `sa-airsonic`.
 
 > **NOTE**: Of course you can choose another name then `sa-airsonic` if you like.
 
