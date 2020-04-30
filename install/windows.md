@@ -55,9 +55,9 @@ That's it, you're ready to start the Windows Service by typing `net start Airson
 
 Wait some seconds and browse to `http://localhost:4040`. You should see the Airsonic logon page.
 
-##### Run the Airsonic Windows Service under an Account
+##### Run the Airsonic Windows Service under a Service Account
 
-The Airsonic Windows Service we just setup, is now running under the `SYSTEM` account. This is just fine, if all your media are on a local disk. But if you have your media on a network share, e.g. on a NAS you need to be able to connect to this share. To access this share you need to have the propper permissions. To achieve that, you should run your Airsonic under an service account and not by using the `SYSTEM` account. In this instructions this service account is called `sa-airsonic`.
+The Airsonic Windows Service we just setup, is now running under the `SYSTEM` account. This is just fine, if all your media are on a local disk. But if you have your media on a network share, e.g. on a NAS you need to be able to connect to this share. To access this share you need to have the propper permissions. To achieve that, you should run your Airsonic under a service account and not by using the `SYSTEM` account. In this instructions this service account is called `sa-airsonic`.
 
 > **NOTE**: Of course you can choose another name then `sa-airsonic` if you like.
 
