@@ -14,11 +14,12 @@ Open the `Server Manager` and start the `Add Roles and Features` wizard from the
 
 To get the URL Rewrite module for IIS, you need to install the `Web Platform Installer`. You can download this installer from the [Microsoft Page](https://www.microsoft.com/web/downloads/platform.aspx).
 
-After installing it open the `Internet Information Services (IIS) Manager`. When you click on your server name you'll see the `Web Platfrom Installer` in the management section. Install the newest `URL Rewrite` module.
+After installing it, open the `Internet Information Services (IIS) Manager`. When you click on your server name on the left side, you'll see the `Web Platfrom Installer` in the management section. Install the newest `URL Rewrite` module.
 
 #### IIS configuration
 
-Configure the IP/hostname binding and certificate settings according to your wishes on the `Default Web Site` (or use a subfolder or create your own site).
+Configure the IP/hostname binding and certificate settings according to your wishes on the `Default Web Site` (or use a subfolder or create your own site). You'll find a lot of information about this on the internet for sure. If you don't have a public trusted certificate, just go for a self-signed one, that's completely fine.
+
 Open the `URL Rewrite` settings from the `IIS` section under your `Default Web Site`.
 Click on `View Server Variables...` and make sure you add the following variables:
 
@@ -31,7 +32,7 @@ ORIGINAL_HOST
 ```
 
 As next you need to setup your rewrite rules. The easiest way to do so, is to just create the `web.config` by yourself. Open the folder of your IIS Site by making a right click on `Default Web Site` and choosing `Explorer`.
-There you have to create a new file called `web.config` with the following content.
+There you have to create a new file called `web.config` with the following content. If you already have the `web.config` there, merge the content.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -55,7 +56,7 @@ There you have to create a new file called `web.config` with the following conte
                         <set name="HTTP_X_FORWARDED_PORT" value="443" />
                         <set name="ORIGINAL_HOST" value="localhost" />
                     </serverVariables>
-                    <action type="Rewrite" url="http://localhost:8080/{R:1}" />
+                    <action type="Rewrite" url="http://localhost:4040/{R:1}" />
                 </rule>
             </rules>
         </rewrite>
@@ -63,6 +64,6 @@ There you have to create a new file called `web.config` with the following conte
 </configuration>
 ```
 
-Make sure you set `airsonic.public.url` to the public URL of your Airsonic site. Also update the internal name `localhost` and the port `8080` if needed.
+Make sure you set `airsonic.public.url` to the public URL of your Airsonic site. Also update the internal name `localhost` and the port `4040` if needed.
 
 > **NOTE**: You probably don't need the `Redirect Transfer` rule, when you run Airsonic under a context.
