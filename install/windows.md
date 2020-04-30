@@ -24,7 +24,7 @@ Create a new directory `C:\Program Files\Airsonic` and move the `airsonic.war` t
 Create an `airsonic.cmd` file in this folder and add the following content.
 
 ```
-java -Dairsonic.home="C:\\Program Files\\Airsonic" -Dserver.port=4040 -jar airsonic.war
+java.exe -Dairsonic.home="C:\\Program Files\\Airsonic" -Dserver.port=4040 -jar airsonic.war
 ```
 
 Now you're ready! Start the `airsonic.cmd` file by double clicking on it, wait some seconds and browse to `http://localhost:4040`. You should see the Airsonic logon page.
