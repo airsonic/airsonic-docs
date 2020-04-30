@@ -3,25 +3,25 @@ layout: docs
 title: Windows Installation
 permalink: /docs/install/windows/
 ---
-This page describes how to install Airsonic under Windows as Stand-alone WAR, without using Tomcat. It also contains information how to setup Airsonic as as Windows Service and let it run under an own user account.
+This page describes how to install Airsonic under Windows as Stand-alone WAR, without using Tomcat. It also contains information about how to setup Airsonic as a Windows Service and let it run under an own user/service account.
 
-> **NOTE**: If you like to run Airsonic by using HTTPS, take a look at the Proxy section about [IIS](/docs/proxy/iis/).
+> **NOTE**: If you like to run Airsonic by using HTTPS, take a look at the proxy section about [IIS](/docs/proxy/iis/).
 
 ##### Prerequisites
 
 Download the latest [Airsonic Release](https://github.com/airsonic/airsonic/releases), you need the `airsonic.war`.
 
-Install [OpenJDK](https://openjdk.java.net) or another Java implementation. If you're using vanilla Airsonic, make sure you use version 13 or below. For Airsonic Advanced you need to have at least version 11, but 14 is fine as well. Make sure to add Java to your `PATH` variable.
+Install [OpenJDK](https://openjdk.java.net) or another Java implementation. If you're using vanilla Airsonic, make sure you use version 13 or below. For Airsonic Advanced with 11.0.0 or newer you need to have at least version 11, but 14 is fine as well. Make sure to add Java to your `PATH` variable.
 
-If you like to run Airsonic as a Windows service, download the [Non-Sucking Service Manager (NSSM)](https://nssm.cc/download).
+If you like to run Airsonic as a Windows Service, download the [Non-Sucking Service Manager (NSSM)](https://nssm.cc/download).
 
 ##### Install Airsonic
 
-Before you start, doublecheck if Java is working as expected. Open a command prompt or the PowerShell console and type `java -version`. This should print the installed Java version.
+Before we start, doublecheck if Java is working as expected and you setup the `PATH` environment variable right. Open a command prompt or the PowerShell console and type `java -version`. This should print the installed Java version.
 
-Create a new directory and `C:\Program Files\Airsonic` copy `airsonic.war` to this folder.
+Create a new directory `C:\Program Files\Airsonic` and move the `airsonic.war` to this folder.
 
-Create a `airsonic.cmd` file and add the following content.
+Create a `airsonic.cmd` file in this folder and add the following content.
 
 ```
 java -Dairsonic.home="C:\\Program Files\\Airsonic" -Dserver.port=4040 -jar airsonic.war
@@ -31,11 +31,11 @@ Now you're ready! Start the `airsonic.cmd` file by double clicking on it, wait s
 
 ##### Installing Airsonic as Windows Service
 
-As it might be a bit inconvenient to start Airsonic after every restart of your computer/server by yourself, you can setup a Windows Service. This service will start Airsonic automatically when you boot your computer, you don't even need to logon.
+As it might be a bit inconvenient to start Airsonic after every restart of your computer/server by yourself, you can setup a Windows Service. This Windows Service will start Airsonic automatically when you boot your computer, you don't even need to logon.
 
 > **NOTE**: To run a Java application as a Windows Service there would be a [Java Service Wrapper](https://wrapper.tanukisoftware.com), but it's not really easy to setup. That's why we go for NSSM.
 
-Create a new directory and `C:\Program Files\NSSM` copy `nssm.exe` to this folder.
+Create a new directory `C:\Program Files\NSSM` and copy `nssm.exe` to this folder.
 
 Open a command prompt or the PowerShell console and change the directory to the NSSM folder `cd C:\Program Files\NSSM`.
 
@@ -57,20 +57,20 @@ Wait some seconds and browse to `http://localhost:4040`. You should see the Airs
 
 ##### Run the Airsonic Windows Service under an own Account
 
-The Airsonic Windows Service we just setup is now running under the `SYSTEM` account. This is just fine, if all your media are on a local disk. But if you have your media on a network share, e.g. on a NAS you need to be able to connect to this share. To access this share you need to have the propper permissions. To achieve that, you should run your Airsonic under an own service account and not by using the `SYSTEM` account. In this instructions this service account is called `sa-airsonic`.
+The Airsonic Windows Service we just setup, is now running under the `SYSTEM` account. This is just fine, if all your media are on a local disk. But if you have your media on a network share, e.g. on a NAS you need to be able to connect to this share. To access this share you need to have the propper permissions. To achieve that, you should run your Airsonic under an own service account and not by using the `SYSTEM` account. In this instructions this service account is called `sa-airsonic`.
+
+> **NOTE**: Of course you can choose another name then `sa-airsonic` if you like.
 
 If you have an Active Directory domain you can create a new user in the Active Directoy with the name `sa-airsonic`. Afterwards you have to grant this user permissions on you network share/drive.
 
 If you don't have an Active Directory and running your computers in a workgroup (non-domain environment), you need to create a new Windows user called `sa-airsonic`. Make sure to create this user account with the same name and password on your device with the network share as well.
 
-> **NOTE**: Of course you can choose another name then `sa-airsonic` if you like.
-
 The `sa-airsonic` user don't necessarily has to get the `Administrators` group/permissions, the `Users` group is just fine. 
 
-After you created the `sa-airsonic` user we need to change some folder permissions and the Windows Service to use this account. 
+After you created the `sa-airsonic` user, we need to change folder permission and the Windows Service to use this account. 
 
-Grant `Modify` permissions for `sa-airsonic` on `C:\Program Files\Airsonic`.
+- Grant `Modify` permissions for `sa-airsonic` on `C:\Program Files\Airsonic`.
 
-Open `services.msc` and lookout for the `Airsonic` service. Stop this service and open the properties. In the `Log On` tab change the settings to use `This account` and specify the username and password of your `sa-airsonic` account. This should automatically grant `Log on as a service` permission for your `sa-airsonic`.
+- Open `services.msc` and lookout for the `Airsonic` service. Stop this service and open the properties. In the `Log On` tab change the settings to use `This account` and specify the username and password of your `sa-airsonic` account. This should automatically grant `Log on as a service` permission for `sa-airsonic` on your computer.
 
 Now you're ready to start the `Airsonic` service again and you should be able to add your network drive as media folder in the Airsonic settings under `Media folders` by using a UNC path like `\\servername\share\folder`.
