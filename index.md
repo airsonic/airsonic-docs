@@ -16,6 +16,7 @@ Here you can pick your installation docs for:
 - [Docker container](/docs/install/docker)
 - [Build from source](/docs/install/source)
 - [Homebrew](/docs/install/homebrew)
+- [Windows](/docs/install/windows)
 
 If you don't know which one you should pick, odds are that the
 [standalone version](/docs/install/war-standalone) is the right choice for you.
@@ -27,6 +28,7 @@ After installing, you may want to put Airsonic behind a reverse proxy to access 
 - [Configure Nginx proxy](/docs/proxy/nginx)
 - [Configure Haproxy proxy](/docs/proxy/haproxy)
 - [Configure Caddy proxy](/docs/proxy/caddy)
+- [Configure IIS proxy](/docs/proxy/iis)
 
 Using an external database for large music collection can only be useful, just follow our [database docs](/docs/database) to set it up.
 

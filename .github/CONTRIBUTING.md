@@ -12,9 +12,13 @@ Airsonic development is a community project, and contributions are welcomed. Her
   2. **Testing** The documentation is browsed with the website, so we recommend to test any new guides within the website using [jekyll](https://jekyllrb.com/) locally.
     - Clone the website repo `git clone https://github.com/airsonic/airsonic.github.io`.
     - Change directory into the cloned repo `cd airsonic.github.io`.
-    - Clone the documentation submodule `git clone https://github.com/airsonic/documentation pages/docs`.
-    - Install [Jekyll](https://jekyllrb.com/)
-    - Run `jekyll serve --watch`.
+    - Clone the documentation submodule `git clone git clone https://github.com/airsonic/airsonic-docs docs`.
+    - Install `ruby` with the devkit. If you run it on Windows, don't install it to `C:\Program Files` as you will get trouble with the space later!
+    - Install [`bundler`](https://bundler.io/) (`gem install bundler`).
+    - Install [`jekyll`](https://jekyllrb.com/) (`gem install jekyll`).
+    - Update local dependencies: `bundler update`.
+    - Install local dependencies: `bundler install`.
+    - Run `bundler exec jekyll serve --watch`.
     - Add your changes.
     - Check if everything is fine at `localhost:4040`.
 
