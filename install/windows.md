@@ -11,7 +11,7 @@ This page describes how to install Airsonic under Windows as Stand-alone WAR, wi
 
 Download the latest [Airsonic Release](https://github.com/airsonic/airsonic/releases), you need the `airsonic.war`.
 
-Install [OpenJDK](https://openjdk.java.net) or another Java implementation. If you're using vanilla Airsonic, make sure you use version 13 or below. For Airsonic Advanced with 11.0.0 or newer you need to have at least version 11, but 14 is fine as well. Make sure to add Java to your `PATH` variable.
+Install [OpenJDK](https://openjdk.java.net) or another Java implementation. Make sure to add Java to your `PATH` variable.
 
 If you like to run Airsonic as a Windows Service, download the [Non-Sucking Service Manager (NSSM)](https://nssm.cc/download).
 
