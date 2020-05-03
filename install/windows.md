@@ -5,7 +5,7 @@ permalink: /docs/install/windows/
 ---
 This page describes how to install Airsonic under Windows as Stand-alone WAR, without using Tomcat. It also contains information about how to setup Airsonic as a Windows Service and let it run under an user/service account.
 
-> **NOTE**: If you like to run Airsonic by using HTTPS, take a look at the proxy section about [IIS](/docs/proxy/iis/).
+> **NOTE**: If you would like to run Airsonic with HTTPS, take a look at the proxy section about [IIS](/docs/proxy/iis/).
 
 ##### Prerequisites
 
@@ -17,9 +17,9 @@ If you like to run Airsonic as a Windows Service, download the [Non-Sucking Serv
 
 ##### Install Airsonic
 
-Before we start, doublecheck if Java is working as expected and you setup the `PATH` environment variable right. Open a command prompt or the PowerShell console and type `java -version`. This should print the installed Java version.
+Before we start, doublecheck if Java is working as expected and the `PATH` environment variable is setup correctly. Open a command prompt or the PowerShell console and type `java -version`. This should print the installed Java version.
 
-Create a new directory `C:\Program Files\Airsonic` and move the `airsonic.war` to this folder.
+Create a new directory `C:\Program Files\Airsonic` and move the `airsonic.war` file to this folder.
 
 Create an `airsonic.cmd` file in this folder and add the following content.
 
@@ -61,11 +61,13 @@ The Airsonic Windows Service we just setup, is now running under the `SYSTEM` ac
 
 > **NOTE**: Of course you can choose another name then `sa-airsonic` if you like.
 
+Running the Airsonic Windows Service using another (non-admin) user also improves the safety of your system, as the `SYSTEM` account has way more rights then really needed to run Airsonic.
+
 If you have an Active Directory domain you can create a new user in the Active Directoy with the name `sa-airsonic`. Afterwards you have to grant this user permissions on you network share/drive.
 
 If you don't have an Active Directory and running your computers in a workgroup (non-domain environment), you need to create a new Windows user called `sa-airsonic`. Make sure to create this user account with the same name and password on your device with the network share as well.
 
-The `sa-airsonic` user don't necessarily has to get the `Administrators` group/permissions, the `Users` group is just fine. 
+The `sa-airsonic` user doesn't necessarily have to get the `Administrators` group/permissions, the `Users` group is just fine. 
 
 After you created the `sa-airsonic` user, we need to change folder permission and the Windows Service to use this account. 
 
