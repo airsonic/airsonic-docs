@@ -47,9 +47,7 @@ Set the following settings in the `Application` tab.
 - Startup directory = `C:\Program Files\Airsonic`
 - Arguments = `-Dairsonic.home="C:\\Program Files\\Airsonic" -Dserver.port=4040`
 
-Open the `Shutdown` tab and remove all the flags in the checkboxes excepted the one for `Generate Contral-C`. Set the timeout to `300000`.
-
-> **NOTE**: This very long timeout (5 minutes) is needed, as Airsonic takes some time to shutdown properly.
+Open the `Shutdown` tab and remove all the flags in the checkboxes excepted the one for `Generate Contral-C`.
 
 That's it, you're ready to start the Windows Service by typing `net start Airsonic` in your command prompt or PowerShell console.
 
