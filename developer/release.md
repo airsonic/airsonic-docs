@@ -119,3 +119,8 @@ These instructions come from [contrib/release.md](https://github.com/airsonic/ai
         mvn versions:set -DnewVersion=X.Y+1.0-SNAPSHOT
 
 14. Git commit and push
+
+15. In the [airsonic.github.io repository](https://github.com/airsonic/airsonic.github.io/),
+    update the current stable release in `_config.yml`:
+
+        sed -i 's/^stable_version: .*$/stable_version: "X.Y.Z"/' _config.yml
