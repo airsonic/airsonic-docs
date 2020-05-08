@@ -6,7 +6,7 @@ permalink: /docs/proxy/iis/
 
 > **NOTE**: This manual was made by using Windows Server 2012 with IIS 8. For other versions it might be slightly different.
 
-> **NOTE**: This manual was made by running Airsonic NOT under a context.
+> **NOTE**: This manual was made by running Airsonic NOT under a custom context path (the default value is `/`).
 
 #### IIS installation
 
@@ -66,4 +66,4 @@ There you have to create a new file called `web.config` with the following conte
 
 Make sure you set `airsonic.public.url` to the public URL of your Airsonic site. Also update the internal name `localhost` and the port `4040` if needed.
 
-> **NOTE**: You probably don't need the `Redirect Transfer` rule, when you run Airsonic under a context.
+> **NOTE**: You probably don't need the `Redirect Transfer` rule, when you run Airsonic under a custom context path.
