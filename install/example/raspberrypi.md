@@ -5,9 +5,9 @@ permalink: /docs/install/example/raspberrypi/
 ---
 This guide will walk you through the process of deploying Airsonic on a Raspbery Pi running Debian 9 Stretch using Tomcat 8.
 
-> Note: We suggest not to use the OpenJDK package because Airsonic will take more than 1 hour to deploy. See [this issue](https://github.com/airsonic/airsonic/issues/283) for more details.
+> **NOTE**: We suggest not to use the OpenJDK package because Airsonic will take more than 1 hour to deploy. See [this issue](https://github.com/airsonic/airsonic/issues/283) for more details.
 
-> Note: If you are using a distribution that does not include Oracle's JDK 8 in the repositories, *e.g.* [OSMC](https://osmc.tv/), you will need to add a repository to install Oracle JDK. Several webpages document how to add a repository and install it using apt tools and can be found using your favourite search engine.
+> **NOTE**: If you are using a distribution that does not include Oracle's JDK 8 in the repositories, *e.g.* [OSMC](https://osmc.tv/), you will need to add a repository to install Oracle JDK. Several webpages document how to add a repository and install it using apt tools and can be found using your favourite search engine.
 
 #### Install required packages
 
@@ -147,4 +147,4 @@ ls -l
 lrwxrwxrwx 1 tomcat8 tomcat8 15 Jan  7 09:46 ffmpeg -> /usr/bin/ffmpeg
 ```
 
-> Note that `user` has to be the user that runs Airsonic
+> **NOTE**: `user` has to be the user that runs Airsonic

@@ -15,17 +15,36 @@ This guide assumes you already have a TLS certificate. [Let's Encrypt](https://l
 
 ### Configure Airsonic
 
+##### Basic configuration
+
 A few settings should be tweaked via Spring Boot or Tomcat
 configuration:
 
-  - Set the context path to `/airsonic`
-  - Set the correct address to listen to
-  - Set the correct port to listen to
+  - Set the context path if needed (the rest of this guide assumes `/airsonic`, the default value is `/`)
+  - Set the correct address to listen to (the rest of this guide assumes `127.0.0.1`)
+  - Set the correct port to listen to (the rest of this guide assumes `8080`)
 
 To change this, please use one of the guide below according to your installation:
 
 - [Tomcat](/docs/configure/tomcat/)
 - [Standalone](/docs/configure/standalone/)
+
+##### Forward headers
+
+You will also need to make sure Airsonic uses the correct headers for redirects, by setting the `server.use-forward-headers` property to `true`.
+
+To do so, stop your Airsonic server or Docker image, then edit the `config/application.properties` file:
+
+```
+nano /path/to/airsonic/config/application.properties
+```
+
+Add the following line to the bottom of the file:
+```
+server.use-forward-headers=true
+```
+
+Use Ctrl+X to save and exit the file, and restart your Airsonic server or Docker image.
 
 ### Reverse proxy configuration
 
@@ -53,3 +72,4 @@ Use a guide in the list below:
 - [Configure Apache proxy](/docs/proxy/apache)
 - [Configure Nginx proxy](/docs/proxy/nginx)
 - [Configure Haproxy proxy](/docs/proxy/haproxy)
+- [Configure Caddy proxy](/docs/proxy/caddy)

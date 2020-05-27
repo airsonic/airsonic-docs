@@ -12,15 +12,18 @@ In order to install and run Airsonic using [Docker](https://www.docker.com/), a 
 If you do not have Docker installed, you may follow [these instructions](https://docs.docker.com/engine/installation/) to install it on your system.
 
 Verify that Docker is installed by running
-
-    $ docker -v
-    Docker version 17.06.0-ce, build 02c1d87
+```
+$ docker -v
+Docker version 17.06.0-ce, build 02c1d87
+```
 
 ##### Running Airsonic
 
 Running the Airsonic Docker container is straight forward. Simply execute the command below.
 
-    docker run -p 4040:4040 -d airsonic/airsonic
+```
+docker run -p 4040:4040 -d airsonic/airsonic
+```
 
 You should be able to access Airsonic on [http://localhost:4040](http://localhost:4040) after a couple of seconds.
 
@@ -32,7 +35,16 @@ The Airsonic Docker file provides various mount points for volumes. You can see 
 
 Attach volumes to your docker container when starting the container like so:
 
-    docker run -v data:/airsonic/data -v music:/airsonic/music -v playlists:/airsonic/playlists -v podcasts:/airsonic/podcasts -p 4040:4040 -d airsonic/airsonic
+```
+docker run \
+  -v data:/airsonic/data \
+  -v music:/airsonic/music \
+  -v playlists:/airsonic/playlists \
+  -v podcasts:/airsonic/podcasts \
+  -p 4040:4040 \
+  -d \
+  airsonic/airsonic
+```
 
 You can find additional information regarding volumes [here](https://docs.docker.com/engine/admin/volumes/volumes/). Inspect volumes by running, for example `docker volume inspect data`.
 
@@ -46,10 +58,17 @@ You may adjust the `airsonic.properties` file directly. You can find it in the d
 
 If you did not supply another volume mountpoint the file will reside in `/var/lib/docker/volumes/data/_data`. You need administrator rights to modify it.
 
-    sudo nano /var/lib/docker/volumes/data/_data/airsonic.properties
+```
+sudo nano /var/lib/docker/volumes/data/_data/airsonic.properties
+```
 
 Another way to configure Airsonic is by passing start-up arguments to the container when executing `docker run`. You may use the environment variable `JAVA_OPTS` to pass properties to Airsonic.
 
-     docker run -p 4040:4040 -e JAVA_OPTS="-DDatabaseMysqlMaxlength=512 -DDatabaseConfigType=embed ..." airsonic/airsonic
+```
+docker run \
+  -p 4040:4040 \
+  -e JAVA_OPTS="-DDatabaseMysqlMaxlength=512 -DDatabaseConfigType=embed ..." \
+  airsonic/airsonic
+```
 
 View the docker container [start-up script](https://github.com/airsonic/airsonic/blob/master/install/docker/run.sh) for additional information.

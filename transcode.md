@@ -33,7 +33,7 @@ ls -alh
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
 
-> Note that `user` has to be the user that runs Airsonic
+> **NOTE**:  `user` has to be the user that runs Airsonic
 
 ##### On Debian 8
 
@@ -79,7 +79,7 @@ ls -alh
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
 
-> Note that `user` has to be the user that runs Airsonic
+> **NOTE**:  `user` has to be the user that runs Airsonic
 
 ##### On Ubuntu > 16.04
 
@@ -106,7 +106,7 @@ ls -alh
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
-> Note that `user` has to be the user that runs Airsonic
+> **NOTE**:  `user` has to be the user that runs Airsonic
 
 ##### On Red Hat / Fedora
 
@@ -133,7 +133,7 @@ ls -alh
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
-> Note that `user` has to be the user that runs Airsonic
+> **NOTE**:  `user` has to be the user that runs Airsonic
 
 ##### On Windows
 
@@ -166,4 +166,4 @@ ls -alh
 ```
 lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 ```
-> Note that `user` has to be the user that runs Airsonic
+> **NOTE**:  `user` has to be the user that runs Airsonic

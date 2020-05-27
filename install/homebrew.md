@@ -9,29 +9,8 @@ This installation method is designed for easy install and upgrades, and uses san
 
 ##### Prerequisites
 
-In order to install and Airsonic on macOS you need Java 8 runtime and [Homebrew](https://brew.sh).
-
-Download the _JDK 8 .dmg_ package from the [JDK download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
-
-Install the downloaded package.
-
-Add run the following lines in your terminal:
-
-```bash
-# check to see if you have 'java -version'. if not, run the command below
-# if you run zsh, replace .bash_profile with .zshrc
-
-echo export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" >> ~/.bash_profile && \
-source ~/.bash_profile
-```
-
-All other dependencies will be installed and linked automatically.
-
-To easily load Airsonic, and start it with your system services, you should also install the [Homebrew Services](https://github.com/Homebrew/homebrew-services) tap.
-
-```
-brew tap homebrew/services
-```
+In order to install and run Airsonic, you will need:
+- [A JDK installation, 1.8.x series of OpenJDK or Oracle JDK 8+ should work.](/docs/install/prerequisites)
 
 ##### Installing
 
