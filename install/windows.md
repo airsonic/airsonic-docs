@@ -45,7 +45,7 @@ Set the following settings in the `Application` tab.
 
 - Path = `java.exe`
 - Startup directory = `C:\Program Files\Airsonic`
-- Arguments = `-Dairsonic.home="C:\\Program Files\\Airsonic" -Dserver.port=4040`
+- Arguments = `-Dairsonic.home="C:\\Program Files\\Airsonic" -Dserver.port=4040 -jar airsonic.war`
 
 Open the `Shutdown` tab and remove all the flags in the checkboxes excepted the one for `Generate Contral-C`.
 
