@@ -137,7 +137,7 @@ lrwxrwxrwx 1 user user   15 mai    4 19:57 ffmpeg -> /usr/bin/ffmpeg
 
 ##### On Windows
 
-Get the ffmpeg package from the project [download page](https://ffmpeg.zeranoe.com/builds/).
+Get the ffmpeg package from the project [download page](https://ffmpeg.org/download.html#build-windows).
 
 Unpack the files into the `AIRSONIC_HOME/transcode/` folder.
 
