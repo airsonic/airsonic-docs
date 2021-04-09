@@ -24,7 +24,7 @@ You can find a detailed list of applications available for Subsonic on the [Subs
 | BetaBeats  | [Windows Store](https://www.microsoft.com/store/apps/9nblggh6h297) | ✔  | -
 | SubSonar  | [BlackBerry World](https://appworld.blackberry.com/webstore/content/35305887/?countrycode=AT&lang=en) | ✕  | -
 | SonicAir  | [BlackBerry World](https://appworld.blackberry.com/webstore/content/55137/?lang=en&countrycode=AT) | ✕  | -
-| iSub  | [AppStore](https://itunes.apple.com/us/app/isub-music-streamer/id362920532?mt=8) | ✕  | Made by Ben Baron.
+| iSub  | [AppStore](https://itunes.apple.com/us/app/isub-music-streamer/id362920532?mt=8) | ✔  | Made by Ben Baron.
 | AVSub  | [AppStore](https://itunes.apple.com/us/app/avsub/id923424694?mt=8) | ✕  | Made by Richard Levy.
 | Soundwaves  | [AppStore](https://itunes.apple.com/app/soundwaves/id736139596?mt=8) | ✔  | Made by Simone Tellini.
 | play:Sub  | [AppStore](https://itunes.apple.com/us/app/play-sub-subsonic-music-streamer/id955329386?mt=8) | ✕  |Made by Michael Hansen.
