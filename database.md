@@ -104,6 +104,12 @@ If starting under Docker, the following line should start a compatible PostgreSQ
 docker run --name postgres -e POSTGRES_PASSWORD=yourpasswordhere -p 5432:5432 -d postgres:12
 ```
 
+Some functions used by airsonic are not available in postgresql. You need to create some function aliases by executing this SQL snippet on your database :
+
+```
+create or replace function rand() returns double precision language sql as $$ select random() $$;
+```
+
 ##### MariaDB
 
 The `airsonic.properties` files should contain the following properties in the "embedded" configuration:
