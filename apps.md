@@ -35,7 +35,7 @@ You can find a detailed list of applications available for Subsonic on the [Subs
 | Name   | Platform | Free |  Notes  |
 |:----------:|:-------:|:---------:|:-------:|:------:|
 | [Clementine](https://www.clementine-player.org/) | Windows, Mac OS, Linux | ✔ | A multiplatform music player. Provides support for many different services beside Airsonic (Souncloud, Spotify...)
-| [Submariner](http://subapp.read-write.fr/)  | Mac OS | ✔  | A native mac music application.
+| [Submariner](https://subapp.read-write.fr/)  | Mac OS | ✔  | A native mac music application.
 | [Subsonic Plugin](http://musicbee.wikia.com/wiki/Subsonic_Client) for [MusicBee](https://getmusicbee.com/)  | Windows | ✔  | Provides support for many different services (SoundCloud, web radio...)
 | [Jamstash](http://jamstash.com/#/settings) | Web, Google Chrome ([Web Store](https://chrome.google.com/webstore/detail/jamstash/jccdpflnecheidefpofmlblgebobbloc)) | ✔ | A HTML 5 music player.
 | [Perisonic](https://chrome.google.com/webstore/detail/perisonic/bkdipjpecphmbijlckkkmabnabhbpjbn) | Google Chrome | ✔  | Plays your music in random order.
