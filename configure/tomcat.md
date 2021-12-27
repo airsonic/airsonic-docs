@@ -90,7 +90,7 @@ You will need to add the following right above the `</Host>` tag:
 </Context>
 ```
 
-To clarify, if you want to serve airsonic from the ``/air` context and you have the
+To clarify, if you want to serve airsonic from the ``/air`` context and you have the
 airsonic.war file located in ``/opt/airsonic/airsonic.war``, make sure the
 configuration looks something like this:
 
