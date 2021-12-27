@@ -69,6 +69,14 @@ Finally save the `server.xml` file and restart tomcat8.
 
 #### Context path
 
+By default, Tomcat will deploy any ``.war`` file in ``webapps` directory
+with the context name matching the filename. For example, ``airsonic.war``
+will be deployed to the ``/airsonic`` context.
+
+If you don't want this to happen, you need to locate your ``airsonic.war``
+file somewhere other than the tomcat ``webapps`` directory and apply some
+configuration.
+
 Locate `server.xml` which by default should be in the ``${TOMCAT_HOME}/conf/`` folder (e.g. for Debian it will be `/var/lib/tomcat8/conf/server.xml`).
 
 You will need to add the following right above the `</Host>` tag:
@@ -82,4 +90,28 @@ You will need to add the following right above the `</Host>` tag:
 </Context>
 ```
 
+To clarify, if you want to serve airsonic from the ``/air` context and you have the
+airsonic.war file located in ``/opt/airsonic/airsonic.war``, make sure the
+configuration looks something like this:
+
+```xml
+<Context path="/air" docBase="/opt/airsonic/airsonic.war" debug="0" reloadable="true">
+  <WatchedResource>WEB-INF/web.xml</WatchedResource>
+</Context>
+```
+
 Finally save the `server.xml` file and restart tomcat8.
+
+#### hostname configuration
+
+If you find your reverse proxy isn't working properly and is returning 404 results
+you don't expect, you might need to set the hostname configuration in the Tomcat
+``server.xml`` configuration file.
+
+For example, if your instance is running on a host named ``mymusic.example.com``,
+the config line should look like:
+
+```
+<Host name="mymusic.example.com"  appBase="webapps"
+unpackWARs="true" autoDeploy="true">
+```
