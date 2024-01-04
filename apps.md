@@ -15,7 +15,6 @@ You can find a detailed list of applications available for Subsonic on the [Subs
 | Subsonic  | [Google Play](https://play.google.com/store/apps/details?id=net.sourceforge.subsonic.androidapp) | ✔ |The official Subsonic app made by Sindre Mehus.
 | DSub  | [F-Droid Repository](https://f-droid.org/packages/github.daneren2005.dsub/) | ✔ | A Subsonic client fork. Made by Scott Jackson.  
 | DSub  | [Google Play](https://play.google.com/store/apps/details?id=github.daneren2005.dsub) | ✕  | Not free but very good. Made by Scott Jackson.
-| Audinaut | [F-Droid Repository](https://f-droid.org/app/net.nullsum.audinaut) | ✔ | Made by Andrew Rabert.
 | Ultrasonic | [Google Play](https://play.google.com/store/apps/details?id=org.moire.ultrasonic) | ✔ | [Open source](https://github.com/ultrasonic/ultrasonic) client for Subsonic API compatible servers (Fork of Subsonic app)
 | Ultrasonic | [F-Droid Repository](https://f-droid.org/packages/org.moire.ultrasonic/) | ✔ | [Open source](https://github.com/ultrasonic/ultrasonic) client for Subsonic API compatible servers (Fork of Subsonic app)
 | XenoAmp  | [Google Play](https://play.google.com/store/apps/details?id=pl.qus.xenoamp&hl=en) | ✔ | Supports many different services (Soundcloud, Subsonic, SMB...)
